@@ -5,8 +5,7 @@
 
   <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>🌌 Nuestro pequeño universo</title>
 
@@ -15,7 +14,7 @@
 
     /* =====================================================
        🎨 COLORES
-       ===================================================== */
+    ===================================================== */
 
     :root {
 
@@ -37,19 +36,15 @@
 
     /* =====================================================
        🔧 GENERAL
-       ===================================================== */
+    ===================================================== */
 
     * {
-
       box-sizing: border-box;
-
     }
 
 
     html {
-
       scroll-behavior: smooth;
-
     }
 
 
@@ -79,12 +74,74 @@
 
       overflow-x: hidden;
 
+      transition:
+        background 1s ease,
+        color 1s ease;
+
+    }
+
+
+    /* =====================================================
+       🌌 MODO NOCHE
+    ===================================================== */
+
+    body.modo-noche {
+
+      background:
+
+        radial-gradient(
+          circle at 50% 0%,
+          #25154b 0%,
+          #090615 45%,
+          #020107 100%
+        );
+
+    }
+
+
+    body.modo-noche .portada h1 {
+
+      background:
+
+        linear-gradient(
+          90deg,
+          #ffb8dc,
+          #d5b8ff,
+          white
+        );
+
+      -webkit-background-clip: text;
+
+      -webkit-text-fill-color: transparent;
+
+    }
+
+
+    body.modo-noche .estrella {
+
+      box-shadow:
+        0 0 10px white,
+        0 0 20px #b79ae8;
+
+    }
+
+
+    body.modo-noche .luna {
+
+      box-shadow:
+
+        0 0 45px
+        rgba(255,255,255,.8),
+
+        0 0 120px
+        rgba(183,154,232,.65);
+
     }
 
 
     /* =====================================================
        ⭐ ESTRELLAS DEL FONDO
-       ===================================================== */
+    ===================================================== */
 
     #estrellas {
 
@@ -131,8 +188,7 @@
 
         opacity: .15;
 
-        transform:
-          scale(.6);
+        transform: scale(.6);
 
       }
 
@@ -140,8 +196,7 @@
 
         opacity: 1;
 
-        transform:
-          scale(1.4);
+        transform: scale(1.4);
 
       }
 
@@ -150,7 +205,7 @@
 
     /* =====================================================
        🌠 ESTRELLAS FUGACES
-       ===================================================== */
+    ===================================================== */
 
     .estrella-fugaz {
 
@@ -161,14 +216,14 @@
       height: 2px;
 
       background:
+
         linear-gradient(
           90deg,
           transparent,
           white
         );
 
-      transform:
-        rotate(-35deg);
+      transform: rotate(-35deg);
 
       pointer-events: none;
 
@@ -191,10 +246,7 @@
         opacity: 0;
 
         transform:
-          translate(
-            0,
-            0
-          )
+          translate(0,0)
           rotate(-35deg);
 
       }
@@ -210,10 +262,7 @@
         opacity: 0;
 
         transform:
-          translate(
-            -500px,
-            300px
-          )
+          translate(-500px,300px)
           rotate(-35deg);
 
       }
@@ -223,7 +272,7 @@
 
     /* =====================================================
        🌌 CONTENEDOR
-       ===================================================== */
+    ===================================================== */
 
     .universo {
 
@@ -236,7 +285,7 @@
 
     /* =====================================================
        🌙 PORTADA
-       ===================================================== */
+    ===================================================== */
 
     .portada {
 
@@ -256,6 +305,10 @@
 
     }
 
+
+    /* =====================================================
+       🌙 LUNA
+    ===================================================== */
 
     .luna {
 
@@ -289,7 +342,33 @@
         ease-in-out
         infinite;
 
-      margin-bottom: 35px;
+      margin-bottom: 20px;
+
+      cursor: pointer;
+
+      transition:
+
+        background 1s ease,
+        box-shadow 1s ease,
+        transform .3s ease;
+
+    }
+
+
+    .luna:hover {
+
+      transform: scale(1.08);
+
+    }
+
+
+    .fase-luna {
+
+      margin-bottom: 25px;
+
+      font-size: .9rem;
+
+      opacity: .65;
 
     }
 
@@ -299,20 +378,132 @@
       0%,
       100% {
 
-        transform:
-          translateY(0);
+        transform: translateY(0);
 
       }
 
       50% {
 
-        transform:
-          translateY(-15px);
+        transform: translateY(-15px);
 
       }
 
     }
 
+
+    /* =====================================================
+       🌙 FASES DE LA LUNA
+    ===================================================== */
+
+    .luna-fase-0 {
+
+      background:
+
+        radial-gradient(
+          circle at 35% 30%,
+          #aaa,
+          #444 50%,
+          #111 100%
+        );
+
+    }
+
+
+    .luna-fase-1 {
+
+      background:
+
+        linear-gradient(
+          90deg,
+          #222 0 35%,
+          #eee 36% 100%
+        );
+
+    }
+
+
+    .luna-fase-2 {
+
+      background:
+
+        linear-gradient(
+          90deg,
+          #222 0 50%,
+          #eee 51% 100%
+        );
+
+    }
+
+
+    .luna-fase-3 {
+
+      background:
+
+        linear-gradient(
+          90deg,
+          #222 0 25%,
+          #eee 26% 100%
+        );
+
+    }
+
+
+    .luna-fase-4 {
+
+      background:
+
+        radial-gradient(
+          circle at 35% 30%,
+          #ffffff,
+          #e6dcf7 45%,
+          #a89bc8 100%
+        );
+
+    }
+
+
+    .luna-fase-5 {
+
+      background:
+
+        linear-gradient(
+          90deg,
+          #eee 0 74%,
+          #222 75% 100%
+        );
+
+    }
+
+
+    .luna-fase-6 {
+
+      background:
+
+        linear-gradient(
+          90deg,
+          #eee 0 49%,
+          #222 50% 100%
+        );
+
+    }
+
+
+    .luna-fase-7 {
+
+      background:
+
+        linear-gradient(
+          90deg,
+          #eee 0 25%,
+          #222 26% 100%
+        );
+
+    }
+
+
+    /* =====================================================
+       📝 TÍTULO
+    ===================================================== */
 
     .portada h1 {
 
@@ -356,7 +547,20 @@
 
     /* =====================================================
        🔘 BOTONES
-       ===================================================== */
+    ===================================================== */
+
+    .botones-portada {
+
+      display: flex;
+
+      gap: 12px;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+    }
+
 
     .boton {
 
@@ -391,6 +595,7 @@
         rgba(236,111,169,.25);
 
       transition:
+
         transform .2s,
         box-shadow .2s;
 
@@ -411,9 +616,23 @@
     }
 
 
+    .boton-secundario {
+
+      background:
+
+        rgba(255,255,255,.08);
+
+      border:
+
+        1px solid
+        rgba(255,255,255,.15);
+
+    }
+
+
     /* =====================================================
-       🌌 SECCIÓN CONSTELACIÓN
-       ===================================================== */
+       ✨ SECCIÓN CONSTELACIÓN
+    ===================================================== */
 
     .seccion-universo {
 
@@ -450,17 +669,15 @@
 
 
     /* =====================================================
-       ✨ CONSTELACIÓN
-       ===================================================== */
+       🌌 CONSTELACIÓN
+    ===================================================== */
 
     .constelacion {
 
       position: relative;
 
-      width: min(
-        900px,
-        100%
-      );
+      width:
+        min(900px,100%);
 
       height: 430px;
 
@@ -469,7 +686,9 @@
     }
 
 
-    /* Líneas de la constelación */
+    /* =====================================================
+       ✨ LÍNEAS
+    ===================================================== */
 
     .linea {
 
@@ -486,7 +705,8 @@
           transparent
         );
 
-      transform-origin: left center;
+      transform-origin:
+        left center;
 
       opacity: 0;
 
@@ -501,8 +721,7 @@
     }
 
 
-    .constelacion.completa
-    .linea {
+    .constelacion.completa .linea {
 
       opacity: 1;
 
@@ -552,8 +771,8 @@
 
 
     /* =====================================================
-       ⭐ NODOS DE LA CONSTELACIÓN
-       ===================================================== */
+       ⭐ ESTRELLAS INTERACTIVAS
+    ===================================================== */
 
     .estrella-especial {
 
@@ -584,6 +803,7 @@
         );
 
       border:
+
         1px solid
         rgba(255,255,255,.15);
 
@@ -632,8 +852,7 @@
       0%,
       100% {
 
-        transform:
-          scale(.8);
+        transform: scale(.8);
 
         opacity: .3;
 
@@ -641,8 +860,7 @@
 
       50% {
 
-        transform:
-          scale(1.2);
+        transform: scale(1.2);
 
         opacity: 1;
 
@@ -703,7 +921,7 @@
     }
 
 
-    /* Posiciones */
+    /* POSICIONES */
 
     .recuerdos {
 
@@ -734,7 +952,7 @@
 
     /* =====================================================
        💗 CORAZONES
-       ===================================================== */
+    ===================================================== */
 
     .corazon-flotante {
 
@@ -783,7 +1001,7 @@
 
     /* =====================================================
        💌 VENTANAS
-       ===================================================== */
+    ===================================================== */
 
     .ventana {
 
@@ -861,6 +1079,7 @@
         );
 
       border:
+
         1px solid
         rgba(243,166,200,.3);
 
@@ -943,7 +1162,7 @@
 
     /* =====================================================
        💗 RAZONES
-       ===================================================== */
+    ===================================================== */
 
     .razon {
 
@@ -963,6 +1182,7 @@
         rgba(243,166,200,.08);
 
       border:
+
         1px solid
         rgba(243,166,200,.15);
 
@@ -985,7 +1205,7 @@
 
     /* =====================================================
        💌 CARTA
-       ===================================================== */
+    ===================================================== */
 
     .carta {
 
@@ -1054,8 +1274,8 @@
 
 
     /* =====================================================
-       🔐 MENSAJE FINAL
-       ===================================================== */
+       ✨ MENSAJE FINAL
+    ===================================================== */
 
     .final {
 
@@ -1082,6 +1302,7 @@
         );
 
       border:
+
         1px solid
         rgba(255,255,255,.15);
 
@@ -1154,7 +1375,7 @@
 
     /* =====================================================
        📱 RESPONSIVE
-       ===================================================== */
+    ===================================================== */
 
     @media (max-width: 700px) {
 
@@ -1273,16 +1494,14 @@
 </head>
 
 
-
 <body>
 
 
-<!-- =====================================================
-     ⭐ FONDO DE ESTRELLAS
-     ===================================================== -->
+<!-- =================================================
+     ⭐ ESTRELLAS DEL FONDO
+================================================= -->
 
 <div id="estrellas"></div>
-
 
 
 <div class="universo">
@@ -1290,12 +1509,29 @@
 
   <!-- =================================================
        🌙 PORTADA
-       ================================================= -->
+  ================================================= -->
 
   <section class="portada">
 
 
-    <div class="luna"></div>
+    <!-- Luna -->
+
+    <div
+      id="luna"
+      class="luna luna-fase-4"
+      onclick="cambiarFaseLuna()"
+      title="Haz clic en la luna 🌙">
+    </div>
+
+
+    <div
+      id="faseLuna"
+      class="fase-luna">
+
+      🌕 Luna llena
+      · Haz clic para cambiarla
+
+    </div>
 
 
     <h1>
@@ -1308,8 +1544,7 @@
     <p>
 
       Hay millones de estrellas,
-      miles de planetas y un universo
-      enorme...
+      miles de planetas y un universo enorme...
 
       <br><br>
 
@@ -1320,13 +1555,28 @@
     </p>
 
 
-    <button
-      class="boton"
-      onclick="entrarUniverso()">
+    <div class="botones-portada">
 
-      ✨ Entrar a nuestro universo
 
-    </button>
+      <button
+        class="boton"
+        onclick="entrarUniverso()">
+
+        ✨ Entrar a nuestro universo
+
+      </button>
+
+
+      <button
+        class="boton boton-secundario"
+        onclick="modoNoche()">
+
+        🌙 Modo noche
+
+      </button>
+
+
+    </div>
 
 
   </section>
@@ -1335,7 +1585,7 @@
 
   <!-- =================================================
        ✨ CONSTELACIÓN
-       ================================================= -->
+  ================================================= -->
 
   <section
     id="universo"
@@ -1344,18 +1594,21 @@
 
     <h2>
 
-      ✨ Nuestro universo
+      ✨ Nuestra constelación
 
     </h2>
 
 
     <p class="subtitulo">
 
-      Hay pequeñas estrellas que
-      guardan algo para ti...
+      Hay tres estrellas escondiendo
+      pequeñas partes de nuestra historia...
+
+      <br>
+
+      Tócalas para descubrirlas.
 
     </p>
-
 
 
     <div
@@ -1379,20 +1632,17 @@
         class="estrella-especial recuerdos"
         onclick="abrirVentana('recuerdos', this)">
 
-
         <div class="icono">
 
           🪐
 
         </div>
 
-
         <span>
 
-                    Recuerdos
+                        Recuerdos
 
-                </span>
-
+                    </span>
 
       </div>
 
@@ -1404,20 +1654,17 @@
         class="estrella-especial tu"
         onclick="abrirVentana('razones', this)">
 
-
         <div class="icono">
 
           💗
 
         </div>
 
-
         <span>
 
-                    Tú
+                        Tú
 
-                </span>
-
+                    </span>
 
       </div>
 
@@ -1429,20 +1676,17 @@
         class="estrella-especial carta-planeta"
         onclick="abrirVentana('carta', this)">
 
-
         <div class="icono">
 
           💌
 
         </div>
 
-
         <span>
 
-                    Carta
+                        Carta
 
-                </span>
-
+                    </span>
 
       </div>
 
@@ -1452,8 +1696,8 @@
 
 
     <!-- =================================================
-         🔐 FINAL
-         ================================================= -->
+         ✨ MENSAJE FINAL
+    ================================================= -->
 
     <section
       id="final"
@@ -1471,8 +1715,7 @@
       <p>
 
         Entre tantas estrellas,
-        terminamos encontrándonos
-        nosotros.
+        terminamos encontrándonos nosotros.
 
         <br><br>
 
@@ -1513,7 +1756,7 @@
 
 <!-- =====================================================
      🪐 VENTANA RECUERDOS
-     ===================================================== -->
+===================================================== -->
 
 <div
   id="recuerdos"
@@ -1569,7 +1812,7 @@
 
 <!-- =====================================================
      💗 VENTANA RAZONES
-     ===================================================== -->
+===================================================== -->
 
 <div
   id="razones"
@@ -1633,7 +1876,7 @@
 
 <!-- =====================================================
      💌 VENTANA CARTA
-     ===================================================== -->
+===================================================== -->
 
 <div
   id="carta"
@@ -1673,10 +1916,9 @@
 
       <p>
 
-        Solo sé que ahora existen
-        pequeños momentos del día
-        que automáticamente me hacen
-        pensar en ti.
+        Solo sé que ahora existen pequeños
+        momentos del día que automáticamente
+        me hacen pensar en ti.
 
       </p>
 
@@ -1711,9 +1953,8 @@
         <br><br>
 
         Porque quería dejarte un lugar
-        donde pudieras encontrar
-        un poquito de todo lo que siento
-        por ti.
+        donde pudieras encontrar un poquito
+        de todo lo que siento por ti.
 
       </p>
 
@@ -1744,66 +1985,70 @@
 
   /* =====================================================
      ⭐ CREAR ESTRELLAS
-     ===================================================== */
+  ===================================================== */
 
   const estrellas =
-    document.getElementById(
-      "estrellas"
-    );
+    document.getElementById("estrellas");
 
 
-  for (
-    let i = 0;
-    i < 150;
-    i++
-  ) {
+  function crearEstrellas(cantidad) {
 
 
-    const estrella =
-      document.createElement(
-        "div"
+    for (
+      let i = 0;
+      i < cantidad;
+      i++
+    ) {
+
+
+      const estrella =
+        document.createElement("div");
+
+
+      estrella.className =
+        "estrella";
+
+
+      estrella.style.left =
+        Math.random() * 100 + "%";
+
+
+      estrella.style.top =
+        Math.random() * 100 + "%";
+
+
+      estrella.style.animationDelay =
+        Math.random() * 3 + "s";
+
+
+      estrella.style.opacity =
+        Math.random();
+
+
+      estrellas.appendChild(
+        estrella
       );
 
-
-    estrella.className =
-      "estrella";
-
-
-    estrella.style.left =
-      Math.random() * 100 + "%";
-
-
-    estrella.style.top =
-      Math.random() * 100 + "%";
-
-
-    estrella.style.animationDelay =
-      Math.random() * 3 + "s";
-
-
-    estrella.style.opacity =
-      Math.random();
-
-
-    estrellas.appendChild(
-      estrella
-    );
+    }
 
   }
+
+
+  /* Estrellas iniciales */
+
+  crearEstrellas(150);
 
 
 
   /* =====================================================
      🌠 ESTRELLA FUGAZ
-     ===================================================== */
+  ===================================================== */
 
   function crearEstrellaFugaz() {
 
 
     const estrella =
-      document.createElement(
-        "div"
-      );
+      document.createElement("div");
 
 
     estrella.className =
@@ -1843,8 +2088,243 @@
 
 
   /* =====================================================
+     🌙 IDEA 8
+     CAMBIAR FASE DE LA LUNA
+  ===================================================== */
+
+  const fasesLuna = [
+
+    "🌑 Luna nueva",
+
+    "🌒 Luna creciente",
+
+    "🌓 Cuarto creciente",
+
+    "🌔 Gibosa creciente",
+
+    "🌕 Luna llena",
+
+    "🌖 Gibosa menguante",
+
+    "🌗 Cuarto menguante",
+
+    "🌘 Luna menguante"
+
+  ];
+
+
+  let faseActual = 4;
+
+
+  function cambiarFaseLuna() {
+
+
+    const luna =
+      document.getElementById("luna");
+
+
+    const texto =
+      document.getElementById("faseLuna");
+
+
+    faseActual++;
+
+
+    if (
+      faseActual >= fasesLuna.length
+    ) {
+
+      faseActual = 0;
+
+    }
+
+
+    luna.className =
+      "luna luna-fase-" +
+      faseActual;
+
+
+    texto.textContent =
+      fasesLuna[faseActual] +
+      " · Haz clic para cambiarla";
+
+
+    crearEstrellasEspeciales();
+
+  }
+
+
+
+  /* =====================================================
+     ✨ ESTRELLAS AL CAMBIAR LA LUNA
+  ===================================================== */
+
+  function crearEstrellasEspeciales() {
+
+
+    for (
+      let i = 0;
+      i < 10;
+      i++
+    ) {
+
+
+      const estrella =
+        document.createElement("div");
+
+
+      estrella.textContent =
+        "✦";
+
+
+      estrella.style.position =
+        "fixed";
+
+
+      estrella.style.left =
+        Math.random() * 100 + "%";
+
+
+      estrella.style.top =
+        Math.random() * 60 + "%";
+
+
+      estrella.style.color =
+        "white";
+
+
+      estrella.style.fontSize =
+        "18px";
+
+
+      estrella.style.pointerEvents =
+        "none";
+
+
+      estrella.style.zIndex =
+        "50";
+
+
+      estrella.style.textShadow =
+        "0 0 15px white";
+
+
+      estrella.animate(
+
+        [
+
+          {
+            opacity: 0,
+            transform:
+              "scale(0)"
+          },
+
+          {
+            opacity: 1,
+            transform:
+              "scale(1.5)"
+          },
+
+          {
+            opacity: 0,
+            transform:
+              "scale(0)"
+          }
+
+        ],
+
+        {
+
+          duration: 1200,
+
+          easing:
+            "ease-out"
+
+        }
+
+      );
+
+
+      document.body.appendChild(
+        estrella
+      );
+
+
+      setTimeout(
+        () => {
+
+          estrella.remove();
+
+        },
+        1200
+      );
+
+    }
+
+  }
+
+
+
+  /* =====================================================
+     🌙 IDEA 9
+     MODO NOCHE
+  ===================================================== */
+
+  let modoNocheActivo = false;
+
+
+  function modoNoche() {
+
+
+    modoNocheActivo =
+      !modoNocheActivo;
+
+
+    document.body.classList.toggle(
+      "modo-noche"
+    );
+
+
+    const boton =
+      document.querySelector(
+        ".boton-secundario"
+      );
+
+
+    if (
+      modoNocheActivo
+    ) {
+
+
+      boton.textContent =
+        "☀️ Salir del modo noche";
+
+
+      /* Más estrellas */
+
+      crearEstrellas(80);
+
+
+      /* Estrellas especiales */
+
+      crearEstrellasEspeciales();
+
+
+    } else {
+
+
+      boton.textContent =
+        "🌙 Modo noche";
+
+    }
+
+  }
+
+
+
+  /* =====================================================
      🌌 ENTRAR AL UNIVERSO
-     ===================================================== */
+  ===================================================== */
 
   function entrarUniverso() {
 
@@ -1853,8 +2333,7 @@
       .getElementById("universo")
       .scrollIntoView({
 
-        behavior:
-          "smooth"
+        behavior: "smooth"
 
       });
 
@@ -1863,12 +2342,12 @@
 
 
   /* =====================================================
-     🪐 PLANETAS / ESTRELLAS VISITADAS
-     ===================================================== */
+     ⭐ IDEA 2
+     CONSTELACIÓN INTERACTIVA
+  ===================================================== */
 
   let visitadas =
     new Set();
-
 
 
   function abrirVentana(
@@ -1878,9 +2357,7 @@
 
 
     const ventana =
-      document.getElementById(
-        id
-      );
+      document.getElementById(id);
 
 
     ventana.classList.add(
@@ -1896,10 +2373,28 @@
     );
 
 
-    /* 💗 Corazones */
+    /* Efecto dependiendo de la estrella */
 
     if (
       id === "razones"
+    ) {
+
+      crearCorazones();
+
+    }
+
+
+    if (
+      id === "recuerdos"
+    ) {
+
+      crearEstrellasEspeciales();
+
+    }
+
+
+    if (
+      id === "carta"
     ) {
 
       crearCorazones();
@@ -1914,8 +2409,8 @@
 
 
   /* =====================================================
-     ✨ COMPROBAR CONSTELACIÓN
-     ===================================================== */
+     ✨ COMPLETAR CONSTELACIÓN
+  ===================================================== */
 
   function comprobarConstelacion() {
 
@@ -1949,6 +2444,21 @@
           );
 
 
+          document
+            .getElementById(
+              "final"
+            )
+            .scrollIntoView({
+
+              behavior:
+                "smooth"
+
+            });
+
+
+          crearCorazones();
+
+
         },
         1000
       );
@@ -1961,15 +2471,13 @@
 
   /* =====================================================
      ❌ CERRAR VENTANAS
-     ===================================================== */
+  ===================================================== */
 
   function cerrarVentanas() {
 
 
     document
-      .querySelectorAll(
-        ".ventana"
-      )
+      .querySelectorAll(".ventana")
       .forEach(
         ventana => {
 
@@ -1986,45 +2494,30 @@
 
   /* =====================================================
      💗 RAZONES
-     ===================================================== */
+  ===================================================== */
 
   const razones = [
 
-
     "Porque consigues hacer que mis días sean mejores simplemente estando en ellos.",
 
+    "Porque contigo puedo ser completamente yo sin tener que fingir nada.",
 
-    "Porque contigo puedo ser yo mismo sin tener que fingir nada.",
+    "Porque incluso las cosas más simples se sienten especiales cuando las comparto contigo.",
 
+    "Porque tu sonrisa tiene una capacidad sospechosa de arreglarme el día. 😂💗",
 
-    "Porque tu sonrisa tiene una habilidad bastante injusta para mejorarme el día.",
+    "Porque me gusta imaginar todos los momentos que todavía nos quedan por vivir.",
 
+    "Porque eres una de esas personas que quiero conservar en mi vida durante muchísimo tiempo.",
 
-    "Porque me gusta escucharte incluso cuando estás hablando de algo que no entiendo ni mierda 😂.",
+    "Porque entre millones de personas, tuve la suerte de encontrarte a ti.",
 
-
-    "Porque contigo los momentos más simples terminan siendo especiales.",
-
-
-    "Porque eres esa persona que quiero tener cerca cuando tengo un día malo.",
-
-
-    "Porque me haces querer ser una mejor versión de mí.",
-
-
-    "Porque me encanta crear recuerdos contigo.",
-
-
-    "Porque cuando pienso en momentos felices, muchas veces apareces tú.",
-
-
-    "Porque simplemente eres tú. Y eso me basta. 💜"
+    "Porque simplemente eres tú. Y eso ya es suficiente. 💜"
 
   ];
 
 
   let razonActual = 0;
-
 
 
   function nuevaRazon() {
@@ -2034,8 +2527,7 @@
 
 
     if (
-      razonActual >=
-      razones.length
+      razonActual >= razones.length
     ) {
 
       razonActual = 0;
@@ -2044,24 +2536,16 @@
 
 
     document
-      .getElementById(
-        "numeroRazon"
-      )
+      .getElementById("razon")
       .textContent =
-
-      "Razón #" +
-      (razonActual + 1);
+      razones[razonActual];
 
 
     document
-      .getElementById(
-        "razon"
-      )
+      .getElementById("numeroRazon")
       .textContent =
-
-      razones[
-        razonActual
-        ];
+      "Razón #" +
+      (razonActual + 1);
 
 
     crearCorazones();
@@ -2072,18 +2556,22 @@
 
   /* =====================================================
      💗 CORAZONES
-     ===================================================== */
+  ===================================================== */
 
   function crearCorazones() {
 
 
-    const emojis = [
+    const corazones = [
 
       "💗",
-      "💜",
-      "💕",
+
       "💖",
-      "✨"
+
+      "💕",
+
+      "💜",
+
+      "🩷"
 
     ];
 
@@ -2096,9 +2584,7 @@
 
 
       const corazon =
-        document.createElement(
-          "div"
-        );
+        document.createElement("div");
 
 
       corazon.className =
@@ -2106,20 +2592,20 @@
 
 
       corazon.textContent =
-        emojis[
+        corazones[
           Math.floor(
             Math.random() *
-            emojis.length
+            corazones.length
           )
           ];
 
 
       corazon.style.left =
-        Math.random() * 100 + "vw";
+        Math.random() * 100 + "%";
 
 
       corazon.style.bottom =
-        "0px";
+        "20px";
 
 
       corazon.style.animationDelay =
@@ -2137,7 +2623,7 @@
           corazon.remove();
 
         },
-        2200
+        2500
       );
 
     }
@@ -2147,35 +2633,11 @@
 
 
   /* =====================================================
-     💻 ESC PARA CERRAR
-     ===================================================== */
-
-  document.addEventListener(
-    "keydown",
-    function(event) {
-
-
-      if (
-        event.key === "Escape"
-      ) {
-
-        cerrarVentanas();
-
-      }
-
-    }
-  );
-
-
-
-  /* =====================================================
-     🖱️ CLIC FUERA DE LA VENTANA
-     ===================================================== */
+     🖱️ CERRAR VENTANA AL HACER CLICK AFUERA
+  ===================================================== */
 
   document
-    .querySelectorAll(
-      ".ventana"
-    )
+    .querySelectorAll(".ventana")
     .forEach(
       ventana => {
 
@@ -2186,8 +2648,7 @@
 
 
             if (
-              event.target ===
-              ventana
+              event.target === ventana
             ) {
 
               cerrarVentanas();
@@ -2196,7 +2657,6 @@
 
           }
         );
-
 
       }
     );
