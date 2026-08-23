@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>🌌 Nuestro pequeño universo</title>
+
+  <style>
+
+    /* =====================================================
+       🎨 COLORES
+       ===================================================== */
+
+    :root {
+
+      --rosa: #f3a6c8;
+      --rosa-fuerte: #ec6fa9;
+      --morado: #b79ae8;
+      --morado-oscuro: #7255a8;
+
+      --noche: #171329;
+      --noche2: #25203a;
+
+      --blanco: #fff8ff;
+
+    }
+
+
+    /* =====================================================
+       🔧 GENERAL
+       ===================================================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      color: var(--blanco);
+
+      background:
+        radial-gradient(
+          circle at top,
+          #40305f,
+          var(--noche) 60%
+        );
+
+      overflow-x: hidden;
+
+    }
+
+
+    /* =====================================================
+       ⭐ ESTRELLAS
+       ===================================================== */
+
+    .estrellas {
+
+      position: fixed;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      z-index: 0;
+
+    }
+
+
+    .estrella {
+
+      position: absolute;
+
+      width: 3px;
+
+      height: 3px;
+
+      background: white;
+
+      border-radius: 50%;
+
+      animation:
+        parpadear
+        2s infinite
+        ease-in-out;
+
+    }
+
+
+    @keyframes parpadear {
+
+      0%, 100% {
+
+        opacity: .2;
+
+        transform: scale(.7);
+
+      }
+
+      50% {
+
+        opacity: 1;
+
+        transform: scale(1.3);
+
+      }
+
+    }
+
+
+    /* =====================================================
+       🌌 CONTENEDOR
+       ===================================================== */
+
+    .universo {
+
+      position: relative;
+
+      z-index: 1;
+
+      min-height: 100vh;
+
+    }
+
+
+    /* =====================================================
+       🌙 PORTADA
+       ===================================================== */
+
+    .portada {
+
+      min-height: 100vh;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      align-items: center;
+
+      text-align: center;
+
+      padding: 30px;
+
+    }
+
+
+    .luna {
+
+      width: 150px;
+
+      height: 150px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle at 35% 35%,
+          #ffffff,
+          #ddd3f5 55%,
+          #a99cc9
+        );
+
+      box-shadow:
+        0 0 40px rgba(235, 220, 255, .7),
+        0 0 100px rgba(183, 154, 232, .35);
+
+      animation:
+        flotar
+        4s
+        infinite
+        ease-in-out;
+
+      margin-bottom: 35px;
+
+    }
+
+
+    @keyframes flotar {
+
+      0%, 100% {
+
+        transform: translateY(0);
+
+      }
+
+      50% {
+
+        transform: translateY(-15px);
+
+      }
+
+    }
+
+
+    .portada h1 {
+
+      font-size:
+        clamp(
+          2.5rem,
+          8vw,
+          5rem
+        );
+
+      margin: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--rosa),
+          var(--morado),
+          #ffffff
+        );
+
+      -webkit-background-clip: text;
+
+      -webkit-text-fill-color: transparent;
+
+    }
+
+
+    .portada p {
+
+      max-width: 650px;
+
+      font-size: 1.2rem;
+
+      line-height: 1.7;
+
+      opacity: .9;
+
+    }
+
+
+    .boton {
+
+      border: none;
+
+      border-radius: 999px;
+
+      padding: 14px 25px;
+
+      margin-top: 20px;
+
+      cursor: pointer;
+
+      font-size: 1rem;
+
+      font-weight: bold;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--rosa-fuerte),
+          var(--morado-oscuro)
+        );
+
+      box-shadow:
+        0 10px 30px
+        rgba(236, 111, 169, .25);
+
+      transition:
+        transform .2s,
+        box-shadow .2s;
+
+    }
+
+
+    .boton:hover {
+
+      transform:
+        translateY(-4px)
+        scale(1.03);
+
+      box-shadow:
+        0 15px 40px
+        rgba(183, 154, 232, .35);
+
+    }
+
+
+    /* =====================================================
+       🪐 UNIVERSO
+       ===================================================== */
+
+    .seccion-universo {
+
+      max-width: 1100px;
+
+      margin: auto;
+
+      padding: 100px 25px;
+
+      text-align: center;
+
+    }
+
+
+    .seccion-universo h2 {
+
+      font-size: 2.3rem;
+
+      margin-bottom: 10px;
+
+    }
+
+
+    .subtitulo {
+
+      opacity: .75;
+
+      margin-bottom: 60px;
+
+    }
+
+
+    /* =====================================================
+       🪐 PLANETAS
+       ===================================================== */
+
+    .planetas {
+
+      display: grid;
+
+      grid-template-columns:
+                repeat(3, 1fr);
+
+      gap: 25px;
+
+    }
+
+
+    .planeta {
+
+      min-height: 250px;
+
+      border-radius: 30px;
+
+      padding: 25px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      align-items: center;
+
+      cursor: pointer;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.09),
+          rgba(255,255,255,.03)
+        );
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      backdrop-filter:
+        blur(10px);
+
+      transition:
+        transform .3s,
+        box-shadow .3s,
+        border .3s;
+
+    }
+
+
+    .planeta:hover {
+
+      transform:
+        translateY(-10px)
+        scale(1.03);
+
+      border:
+        1px solid
+        rgba(243,166,200,.5);
+
+      box-shadow:
+        0 20px 50px
+        rgba(183,154,232,.15);
+
+    }
+
+
+    .planeta-icono {
+
+      font-size: 70px;
+
+      margin-bottom: 15px;
+
+      filter:
+        drop-shadow(
+          0 0 15px
+          rgba(243,166,200,.4)
+        );
+
+    }
+
+
+    .planeta h3 {
+
+      margin: 0 0 8px;
+
+      color:
+        var(--rosa);
+
+    }
+
+
+    .planeta p {
+
+      margin: 0;
+
+      opacity: .7;
+
+      font-size: .9rem;
+
+    }
+
+
+    /* =====================================================
+       💌 VENTANAS
+       ===================================================== */
+
+    .ventana {
+
+      position: fixed;
+
+      inset: 0;
+
+      background:
+        rgba(10, 7, 25, .8);
+
+      backdrop-filter:
+        blur(8px);
+
+      display: none;
+
+      justify-content: center;
+
+      align-items: center;
+
+      padding: 20px;
+
+      z-index: 100;
+
+    }
+
+
+    .ventana.activa {
+
+      display: flex;
+
+      animation:
+        aparecer .3s ease;
+
+    }
+
+
+    @keyframes aparecer {
+
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+
+    }
+
+
+    .contenido-ventana {
+
+      width:
+        min(600px, 100%);
+
+      max-height: 85vh;
+
+      overflow-y: auto;
+
+      border-radius: 30px;
+
+      padding: 35px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #2d2545,
+          #1c1731
+        );
+
+      border:
+        1px solid
+        rgba(243,166,200,.3);
+
+      box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.5);
+
+      position: relative;
+
+      text-align: center;
+
+    }
+
+
+    .cerrar {
+
+      position: absolute;
+
+      right: 20px;
+
+      top: 15px;
+
+      border: none;
+
+      background: none;
+
+      color: white;
+
+      font-size: 25px;
+
+      cursor: pointer;
+
+    }
+
+
+    .contenido-ventana h2 {
+
+      color: var(--rosa);
+
+      font-size: 2rem;
+
+    }
+
+
+    .contenido-ventana p {
+
+      line-height: 1.7;
+
+      opacity: .9;
+
+    }
+
+
+    /* =====================================================
+       💗 RAZONES
+       ===================================================== */
+
+    .razon {
+
+      min-height: 150px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 25px;
+
+      border-radius: 20px;
+
+      background:
+        rgba(243,166,200,.08);
+
+      border:
+        1px solid
+        rgba(243,166,200,.15);
+
+      font-size: 1.15rem;
+
+      line-height: 1.6;
+
+    }
+
+
+    .numero {
+
+      color:
+        var(--morado);
+
+      font-size: .9rem;
+
+      margin-bottom: 10px;
+
+    }
+
+
+    /* =====================================================
+       💌 CARTA
+       ===================================================== */
+
+    .carta {
+
+      background:
+        linear-gradient(
+          145deg,
+          #fff5fb,
+          #eee5ff
+        );
+
+      color:
+        #33243d;
+
+      border-radius: 20px;
+
+      padding: 30px;
+
+      text-align: left;
+
+      line-height: 1.8;
+
+    }
+
+
+    .firma {
+
+      text-align: right;
+
+      margin-top: 20px;
+
+      color:
+        var(--morado-oscuro);
+
+      font-weight: bold;
+
+    }
+
+
+    /* =====================================================
+       🔐 FINAL
+       ===================================================== */
+
+    .final {
+
+      display: none;
+
+      max-width: 750px;
+
+      margin:
+        50px auto 100px;
+
+      padding:
+        45px 30px;
+
+      text-align: center;
+
+      border-radius: 35px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(243,166,200,.15),
+          rgba(183,154,232,.15)
+        );
+
+      border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    }
+
+
+    .final.mostrar {
+
+      display: block;
+
+      animation:
+        aparecerFinal
+        1s ease;
+
+    }
+
+
+    @keyframes aparecerFinal {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          scale(.8)
+          translateY(30px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          scale(1)
+          translateY(0);
+
+      }
+
+    }
+
+
+    .final h2 {
+
+      color:
+        var(--rosa);
+
+    }
+
+
+    .final p {
+
+      font-size: 1.15rem;
+
+      line-height: 1.8;
+
+    }
+
+
+    .corazones {
+
+      font-size: 40px;
+
+      margin-top: 25px;
+
+    }
+
+
+    /* =====================================================
+       📱 RESPONSIVE
+       ===================================================== */
+
+    @media (max-width: 850px) {
+
+      .planetas {
+
+        grid-template-columns:
+                    repeat(2, 1fr);
+
+      }
+
+    }
+
+
+    @media (max-width: 550px) {
+
+      .planetas {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .portada h1 {
+
+        font-size: 2.7rem;
+
+      }
+
+
+      .luna {
+
+        width: 110px;
+
+        height: 110px;
+
+      }
+
+
+      .contenido-ventana {
+
+        padding: 25px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     ⭐ ESTRELLAS
+     ===================================================== -->
+
+<div
+  class="estrellas"
+  id="estrellas">
+</div>
+
+
+
+<div class="universo">
+
+
+  <!-- =================================================
+       🌙 PORTADA
+       ================================================= -->
+
+  <section class="portada">
+
+
+    <div class="luna"></div>
+
+
+    <h1>
+
+      Nuestro pequeño universo
+
+    </h1>
+
+
+    <p>
+
+      Hay millones de estrellas,
+      miles de planetas y un universo
+      enorme...
+
+      <br><br>
+
+      pero entre todos esos lugares,
+      mi favorito siempre será
+      donde estés tú. 💜
+
+    </p>
+
+
+    <button
+      class="boton"
+      onclick="entrarUniverso()">
+
+      ✨ Entrar a nuestro universo
+
+    </button>
+
+
+  </section>
+
+
+
+  <!-- =================================================
+       🪐 PLANETAS
+       ================================================= -->
+
+  <section
+    id="universo"
+    class="seccion-universo">
+
+
+    <h2>
+
+      🪐 Explora nuestro universo
+
+    </h2>
+
+
+    <p class="subtitulo">
+
+      Hay tres pequeños lugares
+      esperando ser descubiertos...
+
+    </p>
+
+
+
+    <div class="planetas">
+
+
+      <!-- 🪐 PLANETA 1 -->
+
+      <div
+        class="planeta"
+        onclick="abrirVentana('recuerdos')">
+
+
+        <div class="planeta-icono">
+
+          🪐
+
+        </div>
+
+
+        <h3>
+
+          Nuestros recuerdos
+
+        </h3>
+
+
+        <p>
+
+          Algunos momentos
+          que quiero guardar.
+
+        </p>
+
+
+      </div>
+
+
+
+      <!-- 💗 PLANETA 2 -->
+
+      <div
+        class="planeta"
+        onclick="abrirVentana('razones')">
+
+
+        <div class="planeta-icono">
+
+          💗
+
+        </div>
+
+
+        <h3>
+
+          Tú
+
+        </h3>
+
+
+        <p>
+
+          Algunas razones
+          por las que te quiero.
+
+        </p>
+
+
+      </div>
+
+
+
+      <!-- 💌 PLANETA 3 -->
+
+      <div
+        class="planeta"
+        onclick="abrirVentana('carta')">
+
+
+        <div class="planeta-icono">
+
+          💌
+
+        </div>
+
+
+        <h3>
+
+          Una carta
+
+        </h3>
+
+
+        <p>
+
+          Algo que quería
+          decirte.
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         🔐 FINAL
+         ================================================= -->
+
+    <section
+      id="final"
+      class="final">
+
+
+      <h2>
+
+        ✨ Encontraste
+        todos los planetas ✨
+
+      </h2>
+
+
+      <p>
+
+        Y ahora que recorriste
+        todo nuestro pequeño universo,
+        hay algo que quiero que recuerdes:
+
+        <br><br>
+
+        En un universo tan enorme,
+        tuve la suerte de encontrarte.
+
+        <br><br>
+
+        Y si pudiera volver a elegir
+        entre todas las personas,
+        todos los lugares y todas
+        las posibilidades...
+
+        <br><br>
+
+        <strong>
+
+          te volvería a elegir a ti. 💜
+
+        </strong>
+
+      </p>
+
+
+      <div class="corazones">
+
+        🌸 💜 🌙 💗 ✨
+
+      </div>
+
+
+    </section>
+
+
+  </section>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     🪐 VENTANA RECUERDOS
+     ===================================================== -->
+
+<div
+  id="recuerdos"
+  class="ventana">
+
+
+  <div class="contenido-ventana">
+
+
+    <button
+      class="cerrar"
+      onclick="cerrarVentanas()">
+
+      ✕
+
+    </button>
+
+
+    <h2>
+
+      🪐 Nuestros recuerdos
+
+    </h2>
+
+
+    <p>
+
+      Cada momento contigo termina
+      convirtiéndose en algo que quiero
+      guardar para siempre. 💜
+
+    </p>
+
+
+    <div class="razon">
+
+      ✨
+
+      <br>
+
+      Aquí podremos poner después
+      nuestros recuerdos especiales.
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     💗 VENTANA RAZONES
+     ===================================================== -->
+
+<div
+  id="razones"
+  class="ventana">
+
+
+  <div class="contenido-ventana">
+
+
+    <button
+      class="cerrar"
+      onclick="cerrarVentanas()">
+
+      ✕
+
+    </button>
+
+
+    <h2>
+
+      💗 Algunas razones
+
+    </h2>
+
+
+    <div
+      id="numeroRazon"
+      class="numero">
+
+      Razón #1
+
+    </div>
+
+
+    <div
+      id="razon"
+      class="razon">
+
+      Porque consigues hacer
+      que mis días sean mejores
+      simplemente estando en ellos.
+
+    </div>
+
+
+    <button
+      class="boton"
+      onclick="nuevaRazon()">
+
+      💗 Otra razón
+
+    </button>
+
+
+  </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     💌 VENTANA CARTA
+     ===================================================== -->
+
+<div
+  id="carta"
+  class="ventana">
+
+
+  <div class="contenido-ventana">
+
+
+    <button
+      class="cerrar"
+      onclick="cerrarVentanas()">
+
+      ✕
+
+    </button>
+
+
+    <h2>
+
+      💌 Para ti
+
+    </h2>
+
+
+    <div class="carta">
+
+
+      <p>
+
+        No sé exactamente en qué momento
+        empezaste a convertirte en una
+        persona tan importante para mí.
+
+      </p>
+
+
+      <p>
+
+        Solo sé que ahora existen
+        pequeños momentos del día
+        que automáticamente me hacen
+        pensar en ti.
+
+      </p>
+
+
+      <p>
+
+        Una canción.
+
+        Una palabra.
+
+        Una foto.
+
+        Una tontería cualquiera.
+
+      </p>
+
+
+      <p>
+
+        Y de alguna manera,
+        siempre terminas apareciendo
+        en mis pensamientos.
+
+      </p>
+
+
+      <p>
+
+        Quizás por eso hice este pequeño
+        universo.
+
+        <br><br>
+
+        Porque quería dejarte un lugar
+        donde pudieras encontrar
+        un poquito de todo lo que siento
+        por ti.
+
+      </p>
+
+
+      <div class="firma">
+
+        Con amor,
+
+        <br>
+
+        Tu wawa 💜
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+
+<script>
+
+
+  /* =====================================================
+     ⭐ CREAR ESTRELLAS
+     ===================================================== */
+
+  const estrellas =
+    document.getElementById("estrellas");
+
+
+  for (
+    let i = 0;
+    i < 140;
+    i++
+  ) {
+
+
+    const estrella =
+      document.createElement("div");
+
+
+    estrella.className =
+      "estrella";
+
+
+    estrella.style.left =
+      Math.random() * 100 + "%";
+
+
+    estrella.style.top =
+      Math.random() * 100 + "%";
+
+
+    estrella.style.animationDelay =
+      Math.random() * 3 + "s";
+
+
+    estrella.style.opacity =
+      Math.random();
+
+
+    estrellas.appendChild(
+      estrella
+    );
+
+  }
+
+
+
+  /* =====================================================
+     🌌 ENTRAR AL UNIVERSO
+     ===================================================== */
+
+  function entrarUniverso() {
+
+
+    document
+      .getElementById("universo")
+      .scrollIntoView({
+
+        behavior: "smooth"
+
+      });
+
+
+  }
+
+
+
+  /* =====================================================
+     🪐 CONTROL DE PLANETAS
+     ===================================================== */
+
+  let planetasVisitados =
+    new Set();
+
+
+
+  function abrirVentana(id) {
+
+
+    const ventana =
+      document.getElementById(id);
+
+
+    ventana.classList.add(
+      "activa"
+    );
+
+
+    planetasVisitados.add(id);
+
+
+    comprobarFinal();
+
+  }
+
+
+
+  /* =====================================================
+     ❌ CERRAR VENTANAS
+     ===================================================== */
+
+  function cerrarVentanas() {
+
+
+    document
+      .querySelectorAll(".ventana")
+      .forEach(
+        ventana => {
+
+          ventana.classList.remove(
+            "activa"
+          );
+
+        }
+      );
+
+  }
+
+
+
+  /* =====================================================
+     🔐 COMPROBAR FINAL
+     ===================================================== */
+
+  function comprobarFinal() {
+
+
+    if (
+      planetasVisitados.size >= 3
+    ) {
+
+
+      setTimeout(() => {
+
+
+        document
+          .getElementById("final")
+          .classList.add(
+          "mostrar"
+        );
+
+
+      }, 500);
+
+
+    }
+
+  }
+
+
+
+  /* =====================================================
+     💗 RAZONES
+     ===================================================== */
+
+  const razones = [
+
+    "Porque consigues hacer que mis días sean mejores simplemente estando en ellos.",
+
+    "Porque contigo puedo ser yo mismo sin tener que fingir nada.",
+
+    "Porque tu sonrisa tiene una habilidad bastante injusta para mejorarme el día.",
+
+    "Porque me gusta escucharte incluso cuando estás hablando de algo que no entiendo ni mierda 😂.",
+
+    "Porque contigo los momentos más simples terminan siendo especiales.",
+
+    "Porque eres esa persona que quiero tener cerca cuando tengo un día malo.",
+
+    "Porque me haces querer ser una mejor versión de mí.",
+
+    "Porque me encanta crear recuerdos contigo.",
+
+    "Porque cuando pienso en momentos felices, muchas veces apareces tú.",
+
+    "Porque simplemente eres tú. Y eso me basta. 💜"
+
+  ];
+
+
+  let razonActual = 0;
+
+
+
+  function nuevaRazon() {
+
+
+    razonActual++;
+
+
+    if (
+      razonActual >= razones.length
+    ) {
+
+      razonActual = 0;
+
+    }
+
+
+    document
+      .getElementById("numeroRazon")
+      .textContent =
+      "Razón #" +
+      (razonActual + 1);
+
+
+    document
+      .getElementById("razon")
+      .textContent =
+      razones[razonActual];
+
+
+  }
+
+
+
+  /* =====================================================
+     💻 CERRAR CON ESC
+     ===================================================== */
+
+  document.addEventListener(
+    "keydown",
+    function(event) {
+
+
+      if (
+        event.key === "Escape"
+      ) {
+
+        cerrarVentanas();
+
+      }
+
+    }
+  );
+
+
+
+  /* =====================================================
+     🖱️ CERRAR HACIENDO CLIC AFUERA
+     ===================================================== */
+
+  document
+    .querySelectorAll(".ventana")
+    .forEach(
+      ventana => {
+
+
+        ventana.addEventListener(
+          "click",
+          function(event) {
+
+
+            if (
+              event.target === ventana
+            ) {
+
+              cerrarVentanas();
+
+            }
+
+          }
+        );
+
+
+      }
+    );
+
+
+</script>
+
+
+</body>
+
+</html>
