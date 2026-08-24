@@ -2,8 +2,12 @@
 <html lang="es">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
   <title>🌌 Nuestro pequeño universo</title>
 
@@ -30,7 +34,13 @@
     body{
       margin:0;
       min-height:100vh;
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
       color:var(--blanco);
 
       background:
@@ -43,9 +53,9 @@
 
       overflow-x:hidden;
 
-      transition:background 1s ease;
+      transition:
+        background 1s ease;
     }
-
 
     /* =====================================================
        🌌 NEBULOSA
@@ -104,18 +114,27 @@
     @keyframes moverNebulosa{
 
       0%{
-        transform:translate(0,0) scale(1) rotate(0deg);
+        transform:
+          translate(0,0)
+          scale(1)
+          rotate(0deg);
       }
 
       50%{
-        transform:translate(100px,-70px) scale(1.15) rotate(20deg);
+        transform:
+          translate(100px,-70px)
+          scale(1.15)
+          rotate(20deg);
       }
 
       100%{
-        transform:translate(-80px,90px) scale(.9) rotate(-15deg);
+        transform:
+          translate(-80px,90px)
+          scale(.9)
+          rotate(-15deg);
       }
-    }
 
+    }
 
     /* =====================================================
        🌙 MODO NOCHE
@@ -130,15 +149,15 @@
           #090615 45%,
           #020107 100%
         );
+
     }
 
     body.modo-noche .nebulosa{
       opacity:.35;
     }
 
-
     /* =====================================================
-       ⭐ ESTRELLAS DEL FONDO
+       ⭐ ESTRELLAS
     ===================================================== */
 
     #estrellas{
@@ -152,10 +171,12 @@
       position:absolute;
       width:3px;
       height:3px;
+
       background:white;
       border-radius:50%;
 
-      box-shadow:0 0 6px white;
+      box-shadow:
+        0 0 6px white;
 
       animation:
         parpadear
@@ -175,8 +196,8 @@
         opacity:1;
         transform:scale(1.4);
       }
-    }
 
+    }
 
     /* =====================================================
        🌠 COMETAS
@@ -189,9 +210,7 @@
       height:3px;
 
       pointer-events:none;
-
       z-index:20;
-
       opacity:0;
 
       background:
@@ -239,6 +258,7 @@
 
       0%{
         opacity:0;
+
         transform:
           translate(250px,-100px)
           rotate(-35deg);
@@ -259,8 +279,8 @@
           translate(-700px,600px)
           rotate(-35deg);
       }
-    }
 
+    }
 
     /* =====================================================
        🌌 UNIVERSO
@@ -270,7 +290,6 @@
       position:relative;
       z-index:2;
     }
-
 
     /* =====================================================
        🌙 PORTADA
@@ -285,7 +304,6 @@
       flex-direction:column;
 
       align-items:center;
-
       justify-content:center;
 
       text-align:center;
@@ -347,11 +365,11 @@
       50%{
         transform:translateY(-15px);
       }
+
     }
 
-
     /* =====================================================
-       🌙 FASES DE LUNA
+       🌙 FASES
     ===================================================== */
 
     .luna-fase-0{
@@ -428,7 +446,6 @@
         );
     }
 
-
     /* =====================================================
        📝 TITULO
     ===================================================== */
@@ -453,7 +470,6 @@
         );
 
       -webkit-background-clip:text;
-
       -webkit-text-fill-color:transparent;
     }
 
@@ -467,7 +483,6 @@
 
       opacity:.85;
     }
-
 
     /* =====================================================
        🔘 BOTONES
@@ -539,7 +554,6 @@
         rgba(255,255,255,.15);
     }
 
-
     /* =====================================================
        ✨ SECCIÓN UNIVERSO
     ===================================================== */
@@ -571,7 +585,6 @@
       margin-bottom:70px;
     }
 
-
     /* =====================================================
        🌌 CONSTELACIÓN
     ===================================================== */
@@ -582,24 +595,10 @@
 
       width:min(900px,100%);
 
-      height:520px;
+      height:620px;
 
       margin:auto;
     }
-
-
-    /*
-    ==========================================================
-       ✨ LÍNEAS DE LA CONSTELACIÓN
-
-       AHORA SON DINÁMICAS.
-       JavaScript modifica:
-       left
-       top
-       width
-       transform
-    ==========================================================
-    */
 
     .linea{
 
@@ -634,22 +633,9 @@
         width .8s cubic-bezier(.2,.8,.2,1);
     }
 
-
-    /*
-       Esta clase aparece cuando
-       la línea ha sido activada.
-    */
-
     .linea.visible{
-
       opacity:1;
     }
-
-
-    /*
-       Brillo extra cuando se completa
-       la constelación.
-    */
 
     .constelacion.completa .linea{
 
@@ -663,7 +649,6 @@
     @keyframes brilloLinea{
 
       from{
-
         filter:
           brightness(1)
           drop-shadow(
@@ -672,15 +657,14 @@
       }
 
       to{
-
         filter:
           brightness(1.8)
           drop-shadow(
             0 0 15px white
           );
       }
-    }
 
+    }
 
     /* =====================================================
        ⭐ ESTRELLAS INTERACTIVAS
@@ -752,18 +736,15 @@
     @keyframes pulso{
 
       0%,100%{
-
         transform:scale(.8);
-
         opacity:.3;
       }
 
       50%{
-
         transform:scale(1.2);
-
         opacity:1;
       }
+
     }
 
     .estrella-especial:hover{
@@ -804,34 +785,31 @@
       color:var(--rosa);
     }
 
-
-    /*
-       IMPORTANTE:
-       Estas son las posiciones de las
-       3 estrellas.
-    */
+    /* POSICIONES */
 
     .recuerdos{
 
       left:8%;
-
       top:50px;
     }
 
     .tu{
 
       left:43%;
-
       top:200px;
     }
 
     .carta-planeta{
 
       right:8%;
-
       top:60px;
     }
 
+    .acertijo{
+
+      left:43%;
+      bottom:30px;
+    }
 
     /* =====================================================
        🪐 PLANETA
@@ -846,7 +824,6 @@
       bottom:20px;
 
       width:180px;
-
       height:180px;
 
       transform:translateX(-50%);
@@ -861,11 +838,9 @@
       position:absolute;
 
       left:50%;
-
       top:50%;
 
       width:72px;
-
       height:72px;
 
       transform:
@@ -897,11 +872,9 @@
       position:absolute;
 
       width:120px;
-
       height:30px;
 
       left:-24px;
-
       top:22px;
 
       border:
@@ -939,7 +912,6 @@
       position:absolute;
 
       top:-8px;
-
       left:50%;
 
       transform:translateX(-50%);
@@ -960,7 +932,6 @@
       position:absolute;
 
       bottom:5px;
-
       right:20px;
 
       color:white;
@@ -980,8 +951,8 @@
       to{
         transform:rotate(360deg);
       }
-    }
 
+    }
 
     /* =====================================================
        💗 CORAZONES
@@ -1023,8 +994,8 @@
           translateY(-250px)
           scale(1.5);
       }
-    }
 
+    }
 
     /* =====================================================
        💌 VENTANAS
@@ -1071,6 +1042,7 @@
       to{
         opacity:1;
       }
+
     }
 
     .contenido-ventana{
@@ -1125,6 +1097,7 @@
           scale(1)
           translateY(0);
       }
+
     }
 
     .cerrar{
@@ -1132,7 +1105,6 @@
       position:absolute;
 
       right:20px;
-
       top:15px;
 
       border:none;
@@ -1161,7 +1133,6 @@
 
       opacity:.9;
     }
-
 
     /* =====================================================
        📸 CARRUSEL
@@ -1210,7 +1181,6 @@
       inset:0;
 
       width:100%;
-
       height:100%;
 
       object-fit:cover;
@@ -1246,7 +1216,6 @@
       transform:translateY(-50%);
 
       width:48px;
-
       height:48px;
 
       border-radius:50%;
@@ -1314,7 +1283,6 @@
     .indicador{
 
       width:9px;
-
       height:9px;
 
       border-radius:50%;
@@ -1365,7 +1333,6 @@
         rgba(255,255,255,.8);
     }
 
-
     /* =====================================================
        💗 RAZONES
     ===================================================== */
@@ -1402,7 +1369,6 @@
 
       margin-bottom:10px;
     }
-
 
     /* =====================================================
        💌 CARTA
@@ -1463,6 +1429,269 @@
       font-weight:bold;
     }
 
+    /* =====================================================
+       🧩 ACERTIJO
+    ===================================================== */
+
+    .acertijo-intro{
+
+      font-size:1.1rem;
+
+      line-height:1.8;
+
+      margin-bottom:25px;
+    }
+
+    .palabras-acertijo{
+
+      display:flex;
+
+      flex-wrap:wrap;
+
+      justify-content:center;
+
+      gap:12px;
+
+      margin:25px auto;
+
+      max-width:550px;
+    }
+
+    .palabra{
+
+      border:
+        1px solid
+        rgba(243,166,200,.35);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(236,111,169,.2),
+          rgba(141,104,199,.2)
+        );
+
+      color:white;
+
+      padding:12px 18px;
+
+      border-radius:999px;
+
+      cursor:pointer;
+
+      font-size:1rem;
+
+      font-weight:bold;
+
+      transition:
+        transform .2s,
+        background .2s,
+        box-shadow .2s,
+        opacity .2s;
+    }
+
+    .palabra:hover{
+
+      transform:
+        translateY(-3px)
+        scale(1.04);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(236,111,169,.5),
+          rgba(141,104,199,.5)
+        );
+
+      box-shadow:
+        0 0 20px
+        rgba(243,166,200,.3);
+    }
+
+    .palabra.seleccionada{
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--rosa-fuerte),
+          var(--morado-fuerte)
+        );
+
+      box-shadow:
+        0 0 20px
+        rgba(236,111,169,.5);
+
+      transform:scale(1.05);
+    }
+
+    .palabra.incorrecta{
+
+      animation:
+        palabraError .4s ease;
+    }
+
+    @keyframes palabraError{
+
+      0%,100%{
+        transform:translateX(0);
+      }
+
+      25%{
+        transform:translateX(-8px);
+      }
+
+      75%{
+        transform:translateX(8px);
+      }
+
+    }
+
+    .respuesta-acertijo{
+
+      min-height:45px;
+
+      margin:20px auto;
+
+      padding:12px 18px;
+
+      border-radius:15px;
+
+      background:
+        rgba(255,255,255,.06);
+
+      border:
+        1px dashed
+        rgba(255,255,255,.2);
+
+      font-size:1.1rem;
+
+      color:var(--rosa);
+    }
+
+    .mensaje-error{
+
+      min-height:30px;
+
+      color:#ff9dbf;
+
+      font-weight:bold;
+    }
+
+    .eureka{
+
+      display:none;
+
+      animation:
+        eurekaEntrada
+        1s
+        ease;
+    }
+
+    .eureka.mostrar{
+      display:block;
+    }
+
+    @keyframes eurekaEntrada{
+
+      from{
+
+        opacity:0;
+
+        transform:
+          scale(.5)
+          translateY(30px);
+      }
+
+      to{
+
+        opacity:1;
+
+        transform:
+          scale(1)
+          translateY(0);
+      }
+
+    }
+
+    .eclipse{
+
+      width:100%;
+
+      max-width:500px;
+
+      max-height:400px;
+
+      object-fit:cover;
+
+      border-radius:25px;
+
+      margin-top:20px;
+
+      border:
+        1px solid
+        rgba(243,166,200,.4);
+
+      box-shadow:
+        0 0 30px
+        rgba(183,154,232,.35),
+
+        0 20px 60px
+        rgba(0,0,0,.5);
+
+      animation:
+        eclipseBrillo
+        3s
+        ease-in-out
+        infinite
+        alternate;
+    }
+
+    @keyframes eclipseBrillo{
+
+      from{
+
+        box-shadow:
+          0 0 20px
+          rgba(183,154,232,.25),
+
+          0 20px 60px
+          rgba(0,0,0,.5);
+      }
+
+      to{
+
+        box-shadow:
+          0 0 45px
+          rgba(243,166,200,.55),
+
+          0 0 80px
+          rgba(183,154,232,.25),
+
+          0 20px 60px
+          rgba(0,0,0,.5);
+      }
+
+    }
+
+    .eclipse-mensaje{
+
+      margin-top:20px;
+
+      line-height:1.8;
+
+      font-size:1.05rem;
+    }
+
+    .reiniciar-acertijo{
+
+      margin-top:15px;
+
+      background:
+        rgba(255,255,255,.08);
+
+      border:
+        1px solid
+        rgba(255,255,255,.15);
+    }
 
     /* =====================================================
        ✨ FINAL
@@ -1523,6 +1752,7 @@
           scale(1)
           translateY(0);
       }
+
     }
 
     .final h2{
@@ -1543,7 +1773,6 @@
       margin-top:25px;
     }
 
-
     /* =====================================================
        📱 RESPONSIVE
     ===================================================== */
@@ -1551,7 +1780,7 @@
     @media(max-width:700px){
 
       .constelacion{
-        height:560px;
+        height:650px;
       }
 
       .recuerdos{
@@ -1569,13 +1798,19 @@
         top:380px;
       }
 
+      .acertijo{
+        left:35%;
+        bottom:20px;
+      }
+
       .sistema-planeta{
-        bottom:-5px;
+        bottom:100px;
       }
 
       .contenedor-imagen{
         height:270px;
       }
+
     }
 
     @media(max-width:450px){
@@ -1606,6 +1841,10 @@
         right:0;
       }
 
+      .acertijo{
+        left:32%;
+      }
+
       .contenedor-imagen{
         height:230px;
       }
@@ -1614,6 +1853,7 @@
 
         width:42px;
         height:42px;
+
         font-size:21px;
       }
 
@@ -1623,14 +1863,14 @@
           translateX(-50%)
           scale(.8);
       }
+
     }
 
   </style>
+
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      🌌 NEBULOSA
@@ -1674,7 +1914,6 @@
       title="Haz clic en la luna 🌙">
     </div>
 
-
     <div
       id="faseLuna"
       class="fase-luna">
@@ -1683,11 +1922,9 @@
 
     </div>
 
-
     <h1>
       Nuestro pequeño universo
     </h1>
-
 
     <p>
 
@@ -1702,7 +1939,6 @@
 
     </p>
 
-
     <div class="botones-portada">
 
       <button
@@ -1712,7 +1948,6 @@
         ✨ Entrar a nuestro universo
 
       </button>
-
 
       <button
         class="boton boton-secundario"
@@ -1727,7 +1962,6 @@
   </section>
 
 
-
   <!-- =====================================================
        ✨ CONSTELACIÓN
   ===================================================== -->
@@ -1736,15 +1970,13 @@
     id="universo"
     class="seccion-universo">
 
-
     <h2>
       ✨ Nuestra constelación
     </h2>
 
-
     <p class="subtitulo">
 
-      Hay tres estrellas escondiendo
+      Hay cuatro estrellas escondiendo
       pequeñas partes de nuestra historia...
 
       <br>
@@ -1759,24 +1991,30 @@
       class="constelacion">
 
 
-      <!-- Las líneas se crean automáticamente
-           con JavaScript -->
-
+      <!-- LÍNEAS -->
 
       <div
         id="lineaRecuerdosTu"
         class="linea">
       </div>
 
-
       <div
         id="lineaTuCarta"
         class="linea">
       </div>
 
-
       <div
         id="lineaCartaRecuerdos"
+        class="linea">
+      </div>
+
+      <div
+        id="lineaTuAcertijo"
+        class="linea">
+      </div>
+
+      <div
+        id="lineaAcertijoCarta"
         class="linea">
       </div>
 
@@ -1793,8 +2031,8 @@
         </div>
 
         <span>
-                Recuerdos
-            </span>
+            Recuerdos
+          </span>
 
       </div>
 
@@ -1811,8 +2049,8 @@
         </div>
 
         <span>
-                Tú
-            </span>
+            Tú
+          </span>
 
       </div>
 
@@ -1829,8 +2067,26 @@
         </div>
 
         <span>
-                Carta
-            </span>
+            Carta
+          </span>
+
+      </div>
+
+
+      <!-- 🧩 ACERTIJO -->
+
+      <div
+        id="estrellaAcertijo"
+        class="estrella-especial acertijo"
+        onclick="abrirVentana('acertijo', this)">
+
+        <div class="icono">
+          🧩
+        </div>
+
+        <span>
+            Acertijo
+          </span>
 
       </div>
 
@@ -1845,9 +2101,7 @@
 
       </div>
 
-
     </div>
-
 
 
     <!-- =================================================
@@ -1858,14 +2112,12 @@
       id="final"
       class="final">
 
-
       <h2>
 
         ✨ Has encontrado
         nuestra constelación ✨
 
       </h2>
-
 
       <p>
 
@@ -1891,20 +2143,17 @@
 
       </p>
 
-
       <div class="final-estrellas">
 
-        ✨ 💜 🌙 💗 ✨
+        ✨ 💜 🌙 💗 🧩 ✨
 
       </div>
 
     </section>
 
-
   </section>
 
 </div>
-
 
 
 <!-- =====================================================
@@ -1915,9 +2164,7 @@
   id="recuerdos"
   class="ventana">
 
-
   <div class="contenido-ventana">
-
 
     <button
       class="cerrar"
@@ -1927,11 +2174,9 @@
 
     </button>
 
-
     <h2>
       🪐 Nuestros recuerdos
     </h2>
-
 
     <p>
 
@@ -1944,33 +2189,27 @@
 
     <div class="carrusel">
 
-
       <div class="contenedor-imagen">
-
 
         <img
           class="imagen-recuerdo activa"
           src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80"
           alt="Flores">
 
-
         <img
           class="imagen-recuerdo"
           src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80"
           alt="Flores rosas">
-
 
         <img
           class="imagen-recuerdo"
           src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=80"
           alt="Cielo nocturno">
 
-
         <img
           class="imagen-recuerdo"
           src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
           alt="Paisaje">
-
 
         <img
           class="imagen-recuerdo"
@@ -2047,11 +2286,9 @@
 
     </button>
 
-
   </div>
 
 </div>
-
 
 
 <!-- =====================================================
@@ -2062,9 +2299,7 @@
   id="razones"
   class="ventana">
 
-
   <div class="contenido-ventana">
-
 
     <button
       class="cerrar"
@@ -2074,11 +2309,9 @@
 
     </button>
 
-
     <h2>
       💗 Algunas razones
     </h2>
-
 
     <div
       id="numeroRazon"
@@ -2087,7 +2320,6 @@
       Razón #1
 
     </div>
-
 
     <div
       id="razon"
@@ -2099,7 +2331,6 @@
 
     </div>
 
-
     <button
       class="boton"
       onclick="nuevaRazon()">
@@ -2108,11 +2339,9 @@
 
     </button>
 
-
   </div>
 
 </div>
-
 
 
 <!-- =====================================================
@@ -2123,9 +2352,7 @@
   id="carta"
   class="ventana">
 
-
   <div class="contenido-ventana">
-
 
     <button
       class="cerrar"
@@ -2135,14 +2362,11 @@
 
     </button>
 
-
     <h2>
       💌 Para ti
     </h2>
 
-
     <div class="carta">
-
 
       <p>
 
@@ -2152,7 +2376,6 @@
 
       </p>
 
-
       <p>
 
         Solo sé que ahora existen pequeños
@@ -2161,19 +2384,14 @@
 
       </p>
 
-
       <p>
 
         Una canción.
-
         Una palabra.
-
         Una foto.
-
         Una tontería cualquiera.
 
       </p>
-
 
       <p>
 
@@ -2182,7 +2400,6 @@
         en mis pensamientos.
 
       </p>
-
 
       <p>
 
@@ -2197,7 +2414,6 @@
 
       </p>
 
-
       <div class="firma">
 
         Con amor,
@@ -2208,14 +2424,295 @@
 
       </div>
 
-
     </div>
-
 
   </div>
 
 </div>
 
+
+<!-- =====================================================
+     🧩 ACERTIJO
+===================================================== -->
+
+<div
+  id="acertijo"
+  class="ventana">
+
+  <div class="contenido-ventana">
+
+    <button
+      class="cerrar"
+      onclick="cerrarVentanas()">
+
+      ✕
+
+    </button>
+
+
+    <h2>
+      🧩 Una pequeña pregunta...
+    </h2>
+
+
+    <div class="acertijo-intro">
+
+      <p>
+
+        Hay algo que llevo tiempo
+        queriendo decirte...
+
+      </p>
+
+      <p>
+
+        Pero primero tendrás que
+        descubrirlo. 👀
+
+      </p>
+
+      <strong>
+
+        ¿Qué eres para mí? 💜
+
+      </strong>
+
+    </div>
+
+
+    <div
+      id="respuestaAcertijo"
+      class="respuesta-acertijo">
+
+      _
+
+    </div>
+
+
+    <div
+      id="mensajeError"
+      class="mensaje-error">
+
+    </div>
+
+
+    <div
+      id="palabrasAcertijo"
+      class="palabras-acertijo">
+
+
+      <button
+        class="palabra"
+        onclick="seleccionarPalabra(this,'universo')">
+
+        universo
+
+      </button>
+
+
+      <button
+        class="palabra"
+        onclick="seleccionarPalabra(this,'Tú')">
+
+        Tú
+
+      </button>
+
+
+      <button
+        class="palabra"
+        onclick="seleccionarPalabra(this,'sol')">
+
+        sol
+
+      </button>
+
+
+      <button
+        class="palabra"
+        onclick="seleccionarPalabra(this,'eres')">
+
+        eres
+
+      </button>
+
+
+      <button
+        class="palabra"
+        onclick="seleccionarPalabra(this,'mi')">
+
+        mi
+
+      </button>
+
+
+      <button
+        class="palabra"
+        onclick="seleccionarPalabra(this,'luna')">
+
+        luna
+
+      </button>
+
+
+      <button
+        class="palabra"
+        onclick="seleccionarPalabra(this,'estrella')">
+
+        estrella
+
+      </button>
+
+
+      <button
+        class="palabra"
+        onclick="seleccionarPalabra(this,'bonita')">
+
+        bonita
+
+      </button>
+
+
+      <button
+        class="palabra"
+        onclick="seleccionarPalabra(this,'noche')">
+
+        noche
+
+      </button>
+
+
+      <button
+        class="palabra"
+        onclick="seleccionarPalabra(this,'siempre')">
+
+        siempre
+
+      </button>
+
+
+      <button
+        class="palabra"
+        onclick="seleccionarPalabra(this,'mi')">
+
+        mi
+
+      </button>
+
+
+      <button
+        class="palabra"
+        onclick="seleccionarPalabra(this,'mundo')">
+
+        mundo
+
+      </button>
+
+    </div>
+
+
+    <!-- =================================================
+         🌑 RESULTADO
+    ================================================= -->
+
+    <div
+      id="eureka"
+      class="eureka">
+
+      <h2>
+
+        🌌 Lo encontraste... 💜
+
+      </h2>
+
+
+      <p>
+
+        Exactamente.
+
+      </p>
+
+
+      <p>
+
+        <strong>
+
+          Tú eres mi universo. 🌌
+
+        </strong>
+
+      </p>
+
+
+      <img
+        src="eclipse.png"
+        alt="Nuestro eclipse"
+        class="eclipse">
+
+
+      <div class="eclipse-mensaje">
+
+        <p>
+
+          Tú dices que yo soy tu sol...
+          ☀️
+
+        </p>
+
+        <p>
+
+          Y para mí,
+          tú eres mi luna. 🌙
+
+        </p>
+
+        <p>
+
+          Porque aunque parezcamos dos cosas
+          completamente diferentes,
+          me gusta pensar que de alguna manera
+          siempre terminamos encontrándonos.
+
+        </p>
+
+        <p>
+
+          Y cuando el sol y la luna finalmente
+          se encuentran...
+
+          <br><br>
+
+          <strong>
+
+            ocurre un eclipse. 🌑✨
+
+          </strong>
+
+        </p>
+
+        <p>
+
+          Así que supongo que este es
+          nuestro pequeño eclipse. 💜
+
+        </p>
+
+      </div>
+
+
+      <button
+        class="boton reiniciar-acertijo"
+        onclick="reiniciarAcertijo()">
+
+        🔄 Volver a intentarlo
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
 
 
 <script>
@@ -2258,12 +2755,13 @@
       estrellas.appendChild(
         estrella
       );
+
     }
+
   }
 
 
   crearEstrellas(150);
-
 
 
   /* =====================================================
@@ -2331,6 +2829,7 @@
       },
       2500
     );
+
   }
 
 
@@ -2344,7 +2843,6 @@
     crearCometa,
     9000
   );
-
 
 
   /* =====================================================
@@ -2397,6 +2895,7 @@
     ){
 
       faseActual=0;
+
     }
 
 
@@ -2410,8 +2909,8 @@
 
 
     crearEstrellasEspeciales();
-  }
 
+  }
 
 
   function crearEstrellasEspeciales(){
@@ -2427,7 +2926,9 @@
           "div"
         );
 
+
       estrella.textContent="✦";
+
 
       estrella.style.position="fixed";
 
@@ -2445,7 +2946,7 @@
 
       estrella.style.zIndex="50";
 
-      estrella.style.textShadow=
+      estrella.style.textShadow =
         "0 0 15px white";
 
 
@@ -2471,8 +2972,11 @@
         ],
 
         {
+
           duration:1200,
+
           easing:"ease-out"
+
         }
 
       );
@@ -2489,9 +2993,10 @@
         },
         1200
       );
-    }
-  }
 
+    }
+
+  }
 
 
   /* =====================================================
@@ -2533,9 +3038,10 @@
 
       boton.textContent =
         "🌙 Modo noche";
-    }
-  }
 
+    }
+
+  }
 
 
   /* =====================================================
@@ -2553,8 +3059,8 @@
         behavior:"smooth"
 
       });
-  }
 
+  }
 
 
   /* =====================================================
@@ -2592,12 +3098,6 @@
     comprobarConstelacion();
 
 
-    /*
-     * Actualizamos las líneas
-     * después de que el botón
-     * haya recibido su clase.
-     */
-
     setTimeout(
       actualizarConstelacion,
       50
@@ -2609,6 +3109,7 @@
     ){
 
       crearCorazones();
+
     }
 
 
@@ -2617,6 +3118,7 @@
     ){
 
       crearEstrellasEspeciales();
+
     }
 
 
@@ -2625,13 +3127,23 @@
     ){
 
       crearCorazones();
+
     }
+
+
+    if(
+      id==="acertijo"
+    ){
+
+      crearEstrellasEspeciales();
+
+    }
+
   }
 
 
-
   /* =====================================================
-     🌟 DIBUJAR LÍNEA ENTRE DOS ESTRELLAS
+     🌟 DIBUJAR LÍNEA
   ===================================================== */
 
   function dibujarLinea(
@@ -2659,11 +3171,6 @@
       constelacion.getBoundingClientRect();
 
 
-    /*
-     * Calculamos el centro
-     * de cada estrella.
-     */
-
     const x1 =
       rectA.left +
       rectA.width/2 -
@@ -2688,10 +3195,6 @@
       rectConstelacion.top;
 
 
-    /*
-     * Distancia entre los puntos.
-     */
-
     const dx =
       x2-x1;
 
@@ -2707,10 +3210,6 @@
       );
 
 
-    /*
-     * Ángulo de la línea.
-     */
-
     const angulo =
       Math.atan2(
         dy,
@@ -2720,13 +3219,9 @@
       Math.PI;
 
 
-    /*
-     * Colocamos la línea
-     * en el primer punto.
-     */
-
     linea.style.left =
       x1+"px";
+
 
     linea.style.top =
       y1+"px";
@@ -2742,9 +3237,7 @@
       `rotate(${angulo}deg)`;
 
 
-    if(
-      visible
-    ){
+    if(visible){
 
       linea.classList.add(
         "visible"
@@ -2755,9 +3248,10 @@
       linea.classList.remove(
         "visible"
       );
-    }
-  }
 
+    }
+
+  }
 
 
   /* =====================================================
@@ -2784,6 +3278,12 @@
       );
 
 
+    const acertijo =
+      document.getElementById(
+        "estrellaAcertijo"
+      );
+
+
     const linea1 =
       document.getElementById(
         "lineaRecuerdosTu"
@@ -2802,69 +3302,80 @@
       );
 
 
-    /*
-     * Línea entre RECUERDOS y TÚ
-     */
+    const linea4 =
+      document.getElementById(
+        "lineaTuAcertijo"
+      );
+
+
+    const linea5 =
+      document.getElementById(
+        "lineaAcertijoCarta"
+      );
+
+
+    /* RECUERDOS → TÚ */
 
     dibujarLinea(
-
       linea1,
-
       recuerdos,
-
       tu,
-
       visitadas.has("recuerdos") &&
       visitadas.has("razones")
-
     );
 
 
-    /*
-     * Línea entre TÚ y CARTA
-     */
+    /* TÚ → CARTA */
 
     dibujarLinea(
-
       linea2,
-
       tu,
-
       carta,
-
       visitadas.has("razones") &&
       visitadas.has("carta")
-
     );
 
 
-    /*
-     * Línea entre CARTA y RECUERDOS
-     */
+    /* CARTA → RECUERDOS */
 
     dibujarLinea(
-
       linea3,
-
       carta,
-
       recuerdos,
-
       visitadas.has("carta") &&
       visitadas.has("recuerdos")
-
     );
 
 
-    /*
-     * Si están las tres,
-     * completamos la constelación.
-     */
+    /* TÚ → ACERTIJO */
+
+    dibujarLinea(
+      linea4,
+      tu,
+      acertijo,
+      visitadas.has("razones") &&
+      visitadas.has("acertijo")
+    );
+
+
+    /* ACERTIJO → CARTA */
+
+    dibujarLinea(
+      linea5,
+      acertijo,
+      carta,
+      visitadas.has("acertijo") &&
+      visitadas.has("carta")
+    );
+
+
+    /* COMPLETA */
 
     if(
       visitadas.has("recuerdos") &&
       visitadas.has("razones") &&
-      visitadas.has("carta")
+      visitadas.has("carta") &&
+      visitadas.has("acertijo")
     ){
 
       document
@@ -2885,36 +3396,40 @@
       );
 
     }
+
   }
 
 
-
   /* =====================================================
-     ✨ COMPROBAR CONSTELACIÓN
+     ✨ COMPROBAR
   ===================================================== */
 
   function comprobarConstelacion(){
 
     if(
-      visitadas.size>=3
+      visitadas.size>=4
     ){
 
       actualizarConstelacion();
 
+
       setTimeout(
         ()=>{
           crearCorazones();
+
           crearEstrellasEspeciales();
+
         },
         500
       );
+
     }
+
   }
 
 
-
   /* =====================================================
-     🔄 ACTUALIZAR AL CAMBIAR TAMAÑO
+     🔄 RESIZE
   ===================================================== */
 
   window.addEventListener(
@@ -2923,7 +3438,6 @@
       actualizarConstelacion();
     }
   );
-
 
 
   /* =====================================================
@@ -2938,13 +3452,15 @@
       )
       .forEach(
         ventana=>{
+
           ventana.classList.remove(
             "activa"
           );
+
         }
       );
-  }
 
+  }
 
 
   /* =====================================================
@@ -2996,7 +3512,9 @@
     if(
       animandoCarrusel
     ){
+
       return;
+
     }
 
 
@@ -3011,6 +3529,7 @@
 
       nuevaImagen =
         imagenes.length-1;
+
     }
 
 
@@ -3020,6 +3539,7 @@
     ){
 
       nuevaImagen=0;
+
     }
 
 
@@ -3027,6 +3547,7 @@
       nuevaImagen,
       direccion
     );
+
   }
 
 
@@ -3038,7 +3559,9 @@
     if(
       numero===imagenActual
     ){
+
       return;
+
     }
 
 
@@ -3111,6 +3634,7 @@
                 "translateX(100%) scale(.96)";
 
               imagen.style.zIndex="1";
+
             }
 
           }
@@ -3148,13 +3672,14 @@
 
         imagenActual=numero;
 
+
         animandoCarrusel=false;
 
       },
       600
     );
-  }
 
+  }
 
 
   /* =====================================================
@@ -3196,6 +3721,7 @@
     ){
 
       razonActual=0;
+
     }
 
 
@@ -3217,8 +3743,8 @@
 
 
     crearCorazones();
-  }
 
+  }
 
 
   /* =====================================================
@@ -3289,13 +3815,258 @@
         },
         2500
       );
+
     }
+
   }
 
 
+  /* =====================================================
+     🧩 ACERTIJO
+  ===================================================== */
+
+  const respuestaCorrecta=[
+
+    "Tú",
+    "eres",
+    "mi",
+    "universo"
+
+  ];
+
+
+  let respuestaActual=[];
+
+
+  function seleccionarPalabra(
+    boton,
+    palabra
+  ){
+
+    const mensaje =
+      document.getElementById(
+        "mensajeError"
+      );
+
+
+    const respuesta =
+      document.getElementById(
+        "respuestaAcertijo"
+      );
+
+
+    if(
+      boton.classList.contains(
+        "seleccionada"
+      )
+    ){
+
+      return;
+
+    }
+
+
+    const posicion =
+      respuestaActual.length;
+
+
+    if(
+      palabra===
+      respuestaCorrecta[posicion]
+    ){
+
+      respuestaActual.push(
+        palabra
+      );
+
+
+      boton.classList.add(
+        "seleccionada"
+      );
+
+
+      respuesta.textContent =
+        respuestaActual.join(" ");
+
+
+      mensaje.textContent="";
+
+
+      if(
+        respuestaActual.length===
+        respuestaCorrecta.length
+      ){
+
+        completarAcertijo();
+
+      }
+
+    }else{
+
+      boton.classList.add(
+        "incorrecta"
+      );
+
+
+      mensaje.textContent =
+        "Mmm... esa no va ahí 👀";
+
+
+      setTimeout(
+        ()=>{
+
+          boton.classList.remove(
+            "incorrecta"
+          );
+
+          mensaje.textContent="";
+
+        },
+        700
+      );
+
+    }
+
+  }
+
+
+  function completarAcertijo(){
+
+    const eureka =
+      document.getElementById(
+        "eureka"
+      );
+
+
+    const palabras =
+      document.querySelectorAll(
+        ".palabra"
+      );
+
+
+    palabras.forEach(
+      palabra=>{
+
+        palabra.style.pointerEvents =
+          "none";
+
+      }
+    );
+
+
+    /*
+     * La cuarta estrella queda visitada
+     * cuando se resuelve el acertijo.
+     */
+
+    visitadas.add(
+      "acertijo"
+    );
+
+
+    document
+      .getElementById(
+        "estrellaAcertijo"
+      )
+      .classList.add(
+      "visitada"
+    );
+
+
+    actualizarConstelacion();
+
+
+    setTimeout(
+      ()=>{
+
+        eureka.classList.add(
+          "mostrar"
+        );
+
+
+        crearCorazones();
+
+
+        crearEstrellasEspeciales();
+
+
+        setTimeout(
+          crearCorazones,
+          500
+        );
+
+
+        setTimeout(
+          crearCorazones,
+          1000
+        );
+
+      },
+      500
+    );
+
+  }
+
+
+  function reiniciarAcertijo(){
+
+    respuestaActual=[];
+
+
+    const respuesta =
+      document.getElementById(
+        "respuestaAcertijo"
+      );
+
+
+    const mensaje =
+      document.getElementById(
+        "mensajeError"
+      );
+
+
+    const eureka =
+      document.getElementById(
+        "eureka"
+      );
+
+
+    respuesta.textContent="_";
+
+    mensaje.textContent="";
+
+
+    eureka.classList.remove(
+      "mostrar"
+    );
+
+
+    document
+      .querySelectorAll(
+        ".palabra"
+      )
+      .forEach(
+        palabra=>{
+
+          palabra.classList.remove(
+            "seleccionada"
+          );
+
+          palabra.classList.remove(
+            "incorrecta"
+          );
+
+          palabra.style.pointerEvents =
+            "auto";
+
+        }
+      );
+
+  }
+
 
   /* =====================================================
-     🖱️ CERRAR AL HACER CLICK AFUERA
+     🖱️ CERRAR CLICK AFUERA
   ===================================================== */
 
   document
@@ -3325,29 +4096,24 @@
     );
 
 
-  /*
-  ==========================================================
-     🚀 IMPORTANTE
-
-     Dibujamos inicialmente las líneas
-     aunque todavía estén ocultas.
-
-     Esto permite que cuando aparezcan
-     tengan la posición correcta.
-  ==========================================================
-  */
+  /* =====================================================
+     🚀 INICIO
+  ===================================================== */
 
   window.addEventListener(
     "load",
     ()=>{
+
       setTimeout(
         actualizarConstelacion,
         100
       );
+
     }
   );
 
 </script>
 
 </body>
+
 </html>
