@@ -9,44 +9,26 @@
 
   <title>🌌 Nuestro pequeño universo</title>
 
-
   <style>
 
-    /* =====================================================
-       🎨 COLORES
-    ===================================================== */
-
     :root {
-
       --rosa: #f3a6c8;
       --rosa-fuerte: #ec6fa9;
-
       --morado: #b79ae8;
       --morado-fuerte: #8d68c7;
-
       --azul: #8ec5ff;
-
       --noche: #090714;
       --noche2: #171329;
-
       --blanco: #fff8ff;
-
     }
-
-
-    /* =====================================================
-       🔧 GENERAL
-    ===================================================== */
 
     * {
       box-sizing: border-box;
     }
 
-
     html {
       scroll-behavior: smooth;
     }
-
 
     body {
 
@@ -64,7 +46,6 @@
       color: var(--blanco);
 
       background:
-
         radial-gradient(
           circle at 50% -10%,
           #49366c 0%,
@@ -77,32 +58,27 @@
       transition:
         background 1s ease,
         color 1s ease;
-
     }
 
 
     /* =====================================================
-       🌌 MODO NOCHE
+       🌙 MODO NOCHE
     ===================================================== */
 
     body.modo-noche {
 
       background:
-
         radial-gradient(
           circle at 50% 0%,
           #25154b 0%,
           #090615 45%,
           #020107 100%
         );
-
     }
-
 
     body.modo-noche .portada h1 {
 
       background:
-
         linear-gradient(
           90deg,
           #ffb8dc,
@@ -113,29 +89,20 @@
       -webkit-background-clip: text;
 
       -webkit-text-fill-color: transparent;
-
     }
-
 
     body.modo-noche .estrella {
 
       box-shadow:
         0 0 10px white,
         0 0 20px #b79ae8;
-
     }
-
 
     body.modo-noche .luna {
 
       box-shadow:
-
-        0 0 45px
-        rgba(255,255,255,.8),
-
-        0 0 120px
-        rgba(183,154,232,.65);
-
+        0 0 45px rgba(255,255,255,.8),
+        0 0 120px rgba(183,154,232,.65);
     }
 
 
@@ -152,9 +119,7 @@
       pointer-events: none;
 
       z-index: 0;
-
     }
-
 
     .estrella {
 
@@ -172,24 +137,19 @@
         0 0 6px white;
 
       animation:
-
         parpadear
         2s
         infinite
         ease-in-out;
-
     }
-
 
     @keyframes parpadear {
 
-      0%,
-      100% {
+      0%, 100% {
 
         opacity: .15;
 
         transform: scale(.6);
-
       }
 
       50% {
@@ -197,14 +157,12 @@
         opacity: 1;
 
         transform: scale(1.4);
-
       }
-
     }
 
 
     /* =====================================================
-       🌠 ESTRELLAS FUGACES
+       🌠 ESTRELLA FUGAZ
     ===================================================== */
 
     .estrella-fugaz {
@@ -216,7 +174,6 @@
       height: 2px;
 
       background:
-
         linear-gradient(
           90deg,
           transparent,
@@ -230,14 +187,11 @@
       z-index: 5;
 
       animation:
-
         fugaz
         1.5s
         linear
         forwards;
-
     }
-
 
     @keyframes fugaz {
 
@@ -248,13 +202,11 @@
         transform:
           translate(0,0)
           rotate(-35deg);
-
       }
 
       15% {
 
         opacity: 1;
-
       }
 
       to {
@@ -264,14 +216,12 @@
         transform:
           translate(-500px,300px)
           rotate(-35deg);
-
       }
-
     }
 
 
     /* =====================================================
-       🌌 CONTENEDOR
+       🌌 UNIVERSO
     ===================================================== */
 
     .universo {
@@ -279,7 +229,6 @@
       position: relative;
 
       z-index: 1;
-
     }
 
 
@@ -302,7 +251,6 @@
       text-align: center;
 
       padding: 30px;
-
     }
 
 
@@ -319,7 +267,6 @@
       border-radius: 50%;
 
       background:
-
         radial-gradient(
           circle at 35% 30%,
           #ffffff,
@@ -328,15 +275,10 @@
         );
 
       box-shadow:
-
-        0 0 35px
-        rgba(255,255,255,.65),
-
-        0 0 90px
-        rgba(183,154,232,.4);
+        0 0 35px rgba(255,255,255,.65),
+        0 0 90px rgba(183,154,232,.4);
 
       animation:
-
         flotar
         4s
         ease-in-out
@@ -347,20 +289,15 @@
       cursor: pointer;
 
       transition:
-
         background 1s ease,
         box-shadow 1s ease,
         transform .3s ease;
-
     }
-
 
     .luna:hover {
 
       transform: scale(1.08);
-
     }
-
 
     .fase-luna {
 
@@ -369,135 +306,106 @@
       font-size: .9rem;
 
       opacity: .65;
-
     }
-
 
     @keyframes flotar {
 
-      0%,
-      100% {
+      0%, 100% {
 
         transform: translateY(0);
-
       }
 
       50% {
 
         transform: translateY(-15px);
-
       }
-
     }
 
 
     /* =====================================================
-       🌙 FASES DE LA LUNA
+       🌙 FASES
     ===================================================== */
 
     .luna-fase-0 {
 
       background:
-
         radial-gradient(
           circle at 35% 30%,
           #aaa,
           #444 50%,
           #111 100%
         );
-
     }
-
 
     .luna-fase-1 {
 
       background:
-
         linear-gradient(
           90deg,
           #222 0 35%,
           #eee 36% 100%
         );
-
     }
-
 
     .luna-fase-2 {
 
       background:
-
         linear-gradient(
           90deg,
           #222 0 50%,
           #eee 51% 100%
         );
-
     }
-
 
     .luna-fase-3 {
 
       background:
-
         linear-gradient(
           90deg,
           #222 0 25%,
           #eee 26% 100%
         );
-
     }
-
 
     .luna-fase-4 {
 
       background:
-
         radial-gradient(
           circle at 35% 30%,
           #ffffff,
           #e6dcf7 45%,
           #a89bc8 100%
         );
-
     }
-
 
     .luna-fase-5 {
 
       background:
-
         linear-gradient(
           90deg,
           #eee 0 74%,
           #222 75% 100%
         );
-
     }
-
 
     .luna-fase-6 {
 
       background:
-
         linear-gradient(
           90deg,
           #eee 0 49%,
           #222 50% 100%
         );
-
     }
-
 
     .luna-fase-7 {
 
       background:
-
         linear-gradient(
           90deg,
           #eee 0 25%,
           #222 26% 100%
         );
-
     }
 
 
@@ -517,7 +425,6 @@
         );
 
       background:
-
         linear-gradient(
           90deg,
           var(--rosa),
@@ -528,9 +435,7 @@
       -webkit-background-clip: text;
 
       -webkit-text-fill-color: transparent;
-
     }
-
 
     .portada p {
 
@@ -541,7 +446,6 @@
       font-size: 1.15rem;
 
       opacity: .85;
-
     }
 
 
@@ -558,9 +462,7 @@
       justify-content: center;
 
       flex-wrap: wrap;
-
     }
-
 
     .boton {
 
@@ -582,7 +484,6 @@
       cursor: pointer;
 
       background:
-
         linear-gradient(
           135deg,
           var(--rosa-fuerte),
@@ -590,17 +491,13 @@
         );
 
       box-shadow:
-
         0 10px 30px
         rgba(236,111,169,.25);
 
       transition:
-
         transform .2s,
         box-shadow .2s;
-
     }
-
 
     .boton:hover {
 
@@ -609,29 +506,23 @@
         scale(1.03);
 
       box-shadow:
-
         0 15px 40px
         rgba(183,154,232,.4);
-
     }
-
 
     .boton-secundario {
 
       background:
-
         rgba(255,255,255,.08);
 
       border:
-
         1px solid
         rgba(255,255,255,.15);
-
     }
 
 
     /* =====================================================
-       ✨ SECCIÓN CONSTELACIÓN
+       ✨ SECCIÓN UNIVERSO
     ===================================================== */
 
     .seccion-universo {
@@ -646,25 +537,20 @@
         100px 25px;
 
       text-align: center;
-
     }
-
 
     .seccion-universo h2 {
 
       font-size: 2.5rem;
 
       margin-bottom: 10px;
-
     }
-
 
     .subtitulo {
 
       opacity: .7;
 
       margin-bottom: 70px;
-
     }
 
 
@@ -682,13 +568,7 @@
       height: 430px;
 
       margin: auto;
-
     }
-
-
-    /* =====================================================
-       ✨ LÍNEAS
-    ===================================================== */
 
     .linea {
 
@@ -697,7 +577,6 @@
       height: 2px;
 
       background:
-
         linear-gradient(
           90deg,
           transparent,
@@ -714,19 +593,14 @@
         opacity 1s ease;
 
       box-shadow:
-
         0 0 8px
         rgba(255,255,255,.3);
-
     }
-
 
     .constelacion.completa .linea {
 
       opacity: 1;
-
     }
-
 
     .linea-1 {
 
@@ -738,9 +612,7 @@
 
       transform:
         rotate(15deg);
-
     }
-
 
     .linea-2 {
 
@@ -752,9 +624,7 @@
 
       transform:
         rotate(145deg);
-
     }
-
 
     .linea-3 {
 
@@ -766,7 +636,6 @@
 
       transform:
         rotate(-18deg);
-
     }
 
 
@@ -795,7 +664,6 @@
       cursor: pointer;
 
       background:
-
         radial-gradient(
           circle,
           rgba(255,255,255,.2),
@@ -803,20 +671,16 @@
         );
 
       border:
-
         1px solid
         rgba(255,255,255,.15);
 
       transition:
-
         transform .3s,
         box-shadow .3s,
         border .3s;
 
       z-index: 3;
-
     }
-
 
     .estrella-especial::before {
 
@@ -829,7 +693,6 @@
       border-radius: 50%;
 
       background:
-
         radial-gradient(
           circle,
           rgba(243,166,200,.15),
@@ -837,25 +700,20 @@
         );
 
       animation:
-
         pulso
         2.5s
         infinite;
 
       z-index: -1;
-
     }
-
 
     @keyframes pulso {
 
-      0%,
-      100% {
+      0%,100% {
 
         transform: scale(.8);
 
         opacity: .3;
-
       }
 
       50% {
@@ -863,11 +721,8 @@
         transform: scale(1.2);
 
         opacity: 1;
-
       }
-
     }
-
 
     .estrella-especial:hover {
 
@@ -878,25 +733,19 @@
         var(--rosa);
 
       box-shadow:
-
         0 0 35px
         rgba(243,166,200,.4);
-
     }
-
 
     .estrella-especial.visitada {
 
       box-shadow:
-
         0 0 40px
         rgba(183,154,232,.7);
 
       border-color:
         var(--morado);
-
     }
-
 
     .icono {
 
@@ -905,9 +754,7 @@
       line-height: 1;
 
       margin-bottom: 8px;
-
     }
-
 
     .estrella-especial span {
 
@@ -917,36 +764,27 @@
 
       color:
         var(--rosa);
-
     }
-
-
-    /* POSICIONES */
 
     .recuerdos {
 
       left: 10%;
 
       top: 50px;
-
     }
-
 
     .tu {
 
       left: 43%;
 
       top: 200px;
-
     }
-
 
     .carta-planeta {
 
       right: 8%;
 
       top: 60px;
-
     }
 
 
@@ -965,14 +803,11 @@
       font-size: 25px;
 
       animation:
-
         subirCorazon
         2s
         ease-out
         forwards;
-
     }
-
 
     @keyframes subirCorazon {
 
@@ -983,7 +818,6 @@
         transform:
           translateY(0)
           scale(1);
-
       }
 
       to {
@@ -993,9 +827,7 @@
         transform:
           translateY(-250px)
           scale(1.5);
-
       }
-
     }
 
 
@@ -1024,9 +856,7 @@
         blur(10px);
 
       z-index: 100;
-
     }
-
 
     .ventana.activa {
 
@@ -1034,33 +864,25 @@
 
       animation:
         aparecer .3s ease;
-
     }
-
 
     @keyframes aparecer {
 
       from {
-
         opacity: 0;
-
       }
 
       to {
-
         opacity: 1;
-
       }
-
     }
-
 
     .contenido-ventana {
 
       width:
-        min(600px,100%);
+        min(650px,100%);
 
-      max-height: 85vh;
+      max-height: 90vh;
 
       overflow-y: auto;
 
@@ -1071,7 +893,6 @@
       text-align: center;
 
       background:
-
         linear-gradient(
           145deg,
           #302748,
@@ -1079,25 +900,20 @@
         );
 
       border:
-
         1px solid
         rgba(243,166,200,.3);
 
       box-shadow:
-
         0 30px 100px
         rgba(0,0,0,.6);
 
       position: relative;
 
       animation:
-
         ventanaEntrada
         .5s
         ease;
-
     }
-
 
     @keyframes ventanaEntrada {
 
@@ -1106,7 +922,6 @@
         transform:
           scale(.8)
           translateY(30px);
-
       }
 
       to {
@@ -1114,11 +929,8 @@
         transform:
           scale(1)
           translateY(0);
-
       }
-
     }
-
 
     .cerrar {
 
@@ -1138,8 +950,8 @@
 
       cursor: pointer;
 
+      z-index: 20;
     }
-
 
     .contenido-ventana h2 {
 
@@ -1147,16 +959,258 @@
         var(--rosa);
 
       font-size: 2rem;
-
     }
-
 
     .contenido-ventana p {
 
       line-height: 1.8;
 
       opacity: .9;
+    }
 
+
+    /* =====================================================
+       📸 CARRUSEL DE RECUERDOS
+    ===================================================== */
+
+    .carrusel {
+
+      position: relative;
+
+      width: 100%;
+
+      max-width: 520px;
+
+      margin:
+        25px auto 10px;
+
+      overflow: hidden;
+
+      border-radius: 24px;
+
+      background: #0c0917;
+
+      border:
+        1px solid
+        rgba(243,166,200,.25);
+
+      box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.35);
+    }
+
+
+    .contenedor-imagen {
+
+      width: 100%;
+
+      height: 330px;
+
+      overflow: hidden;
+
+      position: relative;
+    }
+
+
+    .imagen-recuerdo {
+
+      position: absolute;
+
+      inset: 0;
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      opacity: 0;
+
+      transform:
+        translateX(100%)
+        scale(.96);
+
+      transition:
+        transform .55s ease,
+        opacity .55s ease;
+    }
+
+
+    .imagen-recuerdo.activa {
+
+      opacity: 1;
+
+      transform:
+        translateX(0)
+        scale(1);
+
+      z-index: 2;
+    }
+
+
+    .imagen-recuerdo.saliendo {
+
+      opacity: 0;
+
+      transform:
+        translateX(-100%)
+        scale(.96);
+
+      z-index: 1;
+    }
+
+
+    /* =====================================================
+       ⬅️➡️ BOTONES CARRUSEL
+    ===================================================== */
+
+    .flecha {
+
+      position: absolute;
+
+      top: 50%;
+
+      transform:
+        translateY(-50%);
+
+      width: 48px;
+
+      height: 48px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid
+        rgba(255,255,255,.25);
+
+      background:
+        rgba(20,15,35,.7);
+
+      color: white;
+
+      font-size: 25px;
+
+      cursor: pointer;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      z-index: 10;
+
+      transition:
+        transform .2s,
+        background .2s,
+        box-shadow .2s;
+    }
+
+
+    .flecha:hover {
+
+      background:
+        rgba(236,111,169,.8);
+
+      box-shadow:
+        0 0 25px
+        rgba(236,111,169,.4);
+
+      transform:
+        translateY(-50%)
+        scale(1.1);
+    }
+
+
+    .flecha-izquierda {
+
+      left: 15px;
+    }
+
+
+    .flecha-derecha {
+
+      right: 15px;
+    }
+
+
+    /* =====================================================
+       🔘 INDICADORES
+    ===================================================== */
+
+    .indicadores {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 9px;
+
+      padding:
+        15px 10px 5px;
+    }
+
+
+    .indicador {
+
+      width: 9px;
+
+      height: 9px;
+
+      border-radius: 50%;
+
+      border: none;
+
+      padding: 0;
+
+      margin: 0;
+
+      background:
+        rgba(255,255,255,.3);
+
+      cursor: pointer;
+
+      transition:
+        transform .2s,
+        background .2s;
+    }
+
+
+    .indicador.activo {
+
+      background:
+        var(--rosa);
+
+      transform:
+        scale(1.5);
+
+      box-shadow:
+        0 0 10px
+        var(--rosa);
+    }
+
+
+    /* =====================================================
+       📝 TEXTO DEL RECUERDO
+    ===================================================== */
+
+    .texto-recuerdo {
+
+      min-height: 50px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding:
+        8px 20px 20px;
+
+      font-size: .95rem;
+
+      color:
+        rgba(255,255,255,.8);
     }
 
 
@@ -1182,16 +1236,13 @@
         rgba(243,166,200,.08);
 
       border:
-
         1px solid
         rgba(243,166,200,.15);
 
       line-height: 1.7;
 
       font-size: 1.1rem;
-
     }
-
 
     .numero {
 
@@ -1199,7 +1250,6 @@
         var(--morado);
 
       margin-bottom: 10px;
-
     }
 
 
@@ -1210,7 +1260,6 @@
     .carta {
 
       background:
-
         linear-gradient(
           145deg,
           #ffe8f1,
@@ -1229,7 +1278,6 @@
       line-height: 2;
 
       font-family:
-
         "Segoe Print",
         "Comic Sans MS",
         cursive;
@@ -1239,17 +1287,13 @@
       font-weight: bold;
 
       box-shadow:
-
         0 15px 35px
         rgba(0,0,0,.2);
 
       border:
-
         1px solid
         rgba(183,154,232,.35);
-
     }
-
 
     .firma {
 
@@ -1261,7 +1305,6 @@
         #8b5aa8;
 
       font-family:
-
         "Segoe Print",
         "Comic Sans MS",
         cursive;
@@ -1269,12 +1312,11 @@
       font-size: 1.1rem;
 
       font-weight: bold;
-
     }
 
 
     /* =====================================================
-       ✨ MENSAJE FINAL
+       ✨ FINAL
     ===================================================== */
 
     .final {
@@ -1294,7 +1336,6 @@
       text-align: center;
 
       background:
-
         linear-gradient(
           145deg,
           rgba(243,166,200,.15),
@@ -1302,25 +1343,19 @@
         );
 
       border:
-
         1px solid
         rgba(255,255,255,.15);
-
     }
-
 
     .final.mostrar {
 
       display: block;
 
       animation:
-
         finalEntrada
         1.2s
         ease;
-
     }
-
 
     @keyframes finalEntrada {
 
@@ -1331,7 +1366,6 @@
         transform:
           scale(.7)
           translateY(40px);
-
       }
 
       to {
@@ -1341,35 +1375,27 @@
         transform:
           scale(1)
           translateY(0);
-
       }
-
     }
-
 
     .final h2 {
 
       color:
         var(--rosa);
-
     }
-
 
     .final p {
 
       line-height: 1.9;
 
       font-size: 1.15rem;
-
     }
-
 
     .final-estrellas {
 
       font-size: 40px;
 
       margin-top: 25px;
-
     }
 
 
@@ -1382,45 +1408,35 @@
       .constelacion {
 
         height: 500px;
-
       }
-
 
       .recuerdos {
 
         left: 5%;
 
         top: 40px;
-
       }
-
 
       .tu {
 
         left: 35%;
 
         top: 210px;
-
       }
-
 
       .carta-planeta {
 
         right: 5%;
 
         top: 380px;
-
       }
-
 
       .linea-1 {
 
         width: 230px;
 
         left: 22%;
-
       }
-
 
       .linea-2 {
 
@@ -1429,16 +1445,17 @@
         left: 45%;
 
         top: 260px;
-
       }
-
 
       .linea-3 {
 
         display: none;
-
       }
 
+      .contenedor-imagen {
+
+        height: 270px;
+      }
     }
 
 
@@ -1449,44 +1466,46 @@
         width: 105px;
 
         height: 105px;
-
       }
-
 
       .icono {
 
         font-size: 34px;
-
       }
-
 
       .estrella-especial span {
 
         font-size: .75rem;
-
       }
-
 
       .recuerdos {
 
         left: 0;
-
       }
-
 
       .tu {
 
         left: 32%;
-
       }
-
 
       .carta-planeta {
 
         right: 0;
-
       }
 
+      .contenedor-imagen {
+
+        height: 230px;
+      }
+
+      .flecha {
+
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 21px;
+      }
     }
 
   </style>
@@ -1497,9 +1516,7 @@
 <body>
 
 
-<!-- =================================================
-     ⭐ ESTRELLAS DEL FONDO
-================================================= -->
+<!-- ⭐ ESTRELLAS -->
 
 <div id="estrellas"></div>
 
@@ -1514,8 +1531,6 @@
   <section class="portada">
 
 
-    <!-- Luna -->
-
     <div
       id="luna"
       class="luna luna-fase-4"
@@ -1528,8 +1543,7 @@
       id="faseLuna"
       class="fase-luna">
 
-      🌕 Luna llena
-      · Haz clic para cambiarla
+      🌕 Luna llena · Haz clic para cambiarla
 
     </div>
 
@@ -1616,8 +1630,6 @@
       class="constelacion">
 
 
-      <!-- Líneas -->
-
       <div class="linea linea-1"></div>
 
       <div class="linea linea-2"></div>
@@ -1625,8 +1637,7 @@
       <div class="linea linea-3"></div>
 
 
-
-      <!-- ⭐ RECUERDOS -->
+      <!-- 🪐 RECUERDOS -->
 
       <div
         class="estrella-especial recuerdos"
@@ -1645,7 +1656,6 @@
                     </span>
 
       </div>
-
 
 
       <!-- 💗 TÚ -->
@@ -1667,7 +1677,6 @@
                     </span>
 
       </div>
-
 
 
       <!-- 💌 CARTA -->
@@ -1696,7 +1705,7 @@
 
 
     <!-- =================================================
-         ✨ MENSAJE FINAL
+         ✨ FINAL
     ================================================= -->
 
     <section
@@ -1791,16 +1800,149 @@
     </p>
 
 
-    <div class="razon">
 
-      ✨
+    <!-- =================================================
+         📸 CARRUSEL
+    ================================================= -->
 
-      <br>
+    <div class="carrusel">
 
-      Aquí podremos poner después
-      nuestros recuerdos especiales.
+
+      <div class="contenedor-imagen">
+
+
+        <!-- IMAGEN 1 -->
+
+        <img
+          class="imagen-recuerdo activa"
+          src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80"
+          alt="Flores">
+
+
+        <!-- IMAGEN 2 -->
+
+        <img
+          class="imagen-recuerdo"
+          src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80"
+          alt="Flores rosas">
+
+
+        <!-- IMAGEN 3 -->
+
+        <img
+          class="imagen-recuerdo"
+          src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=80"
+          alt="Cielo nocturno">
+
+
+        <!-- IMAGEN 4 -->
+
+        <img
+          class="imagen-recuerdo"
+          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+          alt="Paisaje">
+
+
+        <!-- IMAGEN 5 -->
+
+        <img
+          class="imagen-recuerdo"
+          src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80"
+          alt="Momento especial">
+
+
+      </div>
+
+
+
+      <!-- ⬅️ ANTERIOR -->
+
+      <button
+        class="flecha flecha-izquierda"
+        onclick="cambiarImagen(-1)"
+        aria-label="Imagen anterior">
+
+        ←
+
+      </button>
+
+
+
+      <!-- ➡️ SIGUIENTE -->
+
+      <button
+        class="flecha flecha-derecha"
+        onclick="cambiarImagen(1)"
+        aria-label="Imagen siguiente">
+
+        →
+
+      </button>
+
+
+
+      <!-- 🔘 INDICADORES -->
+
+      <div class="indicadores">
+
+
+        <button
+          class="indicador activo"
+          onclick="irAImagen(0)"
+          aria-label="Imagen 1">
+        </button>
+
+
+        <button
+          class="indicador"
+          onclick="irAImagen(1)"
+          aria-label="Imagen 2">
+        </button>
+
+
+        <button
+          class="indicador"
+          onclick="irAImagen(2)"
+          aria-label="Imagen 3">
+        </button>
+
+
+        <button
+          class="indicador"
+          onclick="irAImagen(3)"
+          aria-label="Imagen 4">
+        </button>
+
+
+        <button
+          class="indicador"
+          onclick="irAImagen(4)"
+          aria-label="Imagen 5">
+        </button>
+
+
+      </div>
+
+
+      <div
+        id="textoRecuerdo"
+        class="texto-recuerdo">
+
+        Un pequeño detalle para ti 🌸
+
+      </div>
+
 
     </div>
+
+
+    <button
+      class="boton"
+      onclick="crearCorazones()">
+
+      💗 Guardar este recuerdo
+
+    </button>
 
 
   </div>
@@ -1984,7 +2126,7 @@
 
 
   /* =====================================================
-     ⭐ CREAR ESTRELLAS
+     ⭐ ESTRELLAS
   ===================================================== */
 
   const estrellas =
@@ -1993,80 +2135,62 @@
 
   function crearEstrellas(cantidad) {
 
-
     for (
       let i = 0;
       i < cantidad;
       i++
     ) {
 
-
       const estrella =
         document.createElement("div");
-
 
       estrella.className =
         "estrella";
 
-
       estrella.style.left =
         Math.random() * 100 + "%";
-
 
       estrella.style.top =
         Math.random() * 100 + "%";
 
-
       estrella.style.animationDelay =
         Math.random() * 3 + "s";
-
 
       estrella.style.opacity =
         Math.random();
 
-
       estrellas.appendChild(
         estrella
       );
-
     }
-
   }
 
-
-  /* Estrellas iniciales */
 
   crearEstrellas(150);
 
 
 
   /* =====================================================
-     🌠 ESTRELLA FUGAZ
+     🌠 ESTRELLAS FUGACES
   ===================================================== */
 
   function crearEstrellaFugaz() {
 
-
     const estrella =
       document.createElement("div");
-
 
     estrella.className =
       "estrella-fugaz";
 
-
     estrella.style.right =
       Math.random() * 40 + "%";
-
 
     estrella.style.top =
       Math.random() * 40 + "%";
 
-
     document.body.appendChild(
       estrella
     );
-
 
     setTimeout(
       () => {
@@ -2076,7 +2200,6 @@
       },
       1500
     );
-
   }
 
 
@@ -2088,8 +2211,7 @@
 
 
   /* =====================================================
-     🌙 IDEA 8
-     CAMBIAR FASE DE LA LUNA
+     🌙 FASE DE LA LUNA
   ===================================================== */
 
   const fasesLuna = [
@@ -2118,49 +2240,40 @@
 
   function cambiarFaseLuna() {
 
-
     const luna =
       document.getElementById("luna");
-
 
     const texto =
       document.getElementById("faseLuna");
 
-
     faseActual++;
 
-
     if (
-      faseActual >= fasesLuna.length
+      faseActual >=
+      fasesLuna.length
     ) {
 
       faseActual = 0;
-
     }
-
 
     luna.className =
       "luna luna-fase-" +
       faseActual;
 
-
     texto.textContent =
       fasesLuna[faseActual] +
       " · Haz clic para cambiarla";
 
-
     crearEstrellasEspeciales();
-
   }
 
 
 
   /* =====================================================
-     ✨ ESTRELLAS AL CAMBIAR LA LUNA
+     ✨ ESTRELLAS ESPECIALES
   ===================================================== */
 
   function crearEstrellasEspeciales() {
-
 
     for (
       let i = 0;
@@ -2168,46 +2281,35 @@
       i++
     ) {
 
-
       const estrella =
         document.createElement("div");
-
 
       estrella.textContent =
         "✦";
 
-
       estrella.style.position =
         "fixed";
-
 
       estrella.style.left =
         Math.random() * 100 + "%";
 
-
       estrella.style.top =
         Math.random() * 60 + "%";
-
 
       estrella.style.color =
         "white";
 
-
       estrella.style.fontSize =
         "18px";
-
 
       estrella.style.pointerEvents =
         "none";
 
-
       estrella.style.zIndex =
         "50";
 
-
       estrella.style.textShadow =
         "0 0 15px white";
-
 
       estrella.animate(
 
@@ -2239,16 +2341,12 @@
 
           easing:
             "ease-out"
-
         }
-
       );
-
 
       document.body.appendChild(
         estrella
       );
-
 
       setTimeout(
         () => {
@@ -2258,16 +2356,13 @@
         },
         1200
       );
-
     }
-
   }
 
 
 
   /* =====================================================
-     🌙 IDEA 9
-     MODO NOCHE
+     🌙 MODO NOCHE
   ===================================================== */
 
   let modoNocheActivo = false;
@@ -2275,49 +2370,34 @@
 
   function modoNoche() {
 
-
     modoNocheActivo =
       !modoNocheActivo;
-
 
     document.body.classList.toggle(
       "modo-noche"
     );
-
 
     const boton =
       document.querySelector(
         ".boton-secundario"
       );
 
-
     if (
       modoNocheActivo
     ) {
 
-
       boton.textContent =
         "☀️ Salir del modo noche";
 
-
-      /* Más estrellas */
-
       crearEstrellas(80);
-
-
-      /* Estrellas especiales */
 
       crearEstrellasEspeciales();
 
-
     } else {
-
 
       boton.textContent =
         "🌙 Modo noche";
-
     }
-
   }
 
 
@@ -2328,22 +2408,20 @@
 
   function entrarUniverso() {
 
-
     document
       .getElementById("universo")
       .scrollIntoView({
 
-        behavior: "smooth"
+        behavior:
+          "smooth"
 
       });
-
   }
 
 
 
   /* =====================================================
-     ⭐ IDEA 2
-     CONSTELACIÓN INTERACTIVA
+     ⭐ CONSTELACIÓN
   ===================================================== */
 
   let visitadas =
@@ -2355,85 +2433,66 @@
     elemento
   ) {
 
-
     const ventana =
       document.getElementById(id);
-
 
     ventana.classList.add(
       "activa"
     );
 
-
     visitadas.add(id);
-
 
     elemento.classList.add(
       "visitada"
     );
-
-
-    /* Efecto dependiendo de la estrella */
 
     if (
       id === "razones"
     ) {
 
       crearCorazones();
-
     }
-
 
     if (
       id === "recuerdos"
     ) {
 
       crearEstrellasEspeciales();
-
     }
-
 
     if (
       id === "carta"
     ) {
 
       crearCorazones();
-
     }
 
-
     comprobarConstelacion();
-
   }
 
 
 
   /* =====================================================
-     ✨ COMPLETAR CONSTELACIÓN
+     ✨ CONSTELACIÓN COMPLETA
   ===================================================== */
 
   function comprobarConstelacion() {
 
-
     if (
       visitadas.size >= 3
     ) {
-
 
       const constelacion =
         document.getElementById(
           "constelacion"
         );
 
-
       constelacion.classList.add(
         "completa"
       );
 
-
       setTimeout(
         () => {
-
 
           document
             .getElementById(
@@ -2443,28 +2502,12 @@
             "mostrar"
           );
 
-
-          document
-            .getElementById(
-              "final"
-            )
-            .scrollIntoView({
-
-              behavior:
-                "smooth"
-
-            });
-
-
           crearCorazones();
-
 
         },
         1000
       );
-
     }
-
   }
 
 
@@ -2475,7 +2518,6 @@
 
   function cerrarVentanas() {
 
-
     document
       .querySelectorAll(".ventana")
       .forEach(
@@ -2484,10 +2526,227 @@
           ventana.classList.remove(
             "activa"
           );
-
         }
       );
+  }
 
+
+
+  /* =====================================================
+     📸 CARRUSEL DE RECUERDOS
+  ===================================================== */
+
+  const imagenes =
+    document.querySelectorAll(
+      ".imagen-recuerdo"
+    );
+
+  const indicadores =
+    document.querySelectorAll(
+      ".indicador"
+    );
+
+  const textoRecuerdo =
+    document.getElementById(
+      "textoRecuerdo"
+    );
+
+
+  const textosRecuerdos = [
+
+    "Un pequeño detalle para ti 🌸",
+
+    "Un pedacito de nuestro universo 💜",
+
+    "Porque los momentos bonitos merecen quedarse ✨",
+
+    "Otro recuerdo que me gustaría guardar contigo 🌙",
+
+    "Y todavía nos quedan muchísimos momentos por vivir 💗"
+
+  ];
+
+
+  let imagenActual = 0;
+
+  let animandoCarrusel = false;
+
+
+  function cambiarImagen(
+    direccion
+  ) {
+
+    if (
+      animandoCarrusel
+    ) {
+
+      return;
+    }
+
+    let nuevaImagen =
+      imagenActual +
+      direccion;
+
+
+    if (
+      nuevaImagen < 0
+    ) {
+
+      nuevaImagen =
+        imagenes.length - 1;
+    }
+
+
+    if (
+      nuevaImagen >=
+      imagenes.length
+    ) {
+
+      nuevaImagen = 0;
+    }
+
+
+    irAImagen(
+      nuevaImagen,
+      direccion
+    );
+  }
+
+
+
+  function irAImagen(
+    numero,
+    direccion = null
+  ) {
+
+    if (
+      numero === imagenActual
+    ) {
+
+      return;
+    }
+
+
+    animandoCarrusel = true;
+
+
+    const actual =
+      imagenes[imagenActual];
+
+    const nueva =
+      imagenes[numero];
+
+
+    /* Si vamos hacia la derecha,
+       la nueva imagen entra desde la derecha.
+       Si vamos hacia la izquierda,
+       entra desde la izquierda. */
+
+    const movimiento =
+      direccion === -1
+        ? "-100%"
+        : "100%";
+
+
+    nueva.style.transform =
+      `translateX(${movimiento}) scale(.96)`;
+
+
+    nueva.style.opacity =
+      "1";
+
+
+    nueva.style.zIndex =
+      "3";
+
+
+    actual.style.zIndex =
+      "2";
+
+
+    /* Forzar al navegador
+       a registrar la posición inicial */
+
+    nueva.offsetHeight;
+
+
+    requestAnimationFrame(
+      () => {
+
+        nueva.style.transform =
+          "translateX(0) scale(1)";
+
+        actual.style.transform =
+          direccion === -1
+            ? "translateX(100%) scale(.96)"
+            : "translateX(-100%) scale(.96)";
+
+        actual.style.opacity =
+          "0";
+
+      }
+    );
+
+
+    setTimeout(
+      () => {
+
+        imagenes.forEach(
+          (imagen, indice) => {
+
+            if (
+              indice !== numero
+            ) {
+
+              imagen.style.opacity =
+                "0";
+
+              imagen.style.transform =
+                "translateX(100%) scale(.96)";
+
+              imagen.style.zIndex =
+                "1";
+            }
+          }
+        );
+
+
+        nueva.classList.add(
+          "activa"
+        );
+
+        actual.classList.remove(
+          "activa"
+        );
+
+
+        indicadores.forEach(
+          (indicador, indice) => {
+
+            indicador.classList.toggle(
+              "activo",
+              indice === numero
+            );
+
+          }
+        );
+
+
+        textoRecuerdo.textContent =
+          textosRecuerdos[numero];
+
+
+        imagenActual =
+          numero;
+
+
+        animandoCarrusel =
+          false;
+
+
+      },
+      600
+    );
   }
 
 
@@ -2522,16 +2781,15 @@
 
   function nuevaRazon() {
 
-
     razonActual++;
 
 
     if (
-      razonActual >= razones.length
+      razonActual >=
+      razones.length
     ) {
 
       razonActual = 0;
-
     }
 
 
@@ -2549,7 +2807,6 @@
 
 
     crearCorazones();
-
   }
 
 
@@ -2560,17 +2817,12 @@
 
   function crearCorazones() {
 
-
     const corazones = [
 
       "💗",
-
       "💖",
-
       "💕",
-
       "💜",
-
       "🩷"
 
     ];
@@ -2582,14 +2834,11 @@
       i++
     ) {
 
-
       const corazon =
         document.createElement("div");
 
-
       corazon.className =
         "corazon-flotante";
-
 
       corazon.textContent =
         corazones[
@@ -2599,23 +2848,18 @@
           )
           ];
 
-
       corazon.style.left =
         Math.random() * 100 + "%";
-
 
       corazon.style.bottom =
         "20px";
 
-
       corazon.style.animationDelay =
         Math.random() * .8 + "s";
-
 
       document.body.appendChild(
         corazon
       );
-
 
       setTimeout(
         () => {
@@ -2625,15 +2869,13 @@
         },
         2500
       );
-
     }
-
   }
 
 
 
   /* =====================================================
-     🖱️ CERRAR VENTANA AL HACER CLICK AFUERA
+     🖱️ CERRAR AL HACER CLICK AFUERA
   ===================================================== */
 
   document
@@ -2641,29 +2883,23 @@
     .forEach(
       ventana => {
 
-
         ventana.addEventListener(
           "click",
           function(event) {
 
-
             if (
-              event.target === ventana
+              event.target ===
+              ventana
             ) {
 
               cerrarVentanas();
-
             }
-
           }
         );
-
       }
     );
 
-
 </script>
-
 
 </body>
 
