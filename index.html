@@ -62,6 +62,126 @@
 
 
     /* =====================================================
+       🌌 NEBULOSA ANIMADA
+    ===================================================== */
+
+    .nebulosa {
+
+      position: fixed;
+
+      inset: -30%;
+
+      pointer-events: none;
+
+      z-index: 0;
+
+      overflow: hidden;
+
+      opacity: .65;
+
+      filter: blur(45px);
+    }
+
+
+    .nube {
+
+      position: absolute;
+
+      border-radius: 50%;
+
+      filter: blur(50px);
+
+      animation:
+        moverNebulosa
+        18s
+        ease-in-out
+        infinite alternate;
+    }
+
+
+    .nube-rosa {
+
+      width: 430px;
+
+      height: 300px;
+
+      left: 5%;
+
+      top: 10%;
+
+      background:
+        rgba(236,111,169,.28);
+
+      animation-delay: -4s;
+    }
+
+
+    .nube-morada {
+
+      width: 500px;
+
+      height: 380px;
+
+      right: 5%;
+
+      top: 25%;
+
+      background:
+        rgba(141,104,199,.3);
+
+      animation-delay: -8s;
+    }
+
+
+    .nube-azul {
+
+      width: 420px;
+
+      height: 320px;
+
+      left: 35%;
+
+      bottom: 5%;
+
+      background:
+        rgba(76,143,220,.18);
+
+      animation-delay: -12s;
+    }
+
+
+    @keyframes moverNebulosa {
+
+      0% {
+
+        transform:
+          translate(0,0)
+          scale(1)
+          rotate(0deg);
+
+      }
+
+      50% {
+
+        transform:
+          translate(100px,-70px)
+          scale(1.15)
+          rotate(20deg);
+
+      }
+
+      100% {
+
+        transform:
+          translate(-80px,90px)
+          scale(.9)
+          rotate(-15deg);
+
+      }
+    }
+
+
+    /* =====================================================
        🌙 MODO NOCHE
     ===================================================== */
 
@@ -76,38 +196,14 @@
         );
     }
 
-    body.modo-noche .portada h1 {
+    body.modo-noche .nebulosa {
 
-      background:
-        linear-gradient(
-          90deg,
-          #ffb8dc,
-          #d5b8ff,
-          white
-        );
-
-      -webkit-background-clip: text;
-
-      -webkit-text-fill-color: transparent;
-    }
-
-    body.modo-noche .estrella {
-
-      box-shadow:
-        0 0 10px white,
-        0 0 20px #b79ae8;
-    }
-
-    body.modo-noche .luna {
-
-      box-shadow:
-        0 0 45px rgba(255,255,255,.8),
-        0 0 120px rgba(183,154,232,.65);
+      opacity: .35;
     }
 
 
     /* =====================================================
-       ⭐ ESTRELLAS DEL FONDO
+       ⭐ ESTRELLAS
     ===================================================== */
 
     #estrellas {
@@ -118,8 +214,9 @@
 
       pointer-events: none;
 
-      z-index: 0;
+      z-index: 1;
     }
+
 
     .estrella {
 
@@ -143,9 +240,10 @@
         ease-in-out;
     }
 
+
     @keyframes parpadear {
 
-      0%, 100% {
+      0%,100% {
 
         opacity: .15;
 
@@ -162,59 +260,95 @@
 
 
     /* =====================================================
-       🌠 ESTRELLA FUGAZ
+       🌠 COMETA
     ===================================================== */
 
-    .estrella-fugaz {
+    .cometa {
 
       position: fixed;
 
-      width: 100px;
+      width: 180px;
 
-      height: 2px;
+      height: 3px;
+
+      pointer-events: none;
+
+      z-index: 20;
+
+      opacity: 0;
 
       background:
         linear-gradient(
           90deg,
           transparent,
+          rgba(255,255,255,.15),
           white
         );
 
-      transform: rotate(-35deg);
+      border-radius: 999px;
 
-      pointer-events: none;
+      box-shadow:
+        0 0 8px white,
+        0 0 20px var(--morado);
 
-      z-index: 5;
+      transform:
+        rotate(-35deg);
 
       animation:
-        fugaz
-        1.5s
+        atravesarCometa
+        2.3s
         linear
         forwards;
     }
 
-    @keyframes fugaz {
 
-      from {
+    .cometa::after {
+
+      content: "✦";
+
+      position: absolute;
+
+      right: -8px;
+
+      top: -9px;
+
+      color: white;
+
+      font-size: 20px;
+
+      text-shadow:
+        0 0 10px white,
+        0 0 20px var(--rosa);
+    }
+
+
+    @keyframes atravesarCometa {
+
+      0% {
 
         opacity: 0;
 
         transform:
-          translate(0,0)
+          translate(250px,-100px)
           rotate(-35deg);
       }
 
-      15% {
+      10% {
 
         opacity: 1;
       }
 
-      to {
+      80% {
+
+        opacity: 1;
+      }
+
+      100% {
 
         opacity: 0;
 
         transform:
-          translate(-500px,300px)
+          translate(-700px,600px)
           rotate(-35deg);
       }
     }
@@ -228,7 +362,7 @@
 
       position: relative;
 
-      z-index: 1;
+      z-index: 2;
     }
 
 
@@ -253,10 +387,6 @@
       padding: 30px;
     }
 
-
-    /* =====================================================
-       🌙 LUNA
-    ===================================================== */
 
     .luna {
 
@@ -294,10 +424,13 @@
         transform .3s ease;
     }
 
+
     .luna:hover {
 
-      transform: scale(1.08);
+      transform:
+        scale(1.08);
     }
+
 
     .fase-luna {
 
@@ -308,22 +441,25 @@
       opacity: .65;
     }
 
+
     @keyframes flotar {
 
-      0%, 100% {
+      0%,100% {
 
-        transform: translateY(0);
+        transform:
+          translateY(0);
       }
 
       50% {
 
-        transform: translateY(-15px);
+        transform:
+          translateY(-15px);
       }
     }
 
 
     /* =====================================================
-       🌙 FASES
+       🌙 FASES DE LUNA
     ===================================================== */
 
     .luna-fase-0 {
@@ -337,6 +473,7 @@
         );
     }
 
+
     .luna-fase-1 {
 
       background:
@@ -346,6 +483,7 @@
           #eee 36% 100%
         );
     }
+
 
     .luna-fase-2 {
 
@@ -357,6 +495,7 @@
         );
     }
 
+
     .luna-fase-3 {
 
       background:
@@ -366,6 +505,7 @@
           #eee 26% 100%
         );
     }
+
 
     .luna-fase-4 {
 
@@ -378,6 +518,7 @@
         );
     }
 
+
     .luna-fase-5 {
 
       background:
@@ -388,6 +529,7 @@
         );
     }
 
+
     .luna-fase-6 {
 
       background:
@@ -397,6 +539,7 @@
           #222 50% 100%
         );
     }
+
 
     .luna-fase-7 {
 
@@ -410,7 +553,7 @@
 
 
     /* =====================================================
-       📝 TÍTULO
+       📝 TITULO
     ===================================================== */
 
     .portada h1 {
@@ -435,7 +578,12 @@
       -webkit-background-clip: text;
 
       -webkit-text-fill-color: transparent;
+
+      text-shadow:
+        0 0 30px
+        rgba(183,154,232,.2);
     }
+
 
     .portada p {
 
@@ -463,6 +611,7 @@
 
       flex-wrap: wrap;
     }
+
 
     .boton {
 
@@ -499,6 +648,7 @@
         box-shadow .2s;
     }
 
+
     .boton:hover {
 
       transform:
@@ -509,6 +659,7 @@
         0 15px 40px
         rgba(183,154,232,.4);
     }
+
 
     .boton-secundario {
 
@@ -539,12 +690,14 @@
       text-align: center;
     }
 
+
     .seccion-universo h2 {
 
       font-size: 2.5rem;
 
       margin-bottom: 10px;
     }
+
 
     .subtitulo {
 
@@ -565,10 +718,11 @@
       width:
         min(900px,100%);
 
-      height: 430px;
+      height: 520px;
 
       margin: auto;
     }
+
 
     .linea {
 
@@ -597,10 +751,12 @@
         rgba(255,255,255,.3);
     }
 
+
     .constelacion.completa .linea {
 
       opacity: 1;
     }
+
 
     .linea-1 {
 
@@ -614,6 +770,7 @@
         rotate(15deg);
     }
 
+
     .linea-2 {
 
       width: 300px;
@@ -625,6 +782,7 @@
       transform:
         rotate(145deg);
     }
+
 
     .linea-3 {
 
@@ -679,8 +837,9 @@
         box-shadow .3s,
         border .3s;
 
-      z-index: 3;
+      z-index: 5;
     }
+
 
     .estrella-especial::before {
 
@@ -707,22 +866,26 @@
       z-index: -1;
     }
 
+
     @keyframes pulso {
 
       0%,100% {
 
-        transform: scale(.8);
+        transform:
+          scale(.8);
 
         opacity: .3;
       }
 
       50% {
 
-        transform: scale(1.2);
+        transform:
+          scale(1.2);
 
         opacity: 1;
       }
     }
+
 
     .estrella-especial:hover {
 
@@ -737,6 +900,7 @@
         rgba(243,166,200,.4);
     }
 
+
     .estrella-especial.visitada {
 
       box-shadow:
@@ -747,6 +911,7 @@
         var(--morado);
     }
 
+
     .icono {
 
       font-size: 42px;
@@ -755,6 +920,7 @@
 
       margin-bottom: 8px;
     }
+
 
     .estrella-especial span {
 
@@ -766,12 +932,14 @@
         var(--rosa);
     }
 
+
     .recuerdos {
 
-      left: 10%;
+      left: 8%;
 
       top: 50px;
     }
+
 
     .tu {
 
@@ -780,11 +948,175 @@
       top: 200px;
     }
 
+
     .carta-planeta {
 
       right: 8%;
 
       top: 60px;
+    }
+
+
+    /* =====================================================
+       🪐 PLANETA ORBITANDO
+    ===================================================== */
+
+    .sistema-planeta {
+
+      position: absolute;
+
+      left: 50%;
+
+      bottom: 20px;
+
+      width: 180px;
+
+      height: 180px;
+
+      transform:
+        translateX(-50%);
+
+      z-index: 3;
+
+      pointer-events: none;
+    }
+
+
+    .planeta {
+
+      position: absolute;
+
+      left: 50%;
+
+      top: 50%;
+
+      width: 72px;
+
+      height: 72px;
+
+      transform:
+        translate(-50%,-50%);
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle at 30% 25%,
+          #ffd9ed,
+          #d38cc0 35%,
+          #8054a8 70%,
+          #3b275e
+        );
+
+      box-shadow:
+        0 0 25px
+        rgba(243,166,200,.55),
+
+        0 0 55px
+        rgba(183,154,232,.3);
+    }
+
+
+    .planeta::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 120px;
+
+      height: 30px;
+
+      left: -24px;
+
+      top: 22px;
+
+      border:
+        3px solid
+        rgba(243,166,200,.65);
+
+      border-radius: 50%;
+
+      transform:
+        rotate(-15deg);
+    }
+
+
+    .orbita {
+
+      position: absolute;
+
+      inset: 5px;
+
+      border:
+        1px dashed
+        rgba(255,255,255,.25);
+
+      border-radius: 50%;
+
+      animation:
+        girarOrbita
+        8s
+        linear
+        infinite;
+    }
+
+
+    .orbita::before {
+
+      content: "💗";
+
+      position: absolute;
+
+      top: -8px;
+
+      left: 50%;
+
+      transform:
+        translateX(-50%);
+
+      font-size: 18px;
+
+      filter:
+        drop-shadow(
+          0 0 8px
+          rgba(255,150,210,.9)
+        );
+    }
+
+
+    .orbita::after {
+
+      content: "✦";
+
+      position: absolute;
+
+      bottom: 5px;
+
+      right: 20px;
+
+      color: white;
+
+      font-size: 16px;
+
+      text-shadow:
+        0 0 10px white;
+    }
+
+
+    @keyframes girarOrbita {
+
+      from {
+
+        transform:
+          rotate(0deg);
+      }
+
+      to {
+
+        transform:
+          rotate(360deg);
+      }
     }
 
 
@@ -808,6 +1140,7 @@
         ease-out
         forwards;
     }
+
 
     @keyframes subirCorazon {
 
@@ -858,13 +1191,17 @@
       z-index: 100;
     }
 
+
     .ventana.activa {
 
       display: flex;
 
       animation:
-        aparecer .3s ease;
+        aparecer
+        .3s
+        ease;
     }
+
 
     @keyframes aparecer {
 
@@ -876,6 +1213,7 @@
         opacity: 1;
       }
     }
+
 
     .contenido-ventana {
 
@@ -915,6 +1253,7 @@
         ease;
     }
 
+
     @keyframes ventanaEntrada {
 
       from {
@@ -931,6 +1270,7 @@
           translateY(0);
       }
     }
+
 
     .cerrar {
 
@@ -953,6 +1293,7 @@
       z-index: 20;
     }
 
+
     .contenido-ventana h2 {
 
       color:
@@ -960,6 +1301,7 @@
 
       font-size: 2rem;
     }
+
 
     .contenido-ventana p {
 
@@ -970,7 +1312,7 @@
 
 
     /* =====================================================
-       📸 CARRUSEL DE RECUERDOS
+       📸 CARRUSEL
     ===================================================== */
 
     .carrusel {
@@ -1048,22 +1390,6 @@
     }
 
 
-    .imagen-recuerdo.saliendo {
-
-      opacity: 0;
-
-      transform:
-        translateX(-100%)
-        scale(.96);
-
-      z-index: 1;
-    }
-
-
-    /* =====================================================
-       ⬅️➡️ BOTONES CARRUSEL
-    ===================================================== */
-
     .flecha {
 
       position: absolute;
@@ -1134,10 +1460,6 @@
     }
 
 
-    /* =====================================================
-       🔘 INDICADORES
-    ===================================================== */
-
     .indicadores {
 
       display: flex;
@@ -1190,10 +1512,6 @@
     }
 
 
-    /* =====================================================
-       📝 TEXTO DEL RECUERDO
-    ===================================================== */
-
     .texto-recuerdo {
 
       min-height: 50px;
@@ -1243,6 +1561,7 @@
 
       font-size: 1.1rem;
     }
+
 
     .numero {
 
@@ -1294,6 +1613,7 @@
         1px solid
         rgba(183,154,232,.35);
     }
+
 
     .firma {
 
@@ -1347,6 +1667,7 @@
         rgba(255,255,255,.15);
     }
 
+
     .final.mostrar {
 
       display: block;
@@ -1356,6 +1677,7 @@
         1.2s
         ease;
     }
+
 
     @keyframes finalEntrada {
 
@@ -1378,11 +1700,13 @@
       }
     }
 
+
     .final h2 {
 
       color:
         var(--rosa);
     }
+
 
     .final p {
 
@@ -1390,6 +1714,7 @@
 
       font-size: 1.15rem;
     }
+
 
     .final-estrellas {
 
@@ -1407,8 +1732,9 @@
 
       .constelacion {
 
-        height: 500px;
+        height: 560px;
       }
+
 
       .recuerdos {
 
@@ -1417,12 +1743,14 @@
         top: 40px;
       }
 
+
       .tu {
 
         left: 35%;
 
         top: 210px;
       }
+
 
       .carta-planeta {
 
@@ -1431,12 +1759,14 @@
         top: 380px;
       }
 
+
       .linea-1 {
 
         width: 230px;
 
         left: 22%;
       }
+
 
       .linea-2 {
 
@@ -1447,10 +1777,18 @@
         top: 260px;
       }
 
+
       .linea-3 {
 
         display: none;
       }
+
+
+      .sistema-planeta {
+
+        bottom: -5px;
+      }
+
 
       .contenedor-imagen {
 
@@ -1468,35 +1806,42 @@
         height: 105px;
       }
 
+
       .icono {
 
         font-size: 34px;
       }
+
 
       .estrella-especial span {
 
         font-size: .75rem;
       }
 
+
       .recuerdos {
 
         left: 0;
       }
+
 
       .tu {
 
         left: 32%;
       }
 
+
       .carta-planeta {
 
         right: 0;
       }
 
+
       .contenedor-imagen {
 
         height: 230px;
       }
+
 
       .flecha {
 
@@ -1505,6 +1850,14 @@
         height: 42px;
 
         font-size: 21px;
+      }
+
+
+      .sistema-planeta {
+
+        transform:
+          translateX(-50%)
+          scale(.8);
       }
     }
 
@@ -1516,10 +1869,31 @@
 <body>
 
 
-<!-- ⭐ ESTRELLAS -->
+<!-- =====================================================
+     🌌 NEBULOSA
+===================================================== -->
+
+<div class="nebulosa">
+
+  <div class="nube nube-rosa"></div>
+
+  <div class="nube nube-morada"></div>
+
+  <div class="nube nube-azul"></div>
+
+</div>
+
+
+<!-- =====================================================
+     ⭐ ESTRELLAS
+===================================================== -->
 
 <div id="estrellas"></div>
 
+
+<!-- =====================================================
+     🌌 UNIVERSO
+===================================================== -->
 
 <div class="universo">
 
@@ -1598,7 +1972,7 @@
 
 
   <!-- =================================================
-       ✨ CONSTELACIÓN
+       ✨ UNIVERSO
   ================================================= -->
 
   <section
@@ -1700,6 +2074,20 @@
       </div>
 
 
+
+      <!-- =================================================
+           🪐 PLANETA
+      ================================================= -->
+
+      <div class="sistema-planeta">
+
+        <div class="orbita"></div>
+
+        <div class="planeta"></div>
+
+      </div>
+
+
     </div>
 
 
@@ -1764,7 +2152,7 @@
 
 
 <!-- =====================================================
-     🪐 VENTANA RECUERDOS
+     🪐 RECUERDOS
 ===================================================== -->
 
 <div
@@ -1800,18 +2188,11 @@
     </p>
 
 
-
-    <!-- =================================================
-         📸 CARRUSEL
-    ================================================= -->
-
     <div class="carrusel">
 
 
       <div class="contenedor-imagen">
 
-
-        <!-- IMAGEN 1 -->
 
         <img
           class="imagen-recuerdo activa"
@@ -1819,15 +2200,11 @@
           alt="Flores">
 
 
-        <!-- IMAGEN 2 -->
-
         <img
           class="imagen-recuerdo"
           src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80"
           alt="Flores rosas">
 
-
-        <!-- IMAGEN 3 -->
 
         <img
           class="imagen-recuerdo"
@@ -1835,15 +2212,11 @@
           alt="Cielo nocturno">
 
 
-        <!-- IMAGEN 4 -->
-
         <img
           class="imagen-recuerdo"
           src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
           alt="Paisaje">
 
-
-        <!-- IMAGEN 5 -->
 
         <img
           class="imagen-recuerdo"
@@ -1854,70 +2227,54 @@
       </div>
 
 
-
-      <!-- ⬅️ ANTERIOR -->
-
       <button
         class="flecha flecha-izquierda"
-        onclick="cambiarImagen(-1)"
-        aria-label="Imagen anterior">
+        onclick="cambiarImagen(-1)">
 
         ←
 
       </button>
 
 
-
-      <!-- ➡️ SIGUIENTE -->
-
       <button
         class="flecha flecha-derecha"
-        onclick="cambiarImagen(1)"
-        aria-label="Imagen siguiente">
+        onclick="cambiarImagen(1)">
 
         →
 
       </button>
 
 
-
-      <!-- 🔘 INDICADORES -->
-
       <div class="indicadores">
 
 
         <button
           class="indicador activo"
-          onclick="irAImagen(0)"
-          aria-label="Imagen 1">
+          onclick="irAImagen(0)">
         </button>
 
 
         <button
           class="indicador"
-          onclick="irAImagen(1)"
-          aria-label="Imagen 2">
+          onclick="irAImagen(1)">
         </button>
 
 
         <button
           class="indicador"
-          onclick="irAImagen(2)"
-          aria-label="Imagen 3">
+          onclick="irAImagen(2)">
         </button>
 
 
         <button
           class="indicador"
-          onclick="irAImagen(3)"
-          aria-label="Imagen 4">
+          onclick="irAImagen(3)">
         </button>
 
 
         <button
           class="indicador"
-          onclick="irAImagen(4)"
-          aria-label="Imagen 5">
+          onclick="irAImagen(4)">
         </button>
 
 
@@ -1947,13 +2304,12 @@
 
   </div>
 
-
 </div>
 
 
 
 <!-- =====================================================
-     💗 VENTANA RAZONES
+     💗 RAZONES
 ===================================================== -->
 
 <div
@@ -2011,13 +2367,12 @@
 
   </div>
 
-
 </div>
 
 
 
 <!-- =====================================================
-     💌 VENTANA CARTA
+     💌 CARTA
 ===================================================== -->
 
 <div
@@ -2117,7 +2472,6 @@
 
   </div>
 
-
 </div>
 
 
@@ -2126,7 +2480,7 @@
 
 
   /* =====================================================
-     ⭐ ESTRELLAS
+     ⭐ CREAR ESTRELLAS
   ===================================================== */
 
   const estrellas =
@@ -2171,47 +2525,106 @@
 
 
   /* =====================================================
-     🌠 ESTRELLAS FUGACES
+     🌠 COMETAS AUTOMÁTICOS
   ===================================================== */
 
-  function crearEstrellaFugaz() {
+  function crearCometa() {
 
-    const estrella =
+    const cometa =
       document.createElement("div");
 
-    estrella.className =
-      "estrella-fugaz";
+    cometa.className =
+      "cometa";
 
-    estrella.style.right =
-      Math.random() * 40 + "%";
 
-    estrella.style.top =
-      Math.random() * 40 + "%";
+    /*
+     * Aparece desde diferentes
+     * posiciones para que no
+     * sea siempre igual.
+     */
+
+    const posiciones = [
+
+      {
+        top: "10%",
+        right: "-150px"
+      },
+
+      {
+        top: "25%",
+        right: "-200px"
+      },
+
+      {
+        top: "45%",
+        right: "-150px"
+      },
+
+      {
+        top: "5%",
+        right: "10%"
+      }
+
+    ];
+
+
+    const posicion =
+      posiciones[
+        Math.floor(
+          Math.random() *
+          posiciones.length
+        )
+        ];
+
+
+    cometa.style.top =
+      posicion.top;
+
+    cometa.style.right =
+      posicion.right;
+
 
     document.body.appendChild(
-      estrella
+      cometa
     );
+
 
     setTimeout(
       () => {
 
-        estrella.remove();
+        cometa.remove();
 
       },
-      1500
+      2500
     );
   }
 
 
+  /*
+   * Primer cometa después
+   * de unos segundos.
+   */
+
+  setTimeout(
+    crearCometa,
+    3500
+  );
+
+
+  /*
+   * Después aparece uno
+   * cada cierto tiempo.
+   */
+
   setInterval(
-    crearEstrellaFugaz,
-    7000
+    crearCometa,
+    9000
   );
 
 
 
   /* =====================================================
-     🌙 FASE DE LA LUNA
+     🌙 FASE LUNAR
   ===================================================== */
 
   const fasesLuna = [
@@ -2241,12 +2654,19 @@
   function cambiarFaseLuna() {
 
     const luna =
-      document.getElementById("luna");
+      document.getElementById(
+        "luna"
+      );
+
 
     const texto =
-      document.getElementById("faseLuna");
+      document.getElementById(
+        "faseLuna"
+      );
+
 
     faseActual++;
+
 
     if (
       faseActual >=
@@ -2256,13 +2676,16 @@
       faseActual = 0;
     }
 
+
     luna.className =
       "luna luna-fase-" +
       faseActual;
 
+
     texto.textContent =
       fasesLuna[faseActual] +
       " · Haz clic para cambiarla";
+
 
     crearEstrellasEspeciales();
   }
@@ -2282,34 +2705,50 @@
     ) {
 
       const estrella =
-        document.createElement("div");
+        document.createElement(
+          "div"
+        );
+
 
       estrella.textContent =
         "✦";
 
+
       estrella.style.position =
         "fixed";
 
+
       estrella.style.left =
-        Math.random() * 100 + "%";
+        Math.random() *
+        100 +
+        "%";
+
 
       estrella.style.top =
-        Math.random() * 60 + "%";
+        Math.random() *
+        60 +
+        "%";
+
 
       estrella.style.color =
         "white";
 
+
       estrella.style.fontSize =
         "18px";
+
 
       estrella.style.pointerEvents =
         "none";
 
+
       estrella.style.zIndex =
         "50";
 
+
       estrella.style.textShadow =
         "0 0 15px white";
+
 
       estrella.animate(
 
@@ -2317,18 +2756,21 @@
 
           {
             opacity: 0,
+
             transform:
               "scale(0)"
           },
 
           {
             opacity: 1,
+
             transform:
               "scale(1.5)"
           },
 
           {
             opacity: 0,
+
             transform:
               "scale(0)"
           }
@@ -2342,11 +2784,14 @@
           easing:
             "ease-out"
         }
+
       );
+
 
       document.body.appendChild(
         estrella
       );
+
 
       setTimeout(
         () => {
@@ -2365,7 +2810,8 @@
      🌙 MODO NOCHE
   ===================================================== */
 
-  let modoNocheActivo = false;
+  let modoNocheActivo =
+    false;
 
 
   function modoNoche() {
@@ -2373,14 +2819,17 @@
     modoNocheActivo =
       !modoNocheActivo;
 
+
     document.body.classList.toggle(
       "modo-noche"
     );
+
 
     const boton =
       document.querySelector(
         ".boton-secundario"
       );
+
 
     if (
       modoNocheActivo
@@ -2389,7 +2838,9 @@
       boton.textContent =
         "☀️ Salir del modo noche";
 
+
       crearEstrellas(80);
+
 
       crearEstrellasEspeciales();
 
@@ -2409,7 +2860,9 @@
   function entrarUniverso() {
 
     document
-      .getElementById("universo")
+      .getElementById(
+        "universo"
+      )
       .scrollIntoView({
 
         behavior:
@@ -2434,38 +2887,50 @@
   ) {
 
     const ventana =
-      document.getElementById(id);
+      document.getElementById(
+        id
+      );
+
 
     ventana.classList.add(
       "activa"
     );
 
+
     visitadas.add(id);
+
 
     elemento.classList.add(
       "visitada"
     );
+
 
     if (
       id === "razones"
     ) {
 
       crearCorazones();
+
     }
+
 
     if (
       id === "recuerdos"
     ) {
 
       crearEstrellasEspeciales();
+
     }
+
 
     if (
       id === "carta"
     ) {
 
       crearCorazones();
+
     }
+
 
     comprobarConstelacion();
   }
@@ -2487,9 +2952,11 @@
           "constelacion"
         );
 
+
       constelacion.classList.add(
         "completa"
       );
+
 
       setTimeout(
         () => {
@@ -2501,6 +2968,7 @@
             .classList.add(
             "mostrar"
           );
+
 
           crearCorazones();
 
@@ -2519,13 +2987,16 @@
   function cerrarVentanas() {
 
     document
-      .querySelectorAll(".ventana")
+      .querySelectorAll(
+        ".ventana"
+      )
       .forEach(
         ventana => {
 
           ventana.classList.remove(
             "activa"
           );
+
         }
       );
   }
@@ -2533,7 +3004,7 @@
 
 
   /* =====================================================
-     📸 CARRUSEL DE RECUERDOS
+     📸 CARRUSEL
   ===================================================== */
 
   const imagenes =
@@ -2541,10 +3012,12 @@
       ".imagen-recuerdo"
     );
 
+
   const indicadores =
     document.querySelectorAll(
       ".indicador"
     );
+
 
   const textoRecuerdo =
     document.getElementById(
@@ -2569,7 +3042,8 @@
 
   let imagenActual = 0;
 
-  let animandoCarrusel = false;
+  let animandoCarrusel =
+    false;
 
 
   function cambiarImagen(
@@ -2582,6 +3056,7 @@
 
       return;
     }
+
 
     let nuevaImagen =
       imagenActual +
@@ -2613,7 +3088,6 @@
   }
 
 
-
   function irAImagen(
     numero,
     direccion = null
@@ -2627,20 +3101,17 @@
     }
 
 
-    animandoCarrusel = true;
+    animandoCarrusel =
+      true;
 
 
     const actual =
       imagenes[imagenActual];
 
+
     const nueva =
       imagenes[numero];
 
-
-    /* Si vamos hacia la derecha,
-       la nueva imagen entra desde la derecha.
-       Si vamos hacia la izquierda,
-       entra desde la izquierda. */
 
     const movimiento =
       direccion === -1
@@ -2664,9 +3135,6 @@
       "2";
 
 
-    /* Forzar al navegador
-       a registrar la posición inicial */
-
     nueva.offsetHeight;
 
 
@@ -2676,14 +3144,15 @@
         nueva.style.transform =
           "translateX(0) scale(1)";
 
+
         actual.style.transform =
           direccion === -1
             ? "translateX(100%) scale(.96)"
             : "translateX(-100%) scale(.96)";
 
+
         actual.style.opacity =
           "0";
-
       }
     );
 
@@ -2692,21 +3161,28 @@
       () => {
 
         imagenes.forEach(
-          (imagen, indice) => {
+          (
+            imagen,
+            indice
+          ) => {
 
             if (
-              indice !== numero
+              indice !==
+              numero
             ) {
 
               imagen.style.opacity =
                 "0";
 
+
               imagen.style.transform =
                 "translateX(100%) scale(.96)";
+
 
               imagen.style.zIndex =
                 "1";
             }
+
           }
         );
 
@@ -2715,17 +3191,22 @@
           "activa"
         );
 
+
         actual.classList.remove(
           "activa"
         );
 
 
         indicadores.forEach(
-          (indicador, indice) => {
+          (
+            indicador,
+            indice
+          ) => {
 
             indicador.classList.toggle(
               "activo",
-              indice === numero
+              indice ===
+              numero
             );
 
           }
@@ -2742,7 +3223,6 @@
 
         animandoCarrusel =
           false;
-
 
       },
       600
@@ -2794,16 +3274,22 @@
 
 
     document
-      .getElementById("razon")
+      .getElementById(
+        "razon"
+      )
       .textContent =
       razones[razonActual];
 
 
     document
-      .getElementById("numeroRazon")
+      .getElementById(
+        "numeroRazon"
+      )
       .textContent =
       "Razón #" +
-      (razonActual + 1);
+      (
+        razonActual + 1
+      );
 
 
     crearCorazones();
@@ -2835,10 +3321,14 @@
     ) {
 
       const corazon =
-        document.createElement("div");
+        document.createElement(
+          "div"
+        );
+
 
       corazon.className =
         "corazon-flotante";
+
 
       corazon.textContent =
         corazones[
@@ -2848,18 +3338,27 @@
           )
           ];
 
+
       corazon.style.left =
-        Math.random() * 100 + "%";
+        Math.random() *
+        100 +
+        "%";
+
 
       corazon.style.bottom =
         "20px";
 
+
       corazon.style.animationDelay =
-        Math.random() * .8 + "s";
+        Math.random() *
+        .8 +
+        "s";
+
 
       document.body.appendChild(
         corazon
       );
+
 
       setTimeout(
         () => {
@@ -2879,7 +3378,9 @@
   ===================================================== */
 
   document
-    .querySelectorAll(".ventana")
+    .querySelectorAll(
+      ".ventana"
+    )
     .forEach(
       ventana => {
 
@@ -2893,9 +3394,12 @@
             ) {
 
               cerrarVentanas();
+
             }
+
           }
         );
+
       }
     );
 
