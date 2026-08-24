@@ -585,6 +585,8 @@
       height:520px;
 
       margin:auto;
+
+      margin-bottom:80px;
     }
 
 
@@ -775,7 +777,9 @@
     }
 
 
-    /* posiciones */
+    /* =====================================================
+       📍 POSICIONES
+    ===================================================== */
 
     .recuerdos{
       left:8%;
@@ -949,7 +953,7 @@
 
       width:100%;
 
-      max-width:700px;
+      max-width:1150px;
 
       margin:90px auto 0;
 
@@ -1071,23 +1075,28 @@
       color:var(--rosa);
     }
 
+
+    /* =====================================================
+       📸 IMAGEN DEL ECLIPSE
+    ===================================================== */
+
     #imagenEclipse{
 
       display:none;
 
       width:100%;
 
-      max-width:500px;
+      max-width:1145px;
 
       height:auto;
 
-      max-height:650px;
+      aspect-ratio:1145 / 1374;
 
       object-fit:contain;
 
-      margin:25px auto 10px;
+      margin:30px auto 0;
 
-      border-radius:28px;
+      border-radius:32px;
 
       border:
         1px solid
@@ -1109,6 +1118,7 @@
     #imagenEclipse.mostrar{
 
       display:block;
+
     }
 
     @keyframes eclipseEntrada{
@@ -1130,6 +1140,82 @@
           scale(1)
           translateY(0);
       }
+    }
+
+
+    /* =====================================================
+       💜 FRASE DESPUÉS DE LA IMAGEN
+    ===================================================== */
+
+    #fraseEclipse{
+
+      display:none;
+
+      max-width:850px;
+
+      margin:30px auto 10px;
+
+      padding:20px 25px;
+
+      font-size:1.45rem;
+
+      line-height:1.7;
+
+      font-weight:bold;
+
+      color:var(--blanco);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(243,166,200,.12),
+          rgba(183,154,232,.12)
+        );
+
+      border-radius:22px;
+
+      border:
+        1px solid
+        rgba(243,166,200,.25);
+
+      box-shadow:
+        0 10px 35px
+        rgba(0,0,0,.25);
+
+      animation:
+        fraseEntrada
+        1s
+        ease;
+    }
+
+    #fraseEclipse.mostrar{
+
+      display:block;
+
+    }
+
+    @keyframes fraseEntrada{
+
+      from{
+
+        opacity:0;
+
+        transform:
+          translateY(20px)
+          scale(.95);
+
+      }
+
+      to{
+
+        opacity:1;
+
+        transform:
+          translateY(0)
+          scale(1);
+
+      }
+
     }
 
 
@@ -1699,6 +1785,7 @@
 
       .constelacion{
         height:560px;
+        margin-bottom:70px;
       }
 
       .recuerdos{
@@ -1726,6 +1813,14 @@
 
       .acertijo-seccion{
         margin-top:70px;
+      }
+
+      #imagenEclipse{
+        border-radius:24px;
+      }
+
+      #fraseEclipse{
+        font-size:1.2rem;
       }
 
     }
@@ -1775,6 +1870,15 @@
         transform:
           translateX(-50%)
           scale(.8);
+      }
+
+      #imagenEclipse{
+        border-radius:20px;
+      }
+
+      #fraseEclipse{
+        padding:18px;
+        font-size:1.05rem;
       }
 
     }
@@ -1942,8 +2046,8 @@
         </div>
 
         <span>
-                Recuerdos
-            </span>
+          Recuerdos
+        </span>
 
       </div>
 
@@ -1960,8 +2064,8 @@
         </div>
 
         <span>
-                Tú
-            </span>
+          Tú
+        </span>
 
       </div>
 
@@ -1978,8 +2082,8 @@
         </div>
 
         <span>
-                Carta
-            </span>
+          Carta
+        </span>
 
       </div>
 
@@ -2112,14 +2216,25 @@
       </button>
 
 
-      <!--
-          📸 CAMBIA ESTA URL POR TU IMAGEN DEL ECLIPSE
-      -->
+      <!-- =================================================
+           📸 IMAGEN
+      ================================================= -->
 
       <img
         id="imagenEclipse"
         src="eclipse.png"
         alt="Nuestro eclipse">
+
+
+      <!-- =================================================
+           💜 FRASE
+      ================================================= -->
+
+      <div id="fraseEclipse">
+
+        💜 Tú eres mi universo. 🌌
+
+      </div>
 
     </div>
 
@@ -3479,12 +3594,21 @@
     if(correcto){
 
       resultado.innerHTML =
-        "💜 ¡Lo encontraste! Tú eres mi universo. 🌌";
+        "💜 ¡Lo encontraste! 🌌";
 
 
       document
         .getElementById(
           "imagenEclipse"
+        )
+        .classList.add(
+        "mostrar"
+      );
+
+
+      document
+        .getElementById(
+          "fraseEclipse"
         )
         .classList.add(
         "mostrar"
