@@ -45,7 +45,10 @@
       transition:background 1s ease;
     }
 
-    /* ================= NEBULOSA ================= */
+
+    /* =====================================================
+       🌌 NEBULOSA
+    ===================================================== */
 
     .nebulosa{
       position:fixed;
@@ -61,7 +64,13 @@
       position:absolute;
       border-radius:50%;
       filter:blur(50px);
-      animation:moverNebulosa 18s ease-in-out infinite alternate;
+
+      animation:
+        moverNebulosa
+        18s
+        ease-in-out
+        infinite
+        alternate;
     }
 
     .nube-rosa{
@@ -70,6 +79,7 @@
       left:5%;
       top:10%;
       background:rgba(236,111,169,.28);
+      animation-delay:-4s;
     }
 
     .nube-morada{
@@ -78,7 +88,7 @@
       right:5%;
       top:25%;
       background:rgba(141,104,199,.3);
-      animation-delay:-5s;
+      animation-delay:-8s;
     }
 
     .nube-azul{
@@ -87,24 +97,49 @@
       left:35%;
       bottom:5%;
       background:rgba(76,143,220,.18);
-      animation-delay:-10s;
+      animation-delay:-12s;
     }
 
     @keyframes moverNebulosa{
+
       0%{
-        transform:translate(0,0) scale(1);
+        transform:translate(0,0) scale(1) rotate(0deg);
       }
 
       50%{
-        transform:translate(100px,-70px) scale(1.15);
+        transform:translate(100px,-70px) scale(1.15) rotate(20deg);
       }
 
       100%{
-        transform:translate(-80px,90px) scale(.9);
+        transform:translate(-80px,90px) scale(.9) rotate(-15deg);
       }
+
     }
 
-    /* ================= ESTRELLAS ================= */
+
+    /* =====================================================
+       🌙 MODO NOCHE
+    ===================================================== */
+
+    body.modo-noche{
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          #25154b 0%,
+          #090615 45%,
+          #020107 100%
+        );
+    }
+
+    body.modo-noche .nebulosa{
+      opacity:.35;
+    }
+
+
+    /* =====================================================
+       ⭐ ESTRELLAS
+    ===================================================== */
 
     #estrellas{
       position:fixed;
@@ -117,13 +152,21 @@
       position:absolute;
       width:3px;
       height:3px;
+
       background:white;
       border-radius:50%;
+
       box-shadow:0 0 6px white;
-      animation:parpadear 2s infinite ease-in-out;
+
+      animation:
+        parpadear
+        2s
+        infinite
+        ease-in-out;
     }
 
     @keyframes parpadear{
+
       0%,100%{
         opacity:.15;
         transform:scale(.6);
@@ -133,16 +176,23 @@
         opacity:1;
         transform:scale(1.4);
       }
+
     }
 
-    /* ================= COMETA ================= */
+
+    /* =====================================================
+       🌠 COMETAS
+    ===================================================== */
 
     .cometa{
       position:fixed;
+
       width:180px;
       height:3px;
+
       pointer-events:none;
       z-index:20;
+
       opacity:0;
 
       background:
@@ -161,24 +211,38 @@
 
       transform:rotate(-35deg);
 
-      animation:atravesarCometa 2.3s linear forwards;
+      animation:
+        atravesarCometa
+        2.3s
+        linear
+        forwards;
     }
 
     .cometa::after{
+
       content:"✦";
+
       position:absolute;
+
       right:-8px;
       top:-9px;
+
       color:white;
+
       font-size:20px;
-      text-shadow:0 0 10px white;
+
+      text-shadow:
+        0 0 10px white,
+        0 0 20px var(--rosa);
     }
 
     @keyframes atravesarCometa{
 
       0%{
         opacity:0;
-        transform:translate(250px,-100px) rotate(-35deg);
+        transform:
+          translate(250px,-100px)
+          rotate(-35deg);
       }
 
       10%{
@@ -191,31 +255,49 @@
 
       100%{
         opacity:0;
-        transform:translate(-700px,600px) rotate(-35deg);
+
+        transform:
+          translate(-700px,600px)
+          rotate(-35deg);
       }
 
     }
 
-    /* ================= PORTADA ================= */
+
+    /* =====================================================
+       🌌 UNIVERSO
+    ===================================================== */
 
     .universo{
       position:relative;
       z-index:2;
     }
 
+
+    /* =====================================================
+       🌙 PORTADA
+    ===================================================== */
+
     .portada{
+
       min-height:100vh;
+
       display:flex;
       flex-direction:column;
+
       align-items:center;
       justify-content:center;
+
       text-align:center;
+
       padding:30px;
     }
 
     .luna{
+
       width:145px;
       height:145px;
+
       border-radius:50%;
 
       background:
@@ -230,13 +312,34 @@
         0 0 35px rgba(255,255,255,.65),
         0 0 90px rgba(183,154,232,.4);
 
-      animation:flotar 4s ease-in-out infinite;
+      animation:
+        flotar
+        4s
+        ease-in-out
+        infinite;
 
       margin-bottom:20px;
+
       cursor:pointer;
+
+      transition:
+        background 1s ease,
+        box-shadow 1s ease,
+        transform .3s ease;
+    }
+
+    .luna:hover{
+      transform:scale(1.08);
+    }
+
+    .fase-luna{
+      margin-bottom:25px;
+      font-size:.9rem;
+      opacity:.65;
     }
 
     @keyframes flotar{
+
       0%,100%{
         transform:translateY(0);
       }
@@ -244,16 +347,103 @@
       50%{
         transform:translateY(-15px);
       }
+
     }
 
-    .fase-luna{
-      opacity:.7;
-      margin-bottom:20px;
+
+    /* =====================================================
+       🌙 FASES
+    ===================================================== */
+
+    .luna-fase-0{
+      background:
+        radial-gradient(
+          circle at 35% 30%,
+          #aaa,
+          #444 50%,
+          #111 100%
+        );
     }
+
+    .luna-fase-1{
+      background:
+        linear-gradient(
+          90deg,
+          #222 0 35%,
+          #eee 36% 100%
+        );
+    }
+
+    .luna-fase-2{
+      background:
+        linear-gradient(
+          90deg,
+          #222 0 50%,
+          #eee 51% 100%
+        );
+    }
+
+    .luna-fase-3{
+      background:
+        linear-gradient(
+          90deg,
+          #222 0 25%,
+          #eee 26% 100%
+        );
+    }
+
+    .luna-fase-4{
+      background:
+        radial-gradient(
+          circle at 35% 30%,
+          #ffffff,
+          #e6dcf7 45%,
+          #a89bc8 100%
+        );
+    }
+
+    .luna-fase-5{
+      background:
+        linear-gradient(
+          90deg,
+          #eee 0 74%,
+          #222 75% 100%
+        );
+    }
+
+    .luna-fase-6{
+      background:
+        linear-gradient(
+          90deg,
+          #eee 0 49%,
+          #222 50% 100%
+        );
+    }
+
+    .luna-fase-7{
+      background:
+        linear-gradient(
+          90deg,
+          #eee 0 25%,
+          #222 26% 100%
+        );
+    }
+
+
+    /* =====================================================
+       📝 TITULO
+    ===================================================== */
 
     .portada h1{
+
       margin:0;
-      font-size:clamp(2.5rem,8vw,5rem);
+
+      font-size:
+        clamp(
+          2.5rem,
+          8vw,
+          5rem
+        );
 
       background:
         linear-gradient(
@@ -268,26 +458,48 @@
     }
 
     .portada p{
+
       max-width:650px;
+
       line-height:1.8;
+
       font-size:1.15rem;
+
       opacity:.85;
     }
 
+
+    /* =====================================================
+       🔘 BOTONES
+    ===================================================== */
+
     .botones-portada{
+
       display:flex;
+
       gap:12px;
-      flex-wrap:wrap;
+
       justify-content:center;
+
+      flex-wrap:wrap;
     }
 
     .boton{
+
       border:none;
+
       border-radius:999px;
+
       padding:14px 25px;
+
       margin-top:20px;
+
       color:white;
+
       font-weight:bold;
+
+      font-size:1rem;
+
       cursor:pointer;
 
       background:
@@ -297,40 +509,88 @@
           var(--morado-fuerte)
         );
 
-      box-shadow:0 10px 30px rgba(236,111,169,.25);
-      transition:.2s;
+      box-shadow:
+        0 10px 30px
+        rgba(236,111,169,.25);
+
+      transition:
+        transform .2s,
+        box-shadow .2s;
     }
 
     .boton:hover{
-      transform:translateY(-4px) scale(1.03);
+
+      transform:
+        translateY(-4px)
+        scale(1.03);
+
+      box-shadow:
+        0 15px 40px
+        rgba(183,154,232,.4);
     }
 
     .boton-secundario{
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.2);
+
+      background:
+        rgba(255,255,255,.08);
+
+      border:
+        1px solid
+        rgba(255,255,255,.15);
     }
 
-    /* ================= SECCION ================= */
+
+    /* =====================================================
+       ✨ SECCIÓN UNIVERSO
+    ===================================================== */
 
     .seccion-universo{
+
+      min-height:100vh;
+
       max-width:1100px;
+
       margin:auto;
+
       padding:100px 25px;
+
       text-align:center;
     }
 
-    .subtitulo{
-      opacity:.7;
-      margin-bottom:60px;
+    .seccion-universo h2{
+
+      font-size:2.5rem;
+
+      margin-bottom:10px;
     }
 
-    /* ================= ACERTIJO ================= */
+    .subtitulo{
+
+      opacity:.7;
+
+      margin-bottom:50px;
+    }
+
+
+    /* =====================================================
+       🧩 ACERTIJO
+    ===================================================== */
 
     .acertijo-seccion{
+
+      position:relative;
+
+      z-index:8;
+
       width:100%;
+
       max-width:700px;
-      margin:0 auto 90px;
-      padding:30px 20px;
+
+      margin:0 auto 100px;
+
+      padding:35px 25px;
+
+      text-align:center;
 
       border-radius:30px;
 
@@ -341,36 +601,84 @@
           rgba(183,154,232,.08)
         );
 
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:0 20px 60px rgba(0,0,0,.25);
+      border:
+        1px solid
+        rgba(255,255,255,.12);
 
-      scroll-margin-top:30px;
+      box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.25);
     }
 
     .acertijo-seccion h2{
+
       color:var(--rosa);
+
+      margin-bottom:10px;
+    }
+
+    .acertijo-seccion p{
+
+      line-height:1.8;
+
+      opacity:.8;
     }
 
     .palabras{
+
       display:flex;
+
       flex-wrap:wrap;
+
       justify-content:center;
+
       gap:10px;
-      margin:25px 0;
+
+      margin:25px auto;
+
+      max-width:600px;
     }
 
     .palabra{
+
       border:none;
-      border-radius:999px;
+
       padding:10px 16px;
+
+      border-radius:999px;
+
       color:white;
+
+      background:
+        rgba(255,255,255,.09);
+
+      border:
+        1px solid
+        rgba(255,255,255,.15);
+
       cursor:pointer;
 
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.15);
+      transition:
+        transform .2s,
+        background .2s,
+        box-shadow .2s;
+    }
+
+    .palabra:hover{
+
+      transform:
+        translateY(-3px);
+
+      background:
+        rgba(236,111,169,.25);
+
+      box-shadow:
+        0 0 18px
+        rgba(236,111,169,.25);
     }
 
     .palabra.seleccionada{
+
       background:
         linear-gradient(
           135deg,
@@ -378,84 +686,274 @@
           var(--morado-fuerte)
         );
 
-      transform:scale(1.05);
+      box-shadow:
+        0 0 20px
+        rgba(236,111,169,.35);
+
+      transform:
+        translateY(-3px)
+        scale(1.04);
     }
 
     #resultadoAcertijo{
+
       min-height:35px;
+
+      margin-top:15px;
+
       font-weight:bold;
+
       color:var(--rosa);
     }
 
+
+    /* =====================================================
+       🔄 BOTÓN REINICIAR
+    ===================================================== */
+
+    .boton-reiniciar{
+
+      background:
+        rgba(255,255,255,.07);
+
+      border:
+        1px solid
+        rgba(255,255,255,.18);
+
+      margin-left:8px;
+    }
+
+
+    /* =====================================================
+       🌑 ECLIPSE
+    ===================================================== */
+
     #imagenEclipse{
+
       display:none;
+
       width:100%;
+
       max-width:500px;
+
       height:auto;
+
+      max-height:650px;
+
       object-fit:contain;
+
+      margin:30px auto 15px;
+
       border-radius:28px;
-      margin:25px auto 10px;
-      box-shadow:0 20px 60px rgba(0,0,0,.5);
+
+      border:
+        1px solid
+        rgba(243,166,200,.4);
+
+      box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.5),
+
+        0 0 35px
+        rgba(183,154,232,.2);
+
+      animation:
+        eclipseEntrada
+        1s
+        ease;
     }
 
     #imagenEclipse.mostrar{
       display:block;
     }
 
-    #fraseEclipse{
-      display:none;
-      max-width:600px;
-      margin:auto;
-      line-height:1.9;
-      font-size:1.05rem;
+    @keyframes eclipseEntrada{
+
+      from{
+
+        opacity:0;
+
+        transform:
+          scale(.85)
+          translateY(20px);
+      }
+
+      to{
+
+        opacity:1;
+
+        transform:
+          scale(1)
+          translateY(0);
+      }
     }
 
-    /* ================= CONSTELACION ================= */
+
+    /* =====================================================
+       💜 MENSAJE DEL ECLIPSE
+    ===================================================== */
+
+    .mensaje-eclipse{
+
+      display:none;
+
+      margin:25px auto 5px;
+
+      max-width:600px;
+
+      padding:25px;
+
+      border-radius:22px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(243,166,200,.10),
+          rgba(183,154,232,.10)
+        );
+
+      border:
+        1px solid
+        rgba(243,166,200,.20);
+
+      line-height:1.9;
+
+      font-size:1.05rem;
+
+      color:
+        rgba(255,255,255,.92);
+
+      animation:
+        mensajeEntrada
+        1.2s
+        ease;
+    }
+
+    .mensaje-eclipse.mostrar{
+      display:block;
+    }
+
+    @keyframes mensajeEntrada{
+
+      from{
+        opacity:0;
+        transform:
+          translateY(20px)
+          scale(.95);
+      }
+
+      to{
+        opacity:1;
+        transform:
+          translateY(0)
+          scale(1);
+      }
+    }
+
+
+    /* =====================================================
+       🌌 CONSTELACIÓN
+    ===================================================== */
 
     .constelacion{
+
       position:relative;
+
       width:min(900px,100%);
-      height:520px;
+
+      height:650px;
+
       margin:auto;
     }
 
+
+    /* =====================================================
+       ✨ LÍNEAS
+    ===================================================== */
+
     .linea{
+
       position:absolute;
+
       height:3px;
+
       border-radius:999px;
+
       transform-origin:left center;
+
       opacity:0;
 
       background:
         linear-gradient(
           90deg,
           transparent,
-          white,
-          var(--rosa),
-          white,
+          white 20%,
+          var(--rosa) 50%,
+          white 80%,
           transparent
         );
 
       box-shadow:
-        0 0 10px white,
-        0 0 25px var(--rosa);
+        0 0 5px white,
+        0 0 12px white,
+        0 0 25px var(--rosa),
+        0 0 45px var(--morado);
 
-      transition:.6s;
+      transition:
+        opacity .7s ease,
+        width .8s cubic-bezier(.2,.8,.2,1);
     }
 
     .linea.visible{
       opacity:1;
     }
 
+    .constelacion.completa .linea{
+
+      animation:
+        brilloLinea
+        2s
+        ease-in-out
+        infinite alternate;
+    }
+
+    @keyframes brilloLinea{
+
+      from{
+        filter:
+          brightness(1)
+          drop-shadow(0 0 4px white);
+      }
+
+      to{
+        filter:
+          brightness(1.8)
+          drop-shadow(0 0 15px white);
+      }
+    }
+
+
+    /* =====================================================
+       ⭐ ESTRELLAS INTERACTIVAS
+    ===================================================== */
+
     .estrella-especial{
+
       position:absolute;
+
       width:120px;
       height:120px;
+
       border-radius:50%;
+
       display:flex;
+
       flex-direction:column;
+
       justify-content:center;
+
       align-items:center;
+
       cursor:pointer;
 
       background:
@@ -465,57 +963,151 @@
           rgba(255,255,255,.04)
         );
 
-      border:1px solid rgba(255,255,255,.2);
-      transition:.3s;
+      border:
+        1px solid
+        rgba(255,255,255,.15);
+
+      transition:
+        transform .3s,
+        box-shadow .3s,
+        border .3s;
+
+      z-index:10;
+    }
+
+    .estrella-especial::before{
+
+      content:"";
+
+      position:absolute;
+
+      inset:-15px;
+
+      border-radius:50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(243,166,200,.15),
+          transparent 70%
+        );
+
+      animation:
+        pulso
+        2.5s
+        infinite;
+
+      z-index:-1;
+    }
+
+    @keyframes pulso{
+
+      0%,100%{
+        transform:scale(.8);
+        opacity:.3;
+      }
+
+      50%{
+        transform:scale(1.2);
+        opacity:1;
+      }
     }
 
     .estrella-especial:hover{
-      transform:scale(1.1);
-      box-shadow:0 0 30px var(--rosa);
+
+      transform:scale(1.12);
+
+      border-color:var(--rosa);
+
+      box-shadow:
+        0 0 35px
+        rgba(243,166,200,.4);
     }
 
     .estrella-especial.visitada{
+
       border-color:var(--morado);
-      box-shadow:0 0 25px var(--morado);
+
+      box-shadow:
+        0 0 30px
+        rgba(183,154,232,.5);
     }
 
     .icono{
+
       font-size:42px;
+
+      line-height:1;
+
+      margin-bottom:8px;
     }
+
+    .estrella-especial span{
+
+      font-size:.85rem;
+
+      font-weight:bold;
+
+      color:var(--rosa);
+    }
+
+
+    /* posiciones */
 
     .recuerdos{
       left:8%;
-      top:40px;
+      top:70px;
     }
 
     .tu{
       left:43%;
-      top:200px;
+      top:260px;
     }
 
     .carta-planeta{
       right:8%;
-      top:60px;
+      top:80px;
     }
 
-    /* ================= PLANETA ================= */
+
+    /* =====================================================
+       🪐 SISTEMA PLANETARIO
+    ===================================================== */
 
     .sistema-planeta{
+
       position:absolute;
+
       left:50%;
-      bottom:20px;
-      width:180px;
-      height:180px;
+
+      bottom:10px;
+
+      width:230px;
+      height:230px;
+
       transform:translateX(-50%);
+
+      z-index:3;
+
+      pointer-events:none;
     }
 
+
+    /* planeta */
+
     .planeta{
+
       position:absolute;
+
       left:50%;
       top:50%;
-      width:72px;
-      height:72px;
-      transform:translate(-50%,-50%);
+
+      width:82px;
+      height:82px;
+
+      transform:
+        translate(-50%,-50%);
+
       border-radius:50%;
 
       background:
@@ -523,49 +1115,453 @@
           circle at 30% 25%,
           #ffd9ed,
           #d38cc0 35%,
-          #8054a8 70%
+          #8054a8 70%,
+          #3b275e
         );
 
-      box-shadow:0 0 30px var(--rosa);
+      box-shadow:
+        0 0 25px
+        rgba(243,166,200,.55),
+
+        0 0 55px
+        rgba(183,154,232,.3),
+
+        0 0 100px
+        rgba(141,104,199,.2);
+
+      animation:
+        planetaFlotar
+        4s
+        ease-in-out
+        infinite;
     }
+
+    @keyframes planetaFlotar{
+
+      0%,100%{
+        transform:
+          translate(-50%,-50%)
+          scale(1);
+      }
+
+      50%{
+        transform:
+          translate(-50%,-53%)
+          scale(1.04);
+      }
+    }
+
+
+    /* anillo del planeta */
+
+    .planeta::before{
+
+      content:"";
+
+      position:absolute;
+
+      width:135px;
+      height:34px;
+
+      left:-27px;
+      top:24px;
+
+      border:
+        3px solid
+        rgba(243,166,200,.7);
+
+      border-radius:50%;
+
+      transform:rotate(-15deg);
+
+      box-shadow:
+        0 0 12px
+        rgba(243,166,200,.3);
+    }
+
+
+    /* segundo anillo */
+
+    .planeta::after{
+
+      content:"";
+
+      position:absolute;
+
+      width:125px;
+      height:28px;
+
+      left:-22px;
+      top:27px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.4);
+
+      border-radius:50%;
+
+      transform:rotate(-15deg);
+    }
+
+
+    /* =====================================================
+       💗 ORBITA PRINCIPAL
+    ===================================================== */
 
     .orbita{
+
       position:absolute;
-      inset:5px;
-      border:1px dashed rgba(255,255,255,.3);
+
+      inset:10px;
+
+      border:
+        1px dashed
+        rgba(255,255,255,.25);
+
       border-radius:50%;
-      animation:girar 8s linear infinite;
+
+      animation:
+        girarOrbita
+        8s
+        linear
+        infinite;
     }
 
-    @keyframes girar{
-      from{transform:rotate(0)}
-      to{transform:rotate(360deg)}
+    .orbita::before{
+
+      content:"💗";
+
+      position:absolute;
+
+      top:-10px;
+      left:50%;
+
+      transform:translateX(-50%);
+
+      font-size:20px;
+
+      filter:
+        drop-shadow(
+          0 0 8px
+          rgba(255,150,210,.9)
+        );
     }
 
-    /* ================= VENTANAS ================= */
+    .orbita::after{
+
+      content:"✦";
+
+      position:absolute;
+
+      bottom:5px;
+      right:20px;
+
+      color:white;
+
+      font-size:16px;
+
+      text-shadow:
+        0 0 10px white;
+    }
+
+    @keyframes girarOrbita{
+
+      from{
+        transform:rotate(0deg);
+      }
+
+      to{
+        transform:rotate(360deg);
+      }
+    }
+
+
+    /* =====================================================
+       🌙 SEGUNDA ORBITA
+    ===================================================== */
+
+    .orbita-2{
+
+      position:absolute;
+
+      inset:-10px;
+
+      border:
+        1px solid
+        rgba(183,154,232,.18);
+
+      border-radius:50%;
+
+      transform:rotate(25deg);
+
+      animation:
+        girarOrbita2
+        13s
+        linear
+        infinite;
+    }
+
+    .orbita-2::before{
+
+      content:"🌙";
+
+      position:absolute;
+
+      left:50%;
+      top:-13px;
+
+      transform:translateX(-50%);
+
+      font-size:18px;
+
+      filter:
+        drop-shadow(
+          0 0 8px
+          rgba(255,255,255,.8)
+        );
+    }
+
+    @keyframes girarOrbita2{
+
+      from{
+        transform:rotate(25deg);
+      }
+
+      to{
+        transform:rotate(385deg);
+      }
+    }
+
+
+    /* =====================================================
+       ✨ TERCERA ORBITA
+    ===================================================== */
+
+    .orbita-3{
+
+      position:absolute;
+
+      inset:28px;
+
+      border:
+        1px dashed
+        rgba(243,166,200,.18);
+
+      border-radius:50%;
+
+      animation:
+        girarOrbita3
+        5s
+        linear
+        infinite reverse;
+    }
+
+    .orbita-3::before{
+
+      content:"✦";
+
+      position:absolute;
+
+      right:-5px;
+      top:50%;
+
+      color:white;
+
+      font-size:14px;
+
+      text-shadow:
+        0 0 10px white,
+        0 0 20px var(--rosa);
+    }
+
+    .orbita-3::after{
+
+      content:"✧";
+
+      position:absolute;
+
+      left:-5px;
+      top:35%;
+
+      color:var(--rosa);
+
+      font-size:18px;
+
+      text-shadow:
+        0 0 12px var(--rosa);
+    }
+
+    @keyframes girarOrbita3{
+
+      from{
+        transform:rotate(0deg);
+      }
+
+      to{
+        transform:rotate(360deg);
+      }
+    }
+
+
+    /* =====================================================
+       ✨ PEQUEÑAS PARTICULAS
+    ===================================================== */
+
+    .particula{
+
+      position:absolute;
+
+      left:50%;
+      top:50%;
+
+      font-size:13px;
+
+      color:white;
+
+      text-shadow:
+        0 0 10px white,
+        0 0 18px var(--morado);
+
+      animation:
+        orbitarParticula
+        6s
+        linear
+        infinite;
+    }
+
+    .particula-1{
+      animation-delay:-1s;
+    }
+
+    .particula-2{
+      animation-delay:-3s;
+    }
+
+    .particula-3{
+      animation-delay:-5s;
+    }
+
+    @keyframes orbitarParticula{
+
+      from{
+        transform:
+          rotate(0deg)
+          translateX(105px)
+          rotate(0deg);
+      }
+
+      to{
+        transform:
+          rotate(360deg)
+          translateX(105px)
+          rotate(-360deg);
+      }
+    }
+
+
+    /* =====================================================
+       💗 CORAZONES
+    ===================================================== */
+
+    .corazon-flotante{
+
+      position:fixed;
+
+      pointer-events:none;
+
+      z-index:200;
+
+      font-size:25px;
+
+      animation:
+        subirCorazon
+        2s
+        ease-out
+        forwards;
+    }
+
+    @keyframes subirCorazon{
+
+      from{
+
+        opacity:1;
+
+        transform:
+          translateY(0)
+          scale(1);
+      }
+
+      to{
+
+        opacity:0;
+
+        transform:
+          translateY(-250px)
+          scale(1.5);
+      }
+    }
+
+
+    /* =====================================================
+       💌 VENTANAS
+    ===================================================== */
 
     .ventana{
+
       position:fixed;
+
       inset:0;
+
       display:none;
+
       align-items:center;
+
       justify-content:center;
-      background:rgba(5,3,15,.85);
-      backdrop-filter:blur(10px);
-      z-index:100;
+
       padding:20px;
+
+      background:
+        rgba(5,3,15,.82);
+
+      backdrop-filter:blur(10px);
+
+      z-index:100;
     }
 
     .ventana.activa{
+
       display:flex;
+
+      animation:
+        aparecer
+        .3s
+        ease;
+    }
+
+    @keyframes aparecer{
+
+      from{
+        opacity:0;
+      }
+
+      to{
+        opacity:1;
+      }
     }
 
     .contenido-ventana{
+
       width:min(650px,100%);
+
       max-height:90vh;
-      overflow:auto;
+
+      overflow-y:auto;
+
       padding:35px;
+
       border-radius:30px;
+
+      text-align:center;
 
       background:
         linear-gradient(
@@ -574,114 +1570,390 @@
           #19142b
         );
 
+      border:
+        1px solid
+        rgba(243,166,200,.3);
+
+      box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.6);
+
       position:relative;
+
+      animation:
+        ventanaEntrada
+        .5s
+        ease;
+    }
+
+    @keyframes ventanaEntrada{
+
+      from{
+
+        transform:
+          scale(.8)
+          translateY(30px);
+      }
+
+      to{
+
+        transform:
+          scale(1)
+          translateY(0);
+      }
     }
 
     .cerrar{
+
       position:absolute;
+
       right:20px;
       top:15px;
+
       border:none;
+
       background:none;
+
       color:white;
+
       font-size:25px;
+
       cursor:pointer;
+
+      z-index:20;
     }
 
-    /* ================= CARRUSEL ================= */
+    .contenido-ventana h2{
+
+      color:var(--rosa);
+
+      font-size:2rem;
+    }
+
+    .contenido-ventana p{
+
+      line-height:1.8;
+
+      opacity:.9;
+    }
+
+
+    /* =====================================================
+       📸 CARRUSEL
+    ===================================================== */
 
     .carrusel{
+
       position:relative;
+
+      width:100%;
+
+      max-width:520px;
+
+      margin:25px auto 10px;
+
       overflow:hidden;
-      border-radius:22px;
+
+      border-radius:24px;
+
+      background:#0c0917;
+
+      border:
+        1px solid
+        rgba(243,166,200,.25);
+
+      box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.35);
     }
 
     .contenedor-imagen{
+
+      width:100%;
+
       height:330px;
-      position:relative;
+
       overflow:hidden;
+
+      position:relative;
     }
 
     .imagen-recuerdo{
+
       position:absolute;
+
       inset:0;
+
       width:100%;
       height:100%;
+
       object-fit:cover;
+
       opacity:0;
-      transition:.5s;
-      transform:translateX(100%);
+
+      transform:
+        translateX(100%)
+        scale(.96);
+
+      transition:
+        transform .55s ease,
+        opacity .55s ease;
     }
 
     .imagen-recuerdo.activa{
+
       opacity:1;
-      transform:translateX(0);
+
+      transform:
+        translateX(0)
+        scale(1);
+
+      z-index:2;
     }
 
     .flecha{
+
       position:absolute;
+
       top:50%;
-      transform:translateY(-50%);
-      width:45px;
-      height:45px;
+
+      transform:
+        translateY(-50%);
+
+      width:48px;
+      height:48px;
+
       border-radius:50%;
-      border:none;
+
+      border:
+        1px solid
+        rgba(255,255,255,.25);
+
+      background:
+        rgba(20,15,35,.7);
+
       color:white;
-      background:rgba(0,0,0,.5);
+
+      font-size:25px;
+
       cursor:pointer;
-      z-index:5;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      z-index:10;
+
+      transition:
+        transform .2s,
+        background .2s,
+        box-shadow .2s;
     }
 
-    .flecha-izquierda{left:10px}
-    .flecha-derecha{right:10px}
+    .flecha:hover{
+
+      background:
+        rgba(236,111,169,.8);
+
+      box-shadow:
+        0 0 25px
+        rgba(236,111,169,.4);
+
+      transform:
+        translateY(-50%)
+        scale(1.1);
+    }
+
+    .flecha-izquierda{
+      left:15px;
+    }
+
+    .flecha-derecha{
+      right:15px;
+    }
 
     .indicadores{
+
       display:flex;
+
       justify-content:center;
-      gap:8px;
-      margin:15px;
+
+      gap:9px;
+
+      padding:15px 10px 5px;
     }
 
     .indicador{
-      width:10px;
-      height:10px;
+
+      width:9px;
+      height:9px;
+
       border-radius:50%;
+
       border:none;
-      background:#777;
+
+      padding:0;
+
+      margin:0;
+
+      background:
+        rgba(255,255,255,.3);
+
       cursor:pointer;
+
+      transition:
+        transform .2s,
+        background .2s;
     }
 
     .indicador.activo{
-      background:var(--rosa);
-      transform:scale(1.3);
+
+      background:
+        var(--rosa);
+
+      transform:scale(1.5);
+
+      box-shadow:
+        0 0 10px
+        var(--rosa);
     }
 
-    /* ================= CARTA ================= */
+    .texto-recuerdo{
+
+      min-height:50px;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      padding:8px 20px 20px;
+
+      font-size:.95rem;
+
+      color:
+        rgba(255,255,255,.8);
+    }
+
+
+    /* =====================================================
+       💗 RAZONES
+    ===================================================== */
+
+    .razon{
+
+      min-height:150px;
+
+      padding:25px;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      border-radius:20px;
+
+      background:
+        rgba(243,166,200,.08);
+
+      border:
+        1px solid
+        rgba(243,166,200,.15);
+
+      line-height:1.7;
+
+      font-size:1.1rem;
+    }
+
+    .numero{
+
+      color:var(--morado);
+
+      margin-bottom:10px;
+    }
+
+
+    /* =====================================================
+       💌 CARTA
+    ===================================================== */
 
     .carta{
-      background:#ffe8f1;
+
+      background:
+        linear-gradient(
+          145deg,
+          #ffe8f1,
+          #f8dff0
+        );
+
       color:#4a3150;
-      border-radius:20px;
-      padding:30px;
-      line-height:2;
-      font-family:"Segoe Print",cursive;
-      font-weight:bold;
+
+      border-radius:22px;
+
+      padding:35px;
+
       text-align:left;
+
+      line-height:2;
+
+      font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+      font-size:1.05rem;
+
+      font-weight:bold;
+
+      box-shadow:
+        0 15px 35px
+        rgba(0,0,0,.2);
+
+      border:
+        1px solid
+        rgba(183,154,232,.35);
     }
 
     .firma{
+
       text-align:right;
+
+      margin-top:30px;
+
       color:#8b5aa8;
-      margin-top:20px;
+
+      font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+      font-size:1.1rem;
+
+      font-weight:bold;
     }
 
-    /* ================= FINAL ================= */
+
+    /* =====================================================
+       ✨ FINAL
+    ===================================================== */
 
     .final{
+
       display:none;
-      margin-top:80px;
-      padding:40px;
-      border-radius:30px;
+
+      max-width:750px;
+
+      margin:80px auto 20px;
+
+      padding:45px 30px;
+
+      border-radius:35px;
+
+      text-align:center;
 
       background:
         linear-gradient(
@@ -689,42 +1961,80 @@
           rgba(243,166,200,.15),
           rgba(183,154,232,.15)
         );
+
+      border:
+        1px solid
+        rgba(255,255,255,.15);
     }
 
     .final.mostrar{
+
       display:block;
+
+      animation:
+        finalEntrada
+        1.2s
+        ease;
     }
 
-    /* ================= CORAZONES ================= */
+    @keyframes finalEntrada{
 
-    .corazon{
-      position:fixed;
-      bottom:20px;
-      font-size:25px;
-      pointer-events:none;
-      animation:subir 2s forwards;
-      z-index:200;
-    }
+      from{
 
-    @keyframes subir{
-      to{
-        transform:translateY(-250px);
         opacity:0;
+
+        transform:
+          scale(.7)
+          translateY(40px);
+      }
+
+      to{
+
+        opacity:1;
+
+        transform:
+          scale(1)
+          translateY(0);
       }
     }
+
+    .final h2{
+      color:var(--rosa);
+    }
+
+    .final p{
+
+      line-height:1.9;
+
+      font-size:1.15rem;
+    }
+
+    .final-estrellas{
+
+      font-size:40px;
+
+      margin-top:25px;
+    }
+
+
+    /* =====================================================
+       📱 RESPONSIVE
+    ===================================================== */
 
     @media(max-width:700px){
 
       .constelacion{
-        height:560px;
+        height:610px;
       }
 
       .recuerdos{
         left:5%;
+        top:40px;
       }
 
       .tu{
         left:35%;
+        top:210px;
       }
 
       .carta-planeta{
@@ -732,8 +2042,70 @@
         top:380px;
       }
 
+      .sistema-planeta{
+        bottom:-5px;
+      }
+
       .contenedor-imagen{
-        height:260px;
+        height:270px;
+      }
+
+      .acertijo-seccion{
+        margin-bottom:70px;
+      }
+
+    }
+
+    @media(max-width:450px){
+
+      .estrella-especial{
+
+        width:105px;
+        height:105px;
+      }
+
+      .icono{
+        font-size:34px;
+      }
+
+      .estrella-especial span{
+        font-size:.75rem;
+      }
+
+      .recuerdos{
+        left:0;
+      }
+
+      .tu{
+        left:32%;
+      }
+
+      .carta-planeta{
+        right:0;
+      }
+
+      .contenedor-imagen{
+        height:230px;
+      }
+
+      .flecha{
+
+        width:42px;
+        height:42px;
+
+        font-size:21px;
+      }
+
+      .sistema-planeta{
+
+        transform:
+          translateX(-50%)
+          scale(.8);
+      }
+
+      .mensaje-eclipse{
+        font-size:.95rem;
+        padding:20px;
       }
 
     }
@@ -741,304 +2113,795 @@
   </style>
 </head>
 
+
 <body>
 
+
+<!-- =====================================================
+     🌌 NEBULOSA
+===================================================== -->
+
 <div class="nebulosa">
+
   <div class="nube nube-rosa"></div>
+
   <div class="nube nube-morada"></div>
+
   <div class="nube nube-azul"></div>
+
 </div>
+
+
+<!-- =====================================================
+     ⭐ ESTRELLAS
+===================================================== -->
 
 <div id="estrellas"></div>
 
+
+<!-- =====================================================
+     🌌 UNIVERSO
+===================================================== -->
+
 <div class="universo">
+
+
+  <!-- =====================================================
+       🌙 PORTADA
+  ===================================================== -->
 
   <section class="portada">
 
-    <div id="luna" class="luna luna-fase-4" onclick="cambiarFaseLuna()"></div>
-
-    <div id="faseLuna" class="fase-luna">
-      🌕 Luna llena · Haz clic para cambiarla
+    <div
+      id="luna"
+      class="luna luna-fase-4"
+      onclick="cambiarFaseLuna()"
+      title="Haz clic en la luna 🌙">
     </div>
 
-    <h1>Nuestro pequeño universo</h1>
+    <div
+      id="faseLuna"
+      class="fase-luna">
+
+      🌕 Luna llena · Haz clic para cambiarla
+
+    </div>
+
+
+    <h1>
+      Nuestro pequeño universo
+    </h1>
+
 
     <p>
-      Hay millones de estrellas, miles de planetas y un universo enorme...
+
+      Hay millones de estrellas,
+      miles de planetas y un universo enorme...
+
       <br><br>
-      pero entre todos esos lugares, mi favorito siempre será donde estés tú. 💜
+
+      pero entre todos esos lugares,
+      mi favorito siempre será
+      donde estés tú. 💜
+
     </p>
+
 
     <div class="botones-portada">
 
-      <button class="boton" onclick="entrarUniverso()">
+      <button
+        class="boton"
+        onclick="entrarUniverso()">
+
         ✨ Entrar a nuestro universo
+
       </button>
 
-      <button class="boton boton-secundario" onclick="modoNoche()">
+
+      <button
+        class="boton boton-secundario"
+        onclick="modoNoche()">
+
         🌙 Modo noche
+
       </button>
 
     </div>
 
   </section>
 
-  <section id="universo" class="seccion-universo">
 
-    <h2>✨ Nuestra constelación</h2>
+
+  <!-- =====================================================
+       ✨ UNIVERSO
+  ===================================================== -->
+
+  <section
+    id="universo"
+    class="seccion-universo">
+
+
+    <h2>
+      ✨ Nuestro pequeño universo
+    </h2>
+
 
     <p class="subtitulo">
-      Hay tres estrellas escondiendo pequeñas partes de nuestra historia...
-      <br>
-      Tócalas para descubrirlas.
+
+      Antes de explorar nuestra constelación...
+      hay algo que tienes que descubrir. 💜
+
     </p>
 
-    <!-- ACERTIJO PRIMERO -->
 
-    <div id="acertijo" class="acertijo-seccion">
 
-      <h2>🧩 Un pequeño acertijo</h2>
+    <!-- =====================================================
+         🧩 ACERTIJO
+    ===================================================== -->
+
+    <div class="acertijo-seccion">
+
+      <h2>
+        🧩 Un pequeño acertijo
+      </h2>
+
 
       <p>
-        Hay una frase escondida entre todas estas palabras...
+
+        Hay una frase escondida entre
+        todas estas palabras...
+
         <br>
-        Selecciona las palabras en el orden correcto para descubrir qué eres para mí. 💜
+
+        Selecciona las palabras en el orden correcto
+        para descubrir qué eres para mí. 💜
+
       </p>
+
 
       <div class="palabras">
 
-        <button class="palabra" onclick="seleccionarPalabra(this,'mi')">mi</button>
-        <button class="palabra" onclick="seleccionarPalabra(this,'universo')">universo</button>
-        <button class="palabra" onclick="seleccionarPalabra(this,'eres')">eres</button>
-        <button class="palabra" onclick="seleccionarPalabra(this,'tú')">tú</button>
-        <button class="palabra" onclick="seleccionarPalabra(this,'luna')">luna</button>
-        <button class="palabra" onclick="seleccionarPalabra(this,'mi')">mi</button>
-        <button class="palabra" onclick="seleccionarPalabra(this,'estrella')">estrella</button>
-        <button class="palabra" onclick="seleccionarPalabra(this,'mundo')">mundo</button>
-        <button class="palabra" onclick="seleccionarPalabra(this,'amor')">amor</button>
-        <button class="palabra" onclick="seleccionarPalabra(this,'sol')">sol</button>
-        <button class="palabra" onclick="seleccionarPalabra(this,'siempre')">siempre</button>
-        <button class="palabra" onclick="seleccionarPalabra(this,'cielo')">cielo</button>
+        <button
+          class="palabra"
+          onclick="seleccionarPalabra(this,'mi')">
+          mi
+        </button>
+
+        <button
+          class="palabra"
+          onclick="seleccionarPalabra(this,'universo')">
+          universo
+        </button>
+
+        <button
+          class="palabra"
+          onclick="seleccionarPalabra(this,'eres')">
+          eres
+        </button>
+
+        <button
+          class="palabra"
+          onclick="seleccionarPalabra(this,'tú')">
+          tú
+        </button>
+
+        <button
+          class="palabra"
+          onclick="seleccionarPalabra(this,'luna')">
+          luna
+        </button>
+
+        <button
+          class="palabra"
+          onclick="seleccionarPalabra(this,'estrella')">
+          estrella
+        </button>
+
+        <button
+          class="palabra"
+          onclick="seleccionarPalabra(this,'mundo')">
+          mundo
+        </button>
+
+        <button
+          class="palabra"
+          onclick="seleccionarPalabra(this,'amor')">
+          amor
+        </button>
+
+        <button
+          class="palabra"
+          onclick="seleccionarPalabra(this,'sol')">
+          sol
+        </button>
+
+        <button
+          class="palabra"
+          onclick="seleccionarPalabra(this,'siempre')">
+          siempre
+        </button>
+
+        <button
+          class="palabra"
+          onclick="seleccionarPalabra(this,'cielo')">
+          cielo
+        </button>
+
+        <button
+          class="palabra"
+          onclick="seleccionarPalabra(this,'mi')">
+          mi
+        </button>
 
       </div>
+
 
       <div id="resultadoAcertijo"></div>
 
-      <button class="boton" onclick="comprobarAcertijo()">
+
+      <button
+        class="boton"
+        onclick="comprobarAcertijo()">
+
         ✨ Descubrir respuesta
+
       </button>
 
-      <button class="boton boton-secundario" onclick="reiniciarAcertijo()">
+
+      <button
+        class="boton boton-reiniciar"
+        onclick="reiniciarAcertijo()">
+
         🔄 Reiniciar
+
       </button>
 
-      <img id="imagenEclipse" src="eclipse.png" alt="Nuestro eclipse">
 
-      <div id="fraseEclipse">
+      <!-- TU IMAGEN DEL ECLIPSE -->
 
-        <p><strong>🌑💜 Para ti...</strong></p>
+      <img
+        id="imagenEclipse"
+        src="eclipse.png"
+        alt="Nuestro eclipse">
 
-        <p>
-          Así como la luna puede cubrir al sol por un instante y hacer que todo el cielo cambie,
-          tú también llegaste a mi vida y cambiaste la forma en que veo muchas cosas.
-        </p>
 
-        <p>
-          Un eclipse dura apenas unos minutos, pero consigue que miles de personas levanten la mirada al mismo cielo.
-          Y contigo me pasa algo parecido: entre tantas personas, tantos lugares y tantos momentos,
-          siempre termino encontrando mis ojos mirando hacia ti.
-        </p>
+      <!-- MENSAJE QUE APARECE AL ACERTAR -->
 
-        <p>
-          Quizás por eso esta imagen significa tanto para mí.
-          Porque el sol y la luna parecen destinados a encontrarse solo en momentos muy especiales...
-          y aun así, cuando ocurre, crean algo increíblemente hermoso.
-        </p>
+      <div
+        id="mensajeEclipse"
+        class="mensaje-eclipse">
 
-        <p>
-          Me gusta pensar que nosotros también somos un poquito así.
-          Tú siendo mi luna y yo intentando ser ese sol que ilumine tus días,
-          encontrándonos en este pequeño universo que construimos juntos.
-        </p>
+        🌑💜
 
-        <p>
-          <strong>
-            Porque entre millones de estrellas, planetas y galaxias...
-            tú eres mi universo. 🌌💜
-          </strong>
-        </p>
+        <br><br>
+
+        Hay algo que me gusta especialmente de los eclipses:
+        durante unos minutos, la luz y la oscuridad
+        terminan encontrándose en el mismo lugar.
+
+        <br><br>
+
+        Y creo que por eso esta imagen me recuerda tanto
+        a nosotros.
+
+        <br><br>
+
+        Porque incluso en medio de un universo enorme,
+        lleno de millones de estrellas y de lugares
+        que jamás podremos conocer...
+
+        <br><br>
+
+        <strong>
+          de alguna manera terminamos encontrándonos tú y yo.
+        </strong>
+
+        💗
+
+        <br><br>
+
+        Así como un eclipse hace que por un momento
+        todo parezca detenerse para mirar al cielo,
+        hay momentos contigo en los que me pasa algo parecido.
+
+        <br><br>
+
+        El mundo sigue girando,
+        pero yo solo quiero quedarme ahí,
+        contigo, disfrutando ese pequeño instante.
+
+        <br><br>
+
+        Quizás por eso la frase era tan sencilla:
+
+        <br><br>
+
+        <strong>
+          Tú eres mi universo. 🌌💜
+        </strong>
 
       </div>
 
     </div>
 
-    <!-- CONSTELACION -->
 
-    <div id="constelacion" class="constelacion">
 
-      <div id="linea1" class="linea"></div>
-      <div id="linea2" class="linea"></div>
-      <div id="linea3" class="linea"></div>
+    <!-- =====================================================
+         ✨ CONSTELACIÓN
+    ===================================================== -->
 
-      <div id="estrellaRecuerdos" class="estrella-especial recuerdos" onclick="abrirVentana('recuerdos',this)">
-        <div class="icono">🪐</div>
-        <span>Recuerdos</span>
+    <h2>
+      ✨ Nuestra constelación
+    </h2>
+
+
+    <p class="subtitulo">
+
+      Hay tres estrellas escondiendo
+      pequeñas partes de nuestra historia...
+
+      <br>
+
+      Tócalas para descubrirlas. 💜
+
+    </p>
+
+
+    <div
+      id="constelacion"
+      class="constelacion">
+
+
+      <!-- LÍNEAS -->
+
+      <div
+        id="lineaRecuerdosTu"
+        class="linea">
       </div>
 
-      <div id="estrellaTu" class="estrella-especial tu" onclick="abrirVentana('razones',this)">
-        <div class="icono">💗</div>
-        <span>Tú</span>
+      <div
+        id="lineaTuCarta"
+        class="linea">
       </div>
 
-      <div id="estrellaCarta" class="estrella-especial carta-planeta" onclick="abrirVentana('carta',this)">
-        <div class="icono">💌</div>
-        <span>Carta</span>
+      <div
+        id="lineaCartaRecuerdos"
+        class="linea">
       </div>
+
+
+      <!-- 🪐 RECUERDOS -->
+
+      <div
+        id="estrellaRecuerdos"
+        class="estrella-especial recuerdos"
+        onclick="abrirVentana('recuerdos',this)">
+
+        <div class="icono">
+          🪐
+        </div>
+
+        <span>
+      Recuerdos
+    </span>
+
+      </div>
+
+
+      <!-- 💗 TÚ -->
+
+      <div
+        id="estrellaTu"
+        class="estrella-especial tu"
+        onclick="abrirVentana('razones',this)">
+
+        <div class="icono">
+          💗
+        </div>
+
+        <span>
+      Tú
+    </span>
+
+      </div>
+
+
+      <!-- 💌 CARTA -->
+
+      <div
+        id="estrellaCarta"
+        class="estrella-especial carta-planeta"
+        onclick="abrirVentana('carta',this)">
+
+        <div class="icono">
+          💌
+        </div>
+
+        <span>
+      Carta
+    </span>
+
+      </div>
+
+
+      <!-- =================================================
+           🪐 PLANETA CON OBJETOS ORBITANDO
+      ================================================= -->
 
       <div class="sistema-planeta">
+
         <div class="orbita"></div>
+
+        <div class="orbita-2"></div>
+
+        <div class="orbita-3"></div>
+
+
+        <div class="particula particula-1">
+          ✦
+        </div>
+
+        <div class="particula particula-2">
+          ✧
+        </div>
+
+        <div class="particula particula-3">
+          ·
+        </div>
+
+
         <div class="planeta"></div>
+
       </div>
+
 
     </div>
 
-    <section id="final" class="final">
 
-      <h2>✨ Has encontrado nuestra constelación ✨</h2>
+
+    <!-- =====================================================
+         ✨ FINAL
+    ===================================================== -->
+
+    <section
+      id="final"
+      class="final">
+
+      <h2>
+
+        ✨ Has encontrado
+        nuestra constelación ✨
+
+      </h2>
+
 
       <p>
-        Entre tantas estrellas terminamos encontrándonos nosotros.
+
+        Entre tantas estrellas,
+        terminamos encontrándonos nosotros.
+
         <br><br>
+
         Quizás el universo sea enorme,
-        pero me gusta pensar que entre todas sus posibilidades...
+        pero me gusta pensar que entre
+        todas sus posibilidades...
+
         <br><br>
+
         <strong>
-          tú y yo terminamos encontrándonos por alguna razón.
+
+          tú y yo terminamos
+          encontrándonos por alguna razón.
+
         </strong>
+
+        💜
+
       </p>
 
-      <div style="font-size:40px">✨ 💜 🌙 💗 ✨</div>
+
+      <div class="final-estrellas">
+
+        ✨ 💜 🌙 💗 ✨
+
+      </div>
 
     </section>
+
 
   </section>
 
 </div>
 
-<!-- RECUERDOS -->
 
-<div id="recuerdos" class="ventana">
+
+<!-- =====================================================
+     🪐 RECUERDOS
+===================================================== -->
+
+<div
+  id="recuerdos"
+  class="ventana">
 
   <div class="contenido-ventana">
 
-    <button class="cerrar" onclick="cerrarVentanas()">✕</button>
+    <button
+      class="cerrar"
+      onclick="cerrarVentanas()">
 
-    <h2>🪐 Nuestros recuerdos</h2>
+      ✕
+
+    </button>
+
+
+    <h2>
+      🪐 Nuestros recuerdos
+    </h2>
+
 
     <p>
-      Cada momento contigo termina convirtiéndose en algo que quiero guardar para siempre. 💜
+
+      Cada momento contigo termina
+      convirtiéndose en algo que quiero
+      guardar para siempre. 💜
+
     </p>
+
 
     <div class="carrusel">
 
+
       <div class="contenedor-imagen">
 
-        <img class="imagen-recuerdo activa" src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80">
 
-        <img class="imagen-recuerdo" src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80">
+        <img
+          class="imagen-recuerdo activa"
+          src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80"
+          alt="Flores">
 
-        <img class="imagen-recuerdo" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=80">
 
-        <img class="imagen-recuerdo" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80">
+        <img
+          class="imagen-recuerdo"
+          src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80"
+          alt="Flores rosas">
 
-        <img class="imagen-recuerdo" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80">
+
+        <img
+          class="imagen-recuerdo"
+          src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=80"
+          alt="Cielo nocturno">
+
+
+        <img
+          class="imagen-recuerdo"
+          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+          alt="Paisaje">
+
+
+        <img
+          class="imagen-recuerdo"
+          src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80"
+          alt="Momento especial">
 
       </div>
 
-      <button class="flecha flecha-izquierda" onclick="cambiarImagen(-1)">←</button>
 
-      <button class="flecha flecha-derecha" onclick="cambiarImagen(1)">→</button>
+      <button
+        class="flecha flecha-izquierda"
+        onclick="cambiarImagen(-1)">
+
+        ←
+
+      </button>
+
+
+      <button
+        class="flecha flecha-derecha"
+        onclick="cambiarImagen(1)">
+
+        →
+
+      </button>
+
 
       <div class="indicadores">
 
-        <button class="indicador activo" onclick="irAImagen(0)"></button>
-        <button class="indicador" onclick="irAImagen(1)"></button>
-        <button class="indicador" onclick="irAImagen(2)"></button>
-        <button class="indicador" onclick="irAImagen(3)"></button>
-        <button class="indicador" onclick="irAImagen(4)"></button>
+        <button
+          class="indicador activo"
+          onclick="irAImagen(0)">
+        </button>
+
+        <button
+          class="indicador"
+          onclick="irAImagen(1)">
+        </button>
+
+        <button
+          class="indicador"
+          onclick="irAImagen(2)">
+        </button>
+
+        <button
+          class="indicador"
+          onclick="irAImagen(3)">
+        </button>
+
+        <button
+          class="indicador"
+          onclick="irAImagen(4)">
+        </button>
+
+      </div>
+
+
+      <div
+        id="textoRecuerdo"
+        class="texto-recuerdo">
+
+        Un pequeño detalle para ti 🌸
 
       </div>
 
     </div>
 
-  </div>
 
-</div>
+    <button
+      class="boton"
+      onclick="crearCorazones()">
 
-<!-- RAZONES -->
+      💗 Guardar este recuerdo
 
-<div id="razones" class="ventana">
-
-  <div class="contenido-ventana">
-
-    <button class="cerrar" onclick="cerrarVentanas()">✕</button>
-
-    <h2>💗 Algunas razones</h2>
-
-    <div id="numeroRazon" style="color:var(--morado)">
-      Razón #1
-    </div>
-
-    <div id="razon" style="margin:25px 0;font-size:1.1rem">
-      Porque consigues hacer que mis días sean mejores simplemente estando en ellos.
-    </div>
-
-    <button class="boton" onclick="nuevaRazon()">
-      💗 Otra razón
     </button>
 
   </div>
 
 </div>
 
-<!-- CARTA -->
 
-<div id="carta" class="ventana">
+
+<!-- =====================================================
+     💗 RAZONES
+===================================================== -->
+
+<div
+  id="razones"
+  class="ventana">
 
   <div class="contenido-ventana">
 
-    <button class="cerrar" onclick="cerrarVentanas()">✕</button>
+    <button
+      class="cerrar"
+      onclick="cerrarVentanas()">
 
-    <h2>💌 Para ti</h2>
+      ✕
+
+    </button>
+
+
+    <h2>
+      💗 Algunas razones
+    </h2>
+
+
+    <div
+      id="numeroRazon"
+      class="numero">
+
+      Razón #1
+
+    </div>
+
+
+    <div
+      id="razon"
+      class="razon">
+
+      Porque consigues hacer
+      que mis días sean mejores
+      simplemente estando en ellos.
+
+    </div>
+
+
+    <button
+      class="boton"
+      onclick="nuevaRazon()">
+
+      💗 Otra razón
+
+    </button>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     💌 CARTA
+===================================================== -->
+
+<div
+  id="carta"
+  class="ventana">
+
+  <div class="contenido-ventana">
+
+    <button
+      class="cerrar"
+      onclick="cerrarVentanas()">
+
+      ✕
+
+    </button>
+
+
+    <h2>
+      💌 Para ti
+    </h2>
+
 
     <div class="carta">
 
       <p>
-        No sé exactamente en qué momento empezaste a convertirte en una persona tan importante para mí.
+
+        No sé exactamente en qué momento
+        empezaste a convertirte en una
+        persona tan importante para mí.
+
       </p>
 
-      <p>
-        Solo sé que ahora existen pequeños momentos del día que automáticamente me hacen pensar en ti.
-      </p>
 
       <p>
-        Una canción. Una palabra. Una foto. Una tontería cualquiera.
+
+        Solo sé que ahora existen pequeños
+        momentos del día que automáticamente
+        me hacen pensar en ti.
+
       </p>
 
-      <p>
-        Y de alguna manera, siempre terminas apareciendo en mis pensamientos.
-      </p>
 
       <p>
-        Quizás por eso hice este pequeño universo.
+
+        Una canción.
+        Una palabra.
+        Una foto.
+        Una tontería cualquiera.
+
+      </p>
+
+
+      <p>
+
+        Y de alguna manera,
+        siempre terminas apareciendo
+        en mis pensamientos.
+
+      </p>
+
+
+      <p>
+
+        Quizás por eso hice este pequeño
+        universo.
+
         <br><br>
-        Porque quería dejarte un lugar donde pudieras encontrar un poquito de todo lo que siento por ti.
+
+        Porque quería dejarte un lugar
+        donde pudieras encontrar un poquito
+        de todo lo que siento por ti.
+
       </p>
+
 
       <div class="firma">
+
         Con amor,
+
         <br>
+
         Tu wawa 💜
+
       </div>
 
     </div>
@@ -1047,24 +2910,48 @@
 
 </div>
 
+
+
 <script>
 
-  const estrellas=document.getElementById("estrellas");
+
+  /* =====================================================
+     ⭐ CREAR ESTRELLAS
+  ===================================================== */
+
+  const estrellas =
+    document.getElementById("estrellas");
+
 
   function crearEstrellas(cantidad){
 
-    for(let i=0;i<cantidad;i++){
+    for(
+      let i=0;
+      i<cantidad;
+      i++
+    ){
 
-      const e=document.createElement("div");
+      const estrella =
+        document.createElement("div");
 
-      e.className="estrella";
+      estrella.className =
+        "estrella";
 
-      e.style.left=Math.random()*100+"%";
-      e.style.top=Math.random()*100+"%";
+      estrella.style.left =
+        Math.random()*100+"%";
 
-      e.style.animationDelay=Math.random()*3+"s";
+      estrella.style.top =
+        Math.random()*100+"%";
 
-      estrellas.appendChild(e);
+      estrella.style.animationDelay =
+        Math.random()*3+"s";
+
+      estrella.style.opacity =
+        Math.random();
+
+      estrellas.appendChild(
+        estrella
+      );
 
     }
 
@@ -1072,27 +2959,87 @@
 
   crearEstrellas(150);
 
+
+  /* =====================================================
+     🌠 COMETAS
+  ===================================================== */
+
   function crearCometa(){
 
-    const c=document.createElement("div");
+    const cometa =
+      document.createElement("div");
 
-    c.className="cometa";
+    cometa.className =
+      "cometa";
 
-    c.style.top=Math.random()*50+"%";
-    c.style.right="-200px";
+    const posiciones=[
 
-    document.body.appendChild(c);
+      {
+        top:"10%",
+        right:"-150px"
+      },
 
-    setTimeout(()=>c.remove(),2500);
+      {
+        top:"25%",
+        right:"-200px"
+      },
+
+      {
+        top:"45%",
+        right:"-150px"
+      },
+
+      {
+        top:"5%",
+        right:"10%"
+      }
+
+    ];
+
+    const posicion =
+      posiciones[
+        Math.floor(
+          Math.random()*
+          posiciones.length
+        )
+        ];
+
+    cometa.style.top =
+      posicion.top;
+
+    cometa.style.right =
+      posicion.right;
+
+    document.body.appendChild(
+      cometa
+    );
+
+    setTimeout(
+      ()=>{
+        cometa.remove();
+      },
+      2500
+    );
 
   }
 
-  setTimeout(crearCometa,3000);
-  setInterval(crearCometa,9000);
+  setTimeout(
+    crearCometa,
+    3500
+  );
 
-  /* LUNA */
+  setInterval(
+    crearCometa,
+    9000
+  );
 
-  const fases=[
+
+  /* =====================================================
+     🌙 LUNA
+  ===================================================== */
+
+  const fasesLuna=[
+
     "🌑 Luna nueva",
     "🌒 Luna creciente",
     "🌓 Cuarto creciente",
@@ -1101,290 +3048,1014 @@
     "🌖 Gibosa menguante",
     "🌗 Cuarto menguante",
     "🌘 Luna menguante"
+
   ];
 
-  let fase=4;
+  let faseActual=4;
+
 
   function cambiarFaseLuna(){
 
-    fase++;
+    const luna =
+      document.getElementById("luna");
 
-    if(fase>=8)fase=0;
+    const texto =
+      document.getElementById("faseLuna");
 
-    document.getElementById("faseLuna").textContent=
-      fases[fase]+" · Haz clic para cambiarla";
+    faseActual++;
+
+    if(
+      faseActual>=fasesLuna.length
+    ){
+
+      faseActual=0;
+
+    }
+
+    luna.className =
+      "luna luna-fase-"+faseActual;
+
+    texto.textContent =
+      fasesLuna[faseActual]+
+      " · Haz clic para cambiarla";
+
+    crearEstrellasEspeciales();
 
   }
 
-  /* MODO NOCHE */
 
-  let noche=false;
+  /* =====================================================
+     ✨ ESTRELLAS ESPECIALES
+  ===================================================== */
+
+  function crearEstrellasEspeciales(){
+
+    for(
+      let i=0;
+      i<10;
+      i++
+    ){
+
+      const estrella =
+        document.createElement("div");
+
+      estrella.textContent="✦";
+
+      estrella.style.position="fixed";
+
+      estrella.style.left =
+        Math.random()*100+"%";
+
+      estrella.style.top =
+        Math.random()*60+"%";
+
+      estrella.style.color="white";
+
+      estrella.style.fontSize="18px";
+
+      estrella.style.pointerEvents="none";
+
+      estrella.style.zIndex="50";
+
+      estrella.style.textShadow =
+        "0 0 15px white";
+
+      estrella.animate(
+
+        [
+
+          {
+            opacity:0,
+            transform:"scale(0)"
+          },
+
+          {
+            opacity:1,
+            transform:"scale(1.5)"
+          },
+
+          {
+            opacity:0,
+            transform:"scale(0)"
+          }
+
+        ],
+
+        {
+          duration:1200,
+          easing:"ease-out"
+        }
+
+      );
+
+      document.body.appendChild(
+        estrella
+      );
+
+      setTimeout(
+        ()=>{
+          estrella.remove();
+        },
+        1200
+      );
+
+    }
+
+  }
+
+
+  /* =====================================================
+     🌙 MODO NOCHE
+  ===================================================== */
+
+  let modoNocheActivo=false;
+
 
   function modoNoche(){
 
-    noche=!noche;
+    modoNocheActivo =
+      !modoNocheActivo;
 
-    document.body.style.filter=
-      noche?"brightness(.8)":"brightness(1)";
+    document.body.classList.toggle(
+      "modo-noche"
+    );
 
-  }
+    const boton =
+      document.querySelector(
+        ".boton-secundario"
+      );
 
-  /* IR AL ACERTIJO */
+    if(
+      modoNocheActivo
+    ){
 
-  function entrarUniverso(){
+      boton.textContent =
+        "☀️ Salir del modo noche";
 
-    document.getElementById("acertijo")
-      .scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-      });
+      crearEstrellas(80);
 
-  }
-
-  /* ACERTIJO */
-
-  let seleccion=[];
-
-  function seleccionarPalabra(boton,palabra){
-
-    if(seleccion.length>=4)return;
-
-    if(boton.classList.contains("seleccionada"))return;
-
-    boton.classList.add("seleccionada");
-
-    seleccion.push({
-      palabra,
-      boton
-    });
-
-    document.getElementById("resultadoAcertijo").textContent=
-      seleccion.map(x=>x.palabra).join(" ");
-
-  }
-
-  function comprobarAcertijo(){
-
-    const respuesta=
-      seleccion.map(x=>x.palabra).join(" ").toLowerCase();
-
-    if(respuesta==="tú eres mi universo"){
-
-      document.getElementById("resultadoAcertijo").innerHTML=
-        "💜 ¡Lo encontraste! Tú eres mi universo. 🌌";
-
-      document.getElementById("imagenEclipse")
-        .classList.add("mostrar");
-
-      document.getElementById("fraseEclipse")
-        .style.display="block";
-
-      crearCorazones();
+      crearEstrellasEspeciales();
 
     }else{
 
-      document.getElementById("resultadoAcertijo").innerHTML=
-        "👀 Esa no parece ser la respuesta... inténtalo nuevamente.";
+      boton.textContent =
+        "🌙 Modo noche";
 
     }
 
   }
 
-  function reiniciarAcertijo(){
 
-    seleccion.forEach(x=>{
-      x.boton.classList.remove("seleccionada");
-    });
+  /* =====================================================
+     🌌 ENTRAR AL UNIVERSO
+  ===================================================== */
 
-    seleccion=[];
+  function entrarUniverso(){
 
-    document.getElementById("resultadoAcertijo").textContent="";
-
-    document.getElementById("imagenEclipse")
-      .classList.remove("mostrar");
-
-    document.getElementById("fraseEclipse")
-      .style.display="none";
+    document
+      .querySelector(".acertijo-seccion")
+      .scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+      });
 
   }
 
-  /* CONSTELACION */
 
-  const visitadas=new Set();
+  /* =====================================================
+     ⭐ CONSTELACIÓN
+  ===================================================== */
 
-  function abrirVentana(id,elemento){
+  const visitadas =
+    new Set();
 
-    document.getElementById(id).classList.add("activa");
 
-    elemento.classList.add("visitada");
+  function abrirVentana(
+    id,
+    elemento
+  ){
+
+    const ventana =
+      document.getElementById(id);
+
+    ventana.classList.add(
+      "activa"
+    );
 
     visitadas.add(id);
 
-    actualizarLineas();
+    elemento.classList.add(
+      "visitada"
+    );
+
+    comprobarConstelacion();
+
+    setTimeout(
+      actualizarConstelacion,
+      50
+    );
+
+
+    if(id==="razones"){
+      crearCorazones();
+    }
+
+    if(id==="recuerdos"){
+      crearEstrellasEspeciales();
+    }
+
+    if(id==="carta"){
+      crearCorazones();
+    }
 
   }
 
-  function actualizarLineas(){
 
-    const a=document.getElementById("estrellaRecuerdos");
-    const b=document.getElementById("estrellaTu");
-    const c=document.getElementById("estrellaCarta");
+  /* =====================================================
+     🌟 DIBUJAR LÍNEAS
+  ===================================================== */
 
-    conectar("linea1",a,b,
-      visitadas.has("recuerdos")&&visitadas.has("razones"));
+  function dibujarLinea(
+    linea,
+    elementoA,
+    elementoB,
+    visible
+  ){
 
-    conectar("linea2",b,c,
-      visitadas.has("razones")&&visitadas.has("carta"));
+    const constelacion =
+      document.getElementById(
+        "constelacion"
+      );
 
-    conectar("linea3",c,a,
-      visitadas.has("carta")&&visitadas.has("recuerdos"));
+    const rectA =
+      elementoA.getBoundingClientRect();
 
-    if(visitadas.size===3){
+    const rectB =
+      elementoB.getBoundingClientRect();
 
-      document.getElementById("final")
+    const rectConstelacion =
+      constelacion.getBoundingClientRect();
+
+
+    const x1 =
+      rectA.left +
+      rectA.width/2 -
+      rectConstelacion.left;
+
+    const y1 =
+      rectA.top +
+      rectA.height/2 -
+      rectConstelacion.top;
+
+
+    const x2 =
+      rectB.left +
+      rectB.width/2 -
+      rectConstelacion.left;
+
+    const y2 =
+      rectB.top +
+      rectB.height/2 -
+      rectConstelacion.top;
+
+
+    const dx =
+      x2-x1;
+
+    const dy =
+      y2-y1;
+
+
+    const distancia =
+      Math.sqrt(
+        dx*dx+
+        dy*dy
+      );
+
+
+    const angulo =
+      Math.atan2(
+        dy,
+        dx
+      )*
+      180/
+      Math.PI;
+
+
+    linea.style.left =
+      x1+"px";
+
+    linea.style.top =
+      y1+"px";
+
+    linea.style.width =
+      visible
+        ? distancia+"px"
+        : "0px";
+
+    linea.style.transform =
+      `rotate(${angulo}deg)`;
+
+
+    if(visible){
+
+      linea.classList.add(
+        "visible"
+      );
+
+    }else{
+
+      linea.classList.remove(
+        "visible"
+      );
+
+    }
+
+  }
+
+
+  /* =====================================================
+     ✨ ACTUALIZAR CONSTELACIÓN
+  ===================================================== */
+
+  function actualizarConstelacion(){
+
+    const recuerdos =
+      document.getElementById(
+        "estrellaRecuerdos"
+      );
+
+    const tu =
+      document.getElementById(
+        "estrellaTu"
+      );
+
+    const carta =
+      document.getElementById(
+        "estrellaCarta"
+      );
+
+
+    const linea1 =
+      document.getElementById(
+        "lineaRecuerdosTu"
+      );
+
+    const linea2 =
+      document.getElementById(
+        "lineaTuCarta"
+      );
+
+    const linea3 =
+      document.getElementById(
+        "lineaCartaRecuerdos"
+      );
+
+
+    dibujarLinea(
+      linea1,
+      recuerdos,
+      tu,
+      visitadas.has("recuerdos") &&
+      visitadas.has("razones")
+    );
+
+
+    dibujarLinea(
+      linea2,
+      tu,
+      carta,
+      visitadas.has("razones") &&
+      visitadas.has("carta")
+    );
+
+
+    dibujarLinea(
+      linea3,
+      carta,
+      recuerdos,
+      visitadas.has("carta") &&
+      visitadas.has("recuerdos")
+    );
+
+
+    if(
+      visitadas.has("recuerdos") &&
+      visitadas.has("razones") &&
+      visitadas.has("carta")
+    ){
+
+      document
+        .getElementById("constelacion")
+        .classList.add("completa");
+
+
+      document
+        .getElementById("final")
         .classList.add("mostrar");
 
     }
 
   }
 
-  function conectar(id,a,b,mostrar){
 
-    const linea=document.getElementById(id);
+  function comprobarConstelacion(){
 
-    const r1=a.getBoundingClientRect();
-    const r2=b.getBoundingClientRect();
-    const cont=document.getElementById("constelacion").getBoundingClientRect();
+    if(
+      visitadas.size>=3
+    ){
 
-    const x1=r1.left+r1.width/2-cont.left;
-    const y1=r1.top+r1.height/2-cont.top;
+      actualizarConstelacion();
 
-    const x2=r2.left+r2.width/2-cont.left;
-    const y2=r2.top+r2.height/2-cont.top;
-
-    const dx=x2-x1;
-    const dy=y2-y1;
-
-    const dist=Math.sqrt(dx*dx+dy*dy);
-
-    const ang=Math.atan2(dy,dx)*180/Math.PI;
-
-    linea.style.left=x1+"px";
-    linea.style.top=y1+"px";
-    linea.style.width=mostrar?dist+"px":"0px";
-    linea.style.transform=`rotate(${ang}deg)`;
-
-    linea.classList.toggle("visible",mostrar);
-
-  }
-
-  /* CERRAR */
-
-  function cerrarVentanas(){
-
-    document.querySelectorAll(".ventana")
-      .forEach(v=>v.classList.remove("activa"));
-
-  }
-
-  /* CARRUSEL */
-
-  const imgs=document.querySelectorAll(".imagen-recuerdo");
-  const puntos=document.querySelectorAll(".indicador");
-
-  let actual=0;
-
-  function cambiarImagen(dir){
-
-    let n=actual+dir;
-
-    if(n<0)n=imgs.length-1;
-    if(n>=imgs.length)n=0;
-
-    irAImagen(n);
-
-  }
-
-  function irAImagen(n){
-
-    imgs[actual].classList.remove("activa");
-
-    imgs[n].classList.add("activa");
-
-    puntos[actual].classList.remove("activo");
-
-    puntos[n].classList.add("activo");
-
-    actual=n;
-
-  }
-
-  /* RAZONES */
-
-  const razones=[
-    "Porque consigues hacer que mis días sean mejores simplemente estando en ellos.",
-    "Porque contigo puedo ser completamente yo.",
-    "Porque cualquier momento contigo termina siendo especial.",
-    "Porque tu sonrisa arregla días enteros. 😂💗",
-    "Porque quiero seguir creando recuerdos contigo.",
-    "Porque entre millones de personas apareciste tú.",
-    "Porque haces bonito hasta lo cotidiano.",
-    "Porque simplemente eres tú. 💜"
-  ];
-
-  let razon=0;
-
-  function nuevaRazon(){
-
-    razon++;
-
-    if(razon>=razones.length)razon=0;
-
-    document.getElementById("razon").textContent=
-      razones[razon];
-
-    document.getElementById("numeroRazon").textContent=
-      "Razón #"+(razon+1);
-
-  }
-
-  /* CORAZONES */
-
-  function crearCorazones(){
-
-    const corazones=["💗","💖","💕","💜"];
-
-    for(let i=0;i<12;i++){
-
-      const c=document.createElement("div");
-
-      c.className="corazon";
-
-      c.textContent=
-        corazones[Math.floor(Math.random()*corazones.length)];
-
-      c.style.left=Math.random()*100+"%";
-
-      document.body.appendChild(c);
-
-      setTimeout(()=>c.remove(),2000);
+      setTimeout(
+        ()=>{
+          crearCorazones();
+          crearEstrellasEspeciales();
+        },
+        500
+      );
 
     }
 
   }
 
-  document.querySelectorAll(".ventana")
-    .forEach(v=>{
 
-      v.addEventListener("click",e=>{
+  window.addEventListener(
+    "resize",
+    ()=>{
+      actualizarConstelacion();
+    }
+  );
 
-        if(e.target===v)cerrarVentanas();
 
-      });
+  /* =====================================================
+     ❌ CERRAR VENTANAS
+  ===================================================== */
 
-    });
+  function cerrarVentanas(){
 
-  window.addEventListener("resize",actualizarLineas);
+    document
+      .querySelectorAll(".ventana")
+      .forEach(
+        ventana=>{
+          ventana.classList.remove(
+            "activa"
+          );
+        }
+      );
+
+  }
+
+
+  /* =====================================================
+     📸 CARRUSEL
+  ===================================================== */
+
+  const imagenes =
+    document.querySelectorAll(
+      ".imagen-recuerdo"
+    );
+
+  const indicadores =
+    document.querySelectorAll(
+      ".indicador"
+    );
+
+  const textoRecuerdo =
+    document.getElementById(
+      "textoRecuerdo"
+    );
+
+
+  const textosRecuerdos=[
+
+    "Un pequeño detalle para ti 🌸",
+
+    "Un pedacito de nuestro universo 💜",
+
+    "Porque los momentos bonitos merecen quedarse ✨",
+
+    "Otro recuerdo que me gustaría guardar contigo 🌙",
+
+    "Y todavía nos quedan muchísimos momentos por vivir 💗"
+
+  ];
+
+
+  let imagenActual=0;
+
+  let animandoCarrusel=false;
+
+
+  function cambiarImagen(
+    direccion
+  ){
+
+    if(animandoCarrusel){
+      return;
+    }
+
+    let nuevaImagen =
+      imagenActual+
+      direccion;
+
+
+    if(nuevaImagen<0){
+
+      nuevaImagen =
+        imagenes.length-1;
+
+    }
+
+
+    if(
+      nuevaImagen>=
+      imagenes.length
+    ){
+
+      nuevaImagen=0;
+
+    }
+
+
+    irAImagen(
+      nuevaImagen,
+      direccion
+    );
+
+  }
+
+
+  function irAImagen(
+    numero,
+    direccion=null
+  ){
+
+    if(
+      numero===imagenActual
+    ){
+
+      return;
+
+    }
+
+
+    animandoCarrusel=true;
+
+
+    const actual =
+      imagenes[imagenActual];
+
+    const nueva =
+      imagenes[numero];
+
+
+    const movimiento =
+      direccion===-1
+        ? "-100%"
+        : "100%";
+
+
+    nueva.style.transform =
+      `translateX(${movimiento}) scale(.96)`;
+
+    nueva.style.opacity="1";
+
+    nueva.style.zIndex="3";
+
+    actual.style.zIndex="2";
+
+
+    nueva.offsetHeight;
+
+
+    requestAnimationFrame(
+      ()=>{
+
+        nueva.style.transform =
+          "translateX(0) scale(1)";
+
+        actual.style.transform =
+          direccion===-1
+            ? "translateX(100%) scale(.96)"
+            : "translateX(-100%) scale(.96)";
+
+        actual.style.opacity="0";
+
+      }
+    );
+
+
+    setTimeout(
+      ()=>{
+
+        imagenes.forEach(
+          (
+            imagen,
+            indice
+          )=>{
+
+            if(
+              indice!==numero
+            ){
+
+              imagen.style.opacity="0";
+
+              imagen.style.transform =
+                "translateX(100%) scale(.96)";
+
+              imagen.style.zIndex="1";
+
+            }
+
+          }
+        );
+
+
+        nueva.classList.add(
+          "activa"
+        );
+
+        actual.classList.remove(
+          "activa"
+        );
+
+
+        indicadores.forEach(
+          (
+            indicador,
+            indice
+          )=>{
+
+            indicador.classList.toggle(
+              "activo",
+              indice===numero
+            );
+
+          }
+        );
+
+
+        textoRecuerdo.textContent =
+          textosRecuerdos[numero];
+
+
+        imagenActual=numero;
+
+        animandoCarrusel=false;
+
+      },
+      600
+    );
+
+  }
+
+
+  /* =====================================================
+     💗 RAZONES
+  ===================================================== */
+
+  const razones=[
+
+    "Porque consigues hacer que mis días sean mejores simplemente estando en ellos.",
+
+    "Porque contigo puedo ser completamente yo sin tener que fingir nada.",
+
+    "Porque incluso las cosas más simples se sienten especiales cuando las comparto contigo.",
+
+    "Porque tu sonrisa tiene una capacidad sospechosa de arreglarme el día. 😂💗",
+
+    "Porque me gusta imaginar todos los momentos que todavía nos quedan por vivir.",
+
+    "Porque eres una de esas personas que quiero conservar en mi vida durante muchísimo tiempo.",
+
+    "Porque entre millones de personas, tuve la suerte de encontrarte a ti.",
+
+    "Porque simplemente eres tú. Y eso ya es suficiente. 💜"
+
+  ];
+
+
+  let razonActual=0;
+
+
+  function nuevaRazon(){
+
+    razonActual++;
+
+    if(
+      razonActual>=
+      razones.length
+    ){
+
+      razonActual=0;
+
+    }
+
+
+    document
+      .getElementById("razon")
+      .textContent =
+      razones[razonActual];
+
+
+    document
+      .getElementById("numeroRazon")
+      .textContent =
+      "Razón #"+
+      (razonActual+1);
+
+
+    crearCorazones();
+
+  }
+
+
+  /* =====================================================
+     💗 CORAZONES
+  ===================================================== */
+
+  function crearCorazones(){
+
+    const corazones=[
+
+      "💗",
+      "💖",
+      "💕",
+      "💜",
+      "🩷"
+
+    ];
+
+
+    for(
+      let i=0;
+      i<12;
+      i++
+    ){
+
+      const corazon =
+        document.createElement("div");
+
+      corazon.className =
+        "corazon-flotante";
+
+
+      corazon.textContent =
+        corazones[
+          Math.floor(
+            Math.random()*
+            corazones.length
+          )
+          ];
+
+
+      corazon.style.left =
+        Math.random()*
+        100+
+        "%";
+
+
+      corazon.style.bottom="20px";
+
+
+      corazon.style.animationDelay =
+        Math.random()*
+        .8+
+        "s";
+
+
+      document.body.appendChild(
+        corazon
+      );
+
+
+      setTimeout(
+        ()=>{
+          corazon.remove();
+        },
+        2500
+      );
+
+    }
+
+  }
+
+
+  /* =====================================================
+     🧩 ACERTIJO
+  ===================================================== */
+
+  let palabrasSeleccionadas=[];
+
+
+  function seleccionarPalabra(
+    boton,
+    palabra
+  ){
+
+    if(
+      palabrasSeleccionadas.length>=4
+    ){
+
+      return;
+
+    }
+
+
+    if(
+      boton.classList.contains(
+        "seleccionada"
+      )
+    ){
+
+      return;
+
+    }
+
+
+    boton.classList.add(
+      "seleccionada"
+    );
+
+
+    palabrasSeleccionadas.push(
+      {
+        palabra:palabra,
+        boton:boton
+      }
+    );
+
+
+    document.getElementById(
+      "resultadoAcertijo"
+    ).textContent =
+      palabrasSeleccionadas
+        .map(
+          elemento=>
+            elemento.palabra
+        )
+        .join(" ");
+
+  }
+
+
+  /* =====================================================
+     ✨ COMPROBAR ACERTIJO
+  ===================================================== */
+
+  function comprobarAcertijo(){
+
+    const respuesta =
+      palabrasSeleccionadas
+        .map(
+          elemento=>
+            elemento.palabra
+        )
+        .join(" ")
+        .toLowerCase();
+
+
+    const correcto =
+      respuesta ===
+      "tú eres mi universo";
+
+
+    const resultado =
+      document.getElementById(
+        "resultadoAcertijo"
+      );
+
+
+    if(correcto){
+
+      resultado.innerHTML =
+        "💜 ¡Lo encontraste! Tú eres mi universo. 🌌";
+
+
+      document
+        .getElementById(
+          "imagenEclipse"
+        )
+        .classList.add(
+        "mostrar"
+      );
+
+
+      document
+        .getElementById(
+          "mensajeEclipse"
+        )
+        .classList.add(
+        "mostrar"
+      );
+
+
+      crearCorazones();
+
+      crearEstrellasEspeciales();
+
+
+    }else{
+
+      resultado.innerHTML =
+        "👀 Mmm... esa no parece ser la respuesta. Inténtalo otra vez. 💜";
+
+    }
+
+  }
+
+
+  /* =====================================================
+     🔄 REINICIAR ACERTIJO
+  ===================================================== */
+
+  function reiniciarAcertijo(){
+
+    palabrasSeleccionadas=[];
+
+
+    document
+      .querySelectorAll(".palabra")
+      .forEach(
+        boton=>{
+          boton.classList.remove(
+            "seleccionada"
+          );
+        }
+      );
+
+
+    document
+      .getElementById(
+        "resultadoAcertijo"
+      )
+      .textContent="";
+
+
+    document
+      .getElementById(
+        "imagenEclipse"
+      )
+      .classList.remove(
+      "mostrar"
+    );
+
+
+    document
+      .getElementById(
+        "mensajeEclipse"
+      )
+      .classList.remove(
+      "mostrar"
+    );
+
+  }
+
+
+  /* =====================================================
+     🖱️ CERRAR AL HACER CLICK AFUERA
+  ===================================================== */
+
+  document
+    .querySelectorAll(".ventana")
+    .forEach(
+      ventana=>{
+
+        ventana.addEventListener(
+          "click",
+          function(event){
+
+            if(
+              event.target===ventana
+            ){
+
+              cerrarVentanas();
+
+            }
+
+          }
+        );
+
+      }
+    );
+
+
+  /* =====================================================
+     🚀 INICIALIZAR
+  ===================================================== */
+
+  window.addEventListener(
+    "load",
+    ()=>{
+
+      setTimeout(
+        actualizarConstelacion,
+        100
+      );
+
+    }
+  );
 
 </script>
 
