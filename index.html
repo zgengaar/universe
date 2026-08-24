@@ -2,22 +2,41 @@
 <html lang="es">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>🌌 Nuestro pequeño universo</title>
 
   <style>
 
+    /* =====================================================
+       🎨 VARIABLES
+    ===================================================== */
+
     :root{
+
       --rosa:#f3a6c8;
       --rosa-fuerte:#ec6fa9;
+
       --morado:#b79ae8;
       --morado-fuerte:#8d68c7;
+
       --azul:#8ec5ff;
+
       --noche:#090714;
+
       --blanco:#fff8ff;
     }
+
+
+    /* =====================================================
+       🌌 BASE
+    ===================================================== */
 
     *{
       box-sizing:border-box;
@@ -28,9 +47,18 @@
     }
 
     body{
+
       margin:0;
+
       min-height:100vh;
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
       color:var(--blanco);
 
       background:
@@ -42,7 +70,9 @@
         );
 
       overflow-x:hidden;
-      transition:background 1s ease;
+
+      transition:
+        background 1s ease;
     }
 
 
@@ -51,18 +81,28 @@
     ===================================================== */
 
     .nebulosa{
+
       position:fixed;
+
       inset:-30%;
+
       pointer-events:none;
+
       z-index:0;
+
       overflow:hidden;
+
       opacity:.65;
+
       filter:blur(45px);
     }
 
     .nube{
+
       position:absolute;
+
       border-radius:50%;
+
       filter:blur(50px);
 
       animation:
@@ -74,46 +114,69 @@
     }
 
     .nube-rosa{
+
       width:430px;
       height:300px;
+
       left:5%;
       top:10%;
-      background:rgba(236,111,169,.28);
+
+      background:
+        rgba(236,111,169,.28);
+
       animation-delay:-4s;
     }
 
     .nube-morada{
+
       width:500px;
       height:380px;
+
       right:5%;
       top:25%;
-      background:rgba(141,104,199,.3);
+
+      background:
+        rgba(141,104,199,.3);
+
       animation-delay:-8s;
     }
 
     .nube-azul{
+
       width:420px;
       height:320px;
+
       left:35%;
       bottom:5%;
-      background:rgba(76,143,220,.18);
+
+      background:
+        rgba(76,143,220,.18);
+
       animation-delay:-12s;
     }
 
     @keyframes moverNebulosa{
 
       0%{
-        transform:translate(0,0) scale(1) rotate(0deg);
+        transform:
+          translate(0,0)
+          scale(1)
+          rotate(0deg);
       }
 
       50%{
-        transform:translate(100px,-70px) scale(1.15) rotate(20deg);
+        transform:
+          translate(100px,-70px)
+          scale(1.15)
+          rotate(20deg);
       }
 
       100%{
-        transform:translate(-80px,90px) scale(.9) rotate(-15deg);
+        transform:
+          translate(-80px,90px)
+          scale(.9)
+          rotate(-15deg);
       }
-
     }
 
 
@@ -142,21 +205,29 @@
     ===================================================== */
 
     #estrellas{
+
       position:fixed;
+
       inset:0;
+
       pointer-events:none;
+
       z-index:1;
     }
 
     .estrella{
+
       position:absolute;
+
       width:3px;
       height:3px;
 
       background:white;
+
       border-radius:50%;
 
-      box-shadow:0 0 6px white;
+      box-shadow:
+        0 0 6px white;
 
       animation:
         parpadear
@@ -176,7 +247,6 @@
         opacity:1;
         transform:scale(1.4);
       }
-
     }
 
 
@@ -185,12 +255,14 @@
     ===================================================== */
 
     .cometa{
+
       position:fixed;
 
       width:180px;
       height:3px;
 
       pointer-events:none;
+
       z-index:20;
 
       opacity:0;
@@ -239,7 +311,9 @@
     @keyframes atravesarCometa{
 
       0%{
+
         opacity:0;
+
         transform:
           translate(250px,-100px)
           rotate(-35deg);
@@ -254,13 +328,13 @@
       }
 
       100%{
+
         opacity:0;
 
         transform:
           translate(-700px,600px)
           rotate(-35deg);
       }
-
     }
 
 
@@ -269,7 +343,9 @@
     ===================================================== */
 
     .universo{
+
       position:relative;
+
       z-index:2;
     }
 
@@ -283,9 +359,11 @@
       min-height:100vh;
 
       display:flex;
+
       flex-direction:column;
 
       align-items:center;
+
       justify-content:center;
 
       text-align:center;
@@ -333,8 +411,11 @@
     }
 
     .fase-luna{
+
       margin-bottom:25px;
+
       font-size:.9rem;
+
       opacity:.65;
     }
 
@@ -347,7 +428,6 @@
       50%{
         transform:translateY(-15px);
       }
-
     }
 
 
@@ -454,6 +534,7 @@
         );
 
       -webkit-background-clip:text;
+
       -webkit-text-fill-color:transparent;
     }
 
@@ -568,7 +649,7 @@
 
       opacity:.7;
 
-      margin-bottom:50px;
+      margin-bottom:70px;
     }
 
 
@@ -580,7 +661,7 @@
 
       position:relative;
 
-      z-index:8;
+      z-index:5;
 
       width:100%;
 
@@ -588,7 +669,7 @@
 
       margin:0 auto 100px;
 
-      padding:35px 25px;
+      padding:35px 20px;
 
       text-align:center;
 
@@ -607,7 +688,7 @@
 
       box-shadow:
         0 20px 60px
-        rgba(0,0,0,.25);
+        rgba(0,0,0,.2);
     }
 
     .acertijo-seccion h2{
@@ -666,8 +747,7 @@
 
     .palabra:hover{
 
-      transform:
-        translateY(-3px);
+      transform:translateY(-3px);
 
       background:
         rgba(236,111,169,.25);
@@ -704,29 +784,20 @@
       font-weight:bold;
 
       color:var(--rosa);
+
+      line-height:1.8;
     }
 
+    .acertijo-controles{
 
-    /* =====================================================
-       🔄 BOTÓN REINICIAR
-    ===================================================== */
+      display:flex;
 
-    .boton-reiniciar{
+      justify-content:center;
 
-      background:
-        rgba(255,255,255,.07);
+      gap:10px;
 
-      border:
-        1px solid
-        rgba(255,255,255,.18);
-
-      margin-left:8px;
+      flex-wrap:wrap;
     }
-
-
-    /* =====================================================
-       🌑 ECLIPSE
-    ===================================================== */
 
     #imagenEclipse{
 
@@ -742,7 +813,7 @@
 
       object-fit:contain;
 
-      margin:30px auto 15px;
+      margin:25px auto 10px;
 
       border-radius:28px;
 
@@ -764,6 +835,39 @@
     }
 
     #imagenEclipse.mostrar{
+      display:block;
+    }
+
+    .frase-eclipse{
+
+      display:none;
+
+      max-width:620px;
+
+      margin:25px auto 0;
+
+      padding:25px;
+
+      border-radius:25px;
+
+      background:
+        rgba(255,255,255,.06);
+
+      border:
+        1px solid
+        rgba(243,166,200,.2);
+
+      line-height:1.9;
+
+      color:#fff4fb;
+
+      animation:
+        eclipseEntrada
+        1s
+        ease;
+    }
+
+    .frase-eclipse.mostrar{
       display:block;
     }
 
@@ -790,68 +894,6 @@
 
 
     /* =====================================================
-       💜 MENSAJE DEL ECLIPSE
-    ===================================================== */
-
-    .mensaje-eclipse{
-
-      display:none;
-
-      margin:25px auto 5px;
-
-      max-width:600px;
-
-      padding:25px;
-
-      border-radius:22px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(243,166,200,.10),
-          rgba(183,154,232,.10)
-        );
-
-      border:
-        1px solid
-        rgba(243,166,200,.20);
-
-      line-height:1.9;
-
-      font-size:1.05rem;
-
-      color:
-        rgba(255,255,255,.92);
-
-      animation:
-        mensajeEntrada
-        1.2s
-        ease;
-    }
-
-    .mensaje-eclipse.mostrar{
-      display:block;
-    }
-
-    @keyframes mensajeEntrada{
-
-      from{
-        opacity:0;
-        transform:
-          translateY(20px)
-          scale(.95);
-      }
-
-      to{
-        opacity:1;
-        transform:
-          translateY(0)
-          scale(1);
-      }
-    }
-
-
-    /* =====================================================
        🌌 CONSTELACIÓN
     ===================================================== */
 
@@ -861,15 +903,10 @@
 
       width:min(900px,100%);
 
-      height:650px;
+      height:520px;
 
       margin:auto;
     }
-
-
-    /* =====================================================
-       ✨ LÍNEAS
-    ===================================================== */
 
     .linea{
 
@@ -914,7 +951,8 @@
         brilloLinea
         2s
         ease-in-out
-        infinite alternate;
+        infinite
+        alternate;
     }
 
     @keyframes brilloLinea{
@@ -1051,27 +1089,27 @@
       color:var(--rosa);
     }
 
-
-    /* posiciones */
-
     .recuerdos{
+
       left:8%;
-      top:70px;
+      top:50px;
     }
 
     .tu{
+
       left:43%;
-      top:260px;
+      top:200px;
     }
 
     .carta-planeta{
+
       right:8%;
-      top:80px;
+      top:60px;
     }
 
 
     /* =====================================================
-       🪐 SISTEMA PLANETARIO
+       🪐 PLANETA + ÓRBITAS
     ===================================================== */
 
     .sistema-planeta{
@@ -1082,8 +1120,8 @@
 
       bottom:10px;
 
-      width:230px;
-      height:230px;
+      width:210px;
+      height:210px;
 
       transform:translateX(-50%);
 
@@ -1092,9 +1130,6 @@
       pointer-events:none;
     }
 
-
-    /* planeta */
-
     .planeta{
 
       position:absolute;
@@ -1102,8 +1137,8 @@
       left:50%;
       top:50%;
 
-      width:82px;
-      height:82px;
+      width:72px;
+      height:72px;
 
       transform:
         translate(-50%,-50%);
@@ -1124,35 +1159,10 @@
         rgba(243,166,200,.55),
 
         0 0 55px
-        rgba(183,154,232,.3),
+        rgba(183,154,232,.3);
 
-        0 0 100px
-        rgba(141,104,199,.2);
-
-      animation:
-        planetaFlotar
-        4s
-        ease-in-out
-        infinite;
+      z-index:5;
     }
-
-    @keyframes planetaFlotar{
-
-      0%,100%{
-        transform:
-          translate(-50%,-50%)
-          scale(1);
-      }
-
-      50%{
-        transform:
-          translate(-50%,-53%)
-          scale(1.04);
-      }
-    }
-
-
-    /* anillo del planeta */
 
     .planeta::before{
 
@@ -1160,43 +1170,15 @@
 
       position:absolute;
 
-      width:135px;
-      height:34px;
+      width:120px;
+      height:30px;
 
-      left:-27px;
-      top:24px;
+      left:-24px;
+      top:22px;
 
       border:
         3px solid
-        rgba(243,166,200,.7);
-
-      border-radius:50%;
-
-      transform:rotate(-15deg);
-
-      box-shadow:
-        0 0 12px
-        rgba(243,166,200,.3);
-    }
-
-
-    /* segundo anillo */
-
-    .planeta::after{
-
-      content:"";
-
-      position:absolute;
-
-      width:125px;
-      height:28px;
-
-      left:-22px;
-      top:27px;
-
-      border:
-        1px solid
-        rgba(255,255,255,.4);
+        rgba(243,166,200,.65);
 
       border-radius:50%;
 
@@ -1204,15 +1186,13 @@
     }
 
 
-    /* =====================================================
-       💗 ORBITA PRINCIPAL
-    ===================================================== */
+    /* ÓRBITA 1 */
 
     .orbita{
 
       position:absolute;
 
-      inset:10px;
+      inset:5px;
 
       border:
         1px dashed
@@ -1233,12 +1213,12 @@
 
       position:absolute;
 
-      top:-10px;
+      top:-8px;
       left:50%;
 
       transform:translateX(-50%);
 
-      font-size:20px;
+      font-size:18px;
 
       filter:
         drop-shadow(
@@ -1264,6 +1244,114 @@
         0 0 10px white;
     }
 
+
+    /* ÓRBITA 2 */
+
+    .orbita-dos{
+
+      position:absolute;
+
+      inset:-18px;
+
+      border:
+        1px solid
+        rgba(243,166,200,.12);
+
+      border-radius:50%;
+
+      animation:
+        girarOrbitaDos
+        12s
+        linear
+        infinite
+        reverse;
+    }
+
+    .orbita-dos::before{
+
+      content:"🌙";
+
+      position:absolute;
+
+      right:-4px;
+      top:50%;
+
+      transform:
+        translateY(-50%);
+
+      font-size:17px;
+
+      filter:
+        drop-shadow(
+          0 0 8px
+          rgba(255,255,255,.8)
+        );
+    }
+
+    .orbita-dos::after{
+
+      content:"⭐";
+
+      position:absolute;
+
+      left:8px;
+      top:15%;
+
+      font-size:14px;
+    }
+
+
+    /* ÓRBITA 3 */
+
+    .orbita-tres{
+
+      position:absolute;
+
+      inset:-40px;
+
+      border:
+        1px dashed
+        rgba(142,197,255,.15);
+
+      border-radius:50%;
+
+      animation:
+        girarOrbitaTres
+        17s
+        linear
+        infinite;
+    }
+
+    .orbita-tres::before{
+
+      content:"💌";
+
+      position:absolute;
+
+      left:12px;
+      bottom:20px;
+
+      font-size:17px;
+
+      filter:
+        drop-shadow(
+          0 0 8px
+          rgba(243,166,200,.8)
+        );
+    }
+
+    .orbita-tres::after{
+
+      content:"✨";
+
+      position:absolute;
+
+      right:5px;
+      top:20px;
+
+      font-size:17px;
+    }
+
     @keyframes girarOrbita{
 
       from{
@@ -1275,123 +1363,18 @@
       }
     }
 
-
-    /* =====================================================
-       🌙 SEGUNDA ORBITA
-    ===================================================== */
-
-    .orbita-2{
-
-      position:absolute;
-
-      inset:-10px;
-
-      border:
-        1px solid
-        rgba(183,154,232,.18);
-
-      border-radius:50%;
-
-      transform:rotate(25deg);
-
-      animation:
-        girarOrbita2
-        13s
-        linear
-        infinite;
-    }
-
-    .orbita-2::before{
-
-      content:"🌙";
-
-      position:absolute;
-
-      left:50%;
-      top:-13px;
-
-      transform:translateX(-50%);
-
-      font-size:18px;
-
-      filter:
-        drop-shadow(
-          0 0 8px
-          rgba(255,255,255,.8)
-        );
-    }
-
-    @keyframes girarOrbita2{
+    @keyframes girarOrbitaDos{
 
       from{
-        transform:rotate(25deg);
+        transform:rotate(0deg);
       }
 
       to{
-        transform:rotate(385deg);
+        transform:rotate(360deg);
       }
     }
 
-
-    /* =====================================================
-       ✨ TERCERA ORBITA
-    ===================================================== */
-
-    .orbita-3{
-
-      position:absolute;
-
-      inset:28px;
-
-      border:
-        1px dashed
-        rgba(243,166,200,.18);
-
-      border-radius:50%;
-
-      animation:
-        girarOrbita3
-        5s
-        linear
-        infinite reverse;
-    }
-
-    .orbita-3::before{
-
-      content:"✦";
-
-      position:absolute;
-
-      right:-5px;
-      top:50%;
-
-      color:white;
-
-      font-size:14px;
-
-      text-shadow:
-        0 0 10px white,
-        0 0 20px var(--rosa);
-    }
-
-    .orbita-3::after{
-
-      content:"✧";
-
-      position:absolute;
-
-      left:-5px;
-      top:35%;
-
-      color:var(--rosa);
-
-      font-size:18px;
-
-      text-shadow:
-        0 0 12px var(--rosa);
-    }
-
-    @keyframes girarOrbita3{
+    @keyframes girarOrbitaTres{
 
       from{
         transform:rotate(0deg);
@@ -1404,63 +1387,7 @@
 
 
     /* =====================================================
-       ✨ PEQUEÑAS PARTICULAS
-    ===================================================== */
-
-    .particula{
-
-      position:absolute;
-
-      left:50%;
-      top:50%;
-
-      font-size:13px;
-
-      color:white;
-
-      text-shadow:
-        0 0 10px white,
-        0 0 18px var(--morado);
-
-      animation:
-        orbitarParticula
-        6s
-        linear
-        infinite;
-    }
-
-    .particula-1{
-      animation-delay:-1s;
-    }
-
-    .particula-2{
-      animation-delay:-3s;
-    }
-
-    .particula-3{
-      animation-delay:-5s;
-    }
-
-    @keyframes orbitarParticula{
-
-      from{
-        transform:
-          rotate(0deg)
-          translateX(105px)
-          rotate(0deg);
-      }
-
-      to{
-        transform:
-          rotate(360deg)
-          translateX(105px)
-          rotate(-360deg);
-      }
-    }
-
-
-    /* =====================================================
-       💗 CORAZONES
+       💗 CORAZONES FLOTANTES
     ===================================================== */
 
     .corazon-flotante{
@@ -1469,7 +1396,7 @@
 
       pointer-events:none;
 
-      z-index:200;
+      z-index:700;
 
       font-size:25px;
 
@@ -1499,6 +1426,561 @@
           translateY(-250px)
           scale(1.5);
       }
+    }
+
+
+    /* =====================================================
+       🕳️ AGUJERO NEGRO
+    ===================================================== */
+
+    .agujero-negro{
+
+      position:fixed;
+
+      right:7%;
+      bottom:12%;
+
+      width:100px;
+      height:100px;
+
+      border-radius:50%;
+
+      cursor:pointer;
+
+      z-index:30;
+
+      background:
+        radial-gradient(
+          circle,
+          #000 0 35%,
+          #12091f 45%,
+          #6d3b91 65%,
+          transparent 72%
+        );
+
+      box-shadow:
+        0 0 25px #8d68c7,
+        0 0 60px rgba(183,154,232,.5);
+
+      animation:
+        agujeroFlotando
+        5s
+        ease-in-out
+        infinite;
+    }
+
+    .agujero-centro{
+
+      position:absolute;
+
+      inset:20px;
+
+      border-radius:50%;
+
+      background:#000;
+
+      box-shadow:
+        inset 0 0 20px #000,
+        0 0 25px rgba(0,0,0,.9);
+    }
+
+    .disco-acrecion{
+
+      position:absolute;
+
+      inset:-12px;
+
+      border-radius:50%;
+
+      border:
+        5px solid transparent;
+
+      border-top-color:#f3a6c8;
+
+      border-bottom-color:#8d68c7;
+
+      transform:rotate(-25deg);
+
+      animation:
+        girarAgujero
+        2s
+        linear
+        infinite;
+    }
+
+    @keyframes girarAgujero{
+
+      from{
+        transform:rotate(-25deg);
+      }
+
+      to{
+        transform:rotate(335deg);
+      }
+    }
+
+    @keyframes agujeroFlotando{
+
+      0%,100%{
+        transform:translateY(0);
+      }
+
+      50%{
+        transform:translateY(-15px);
+      }
+    }
+
+    .mensaje-agujero{
+
+      position:fixed;
+
+      inset:0;
+
+      display:none;
+
+      align-items:center;
+
+      justify-content:center;
+
+      padding:20px;
+
+      background:
+        rgba(0,0,0,.8);
+
+      backdrop-filter:blur(12px);
+
+      z-index:500;
+    }
+
+    .mensaje-agujero.activo{
+
+      display:flex;
+
+      animation:
+        aparecer
+        .5s
+        ease;
+    }
+
+    .contenido-agujero{
+
+      width:min(550px,90%);
+
+      padding:45px 30px;
+
+      text-align:center;
+
+      border-radius:30px;
+
+      background:
+        radial-gradient(
+          circle at center,
+          #302047,
+          #100b1d
+        );
+
+      border:
+        1px solid
+        rgba(183,154,232,.4);
+
+      box-shadow:
+        0 0 80px
+        rgba(141,104,199,.3);
+    }
+
+    .contenido-agujero > span{
+
+      font-size:60px;
+    }
+
+    .contenido-agujero h2{
+
+      color:var(--rosa);
+    }
+
+
+    /* =====================================================
+       🔭 TELESCOPIO
+    ===================================================== */
+
+    .telescopio-boton{
+
+      position:fixed;
+
+      left:7%;
+      bottom:12%;
+
+      z-index:30;
+
+      border:none;
+
+      border-radius:999px;
+
+      padding:13px 20px;
+
+      color:white;
+
+      font-weight:bold;
+
+      font-size:.95rem;
+
+      cursor:pointer;
+
+      background:
+        rgba(255,255,255,.08);
+
+      border:
+        1px solid
+        rgba(255,255,255,.2);
+
+      backdrop-filter:blur(8px);
+
+      box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.3);
+
+      transition:.3s;
+    }
+
+    .telescopio-boton:hover{
+
+      transform:
+        translateY(-4px)
+        scale(1.04);
+
+      background:
+        rgba(183,154,232,.2);
+
+      box-shadow:
+        0 0 30px
+        rgba(183,154,232,.3);
+    }
+
+    .telescopio{
+
+      position:fixed;
+
+      inset:0;
+
+      display:none;
+
+      z-index:600;
+
+      background:
+        radial-gradient(
+          circle,
+          #201638,
+          #030208 80%
+        );
+
+      overflow:hidden;
+    }
+
+    .telescopio.activo{
+
+      display:block;
+
+      animation:
+        aparecer
+        .8s
+        ease;
+    }
+
+    .telescopio-cielo{
+
+      position:absolute;
+
+      inset:0;
+
+      transform:scale(.5);
+
+      transition:
+        transform
+        2s
+        cubic-bezier(.2,.8,.2,1);
+    }
+
+    .telescopio.activo .telescopio-cielo{
+
+      transform:scale(1);
+    }
+
+    .telescopio-luna{
+
+      position:absolute;
+
+      left:50%;
+      top:42%;
+
+      transform:
+        translate(-50%,-50%);
+
+      font-size:150px;
+
+      filter:
+        drop-shadow(
+          0 0 40px
+          rgba(255,255,255,.7)
+        );
+    }
+
+    .telescopio-secreto{
+
+      position:absolute;
+
+      left:50%;
+      top:65%;
+
+      transform:
+        translateX(-50%);
+
+      width:min(600px,90%);
+
+      text-align:center;
+
+      color:white;
+
+      opacity:0;
+
+      transition:
+        opacity
+        1.5s
+        ease
+        1.5s;
+    }
+
+    .telescopio.activo .telescopio-secreto{
+
+      opacity:1;
+    }
+
+    .telescopio-secreto > div{
+
+      font-size:30px;
+
+      margin-bottom:15px;
+    }
+
+    .telescopio-secreto strong{
+
+      display:block;
+
+      font-size:1.2rem;
+
+      line-height:1.8;
+
+      color:var(--rosa);
+    }
+
+    .cerrar-telescopio{
+
+      position:absolute;
+
+      right:25px;
+      top:20px;
+
+      z-index:10;
+
+      border:none;
+
+      background:none;
+
+      color:white;
+
+      font-size:30px;
+
+      cursor:pointer;
+    }
+
+
+    /* =====================================================
+       🧬 ADN DEL UNIVERSO
+    ===================================================== */
+
+    .adn-seccion{
+
+      max-width:750px;
+
+      margin:100px auto;
+
+      padding:50px 30px;
+
+      text-align:center;
+
+      border-radius:35px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(243,166,200,.08),
+          rgba(183,154,232,.08)
+        );
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      box-shadow:
+        0 25px 80px
+        rgba(0,0,0,.25);
+    }
+
+    .adn-icono{
+
+      font-size:65px;
+
+      filter:
+        drop-shadow(
+          0 0 20px
+          rgba(243,166,200,.5)
+        );
+
+      animation:
+        adnFlotar
+        3s
+        ease-in-out
+        infinite;
+    }
+
+    @keyframes adnFlotar{
+
+      0%,100%{
+        transform:
+          translateY(0)
+          rotate(-5deg);
+      }
+
+      50%{
+        transform:
+          translateY(-10px)
+          rotate(5deg);
+      }
+    }
+
+    .adn-seccion h2{
+
+      color:var(--rosa);
+
+      font-size:2rem;
+
+      margin-bottom:10px;
+    }
+
+    .adn-seccion p{
+
+      opacity:.75;
+
+      line-height:1.7;
+    }
+
+    .adn-resultado{
+
+      display:none;
+
+      margin-top:35px;
+    }
+
+    .adn-resultado.activo{
+
+      display:block;
+
+      animation:
+        aparecer
+        .5s
+        ease;
+    }
+
+    .adn-escaneo{
+
+      position:relative;
+
+      width:180px;
+      height:180px;
+
+      margin:auto;
+
+      display:flex;
+
+      justify-content:center;
+
+      align-items:center;
+    }
+
+    .adn-helice{
+
+      font-size:100px;
+
+      animation:
+        girarADN
+        2s
+        linear
+        infinite;
+
+      filter:
+        drop-shadow(
+          0 0 25px
+          rgba(183,154,232,.8)
+        );
+    }
+
+    @keyframes girarADN{
+
+      from{
+        transform:rotateY(0deg);
+      }
+
+      to{
+        transform:rotateY(360deg);
+      }
+    }
+
+    .adn-linea{
+
+      position:absolute;
+
+      width:170px;
+      height:170px;
+
+      border-radius:50%;
+
+      border:
+        2px solid
+        rgba(243,166,200,.3);
+
+      border-top-color:
+        var(--rosa);
+
+      animation:
+        escanear
+        1.2s
+        linear
+        infinite;
+    }
+
+    @keyframes escanear{
+
+      from{
+        transform:rotate(0deg);
+      }
+
+      to{
+        transform:rotate(360deg);
+      }
+    }
+
+    .adn-texto{
+
+      min-height:100px;
+
+      margin-top:25px;
+
+      font-size:1.2rem;
+
+      font-weight:bold;
+
+      color:var(--rosa);
+
+      line-height:1.8;
     }
 
 
@@ -2024,7 +2506,7 @@
     @media(max-width:700px){
 
       .constelacion{
-        height:610px;
+        height:560px;
       }
 
       .recuerdos{
@@ -2050,10 +2532,34 @@
         height:270px;
       }
 
-      .acertijo-seccion{
-        margin-bottom:70px;
+      .agujero-negro{
+
+        width:70px;
+        height:70px;
+
+        right:4%;
+        bottom:8%;
       }
 
+      .telescopio-boton{
+
+        left:4%;
+        bottom:8%;
+
+        font-size:.8rem;
+
+        padding:
+          10px 14px;
+      }
+
+      .adn-seccion{
+
+        margin:
+          70px 20px;
+
+        padding:
+          40px 20px;
+      }
     }
 
     @media(max-width:450px){
@@ -2103,14 +2609,22 @@
           scale(.8);
       }
 
-      .mensaje-eclipse{
-        font-size:.95rem;
-        padding:20px;
+      .agujero-negro{
+
+        width:60px;
+        height:60px;
       }
 
+      .telescopio-boton{
+
+        bottom:5%;
+
+        left:3%;
+      }
     }
 
   </style>
+
 </head>
 
 
@@ -2211,7 +2725,6 @@
   </section>
 
 
-
   <!-- =====================================================
        ✨ UNIVERSO
   ===================================================== -->
@@ -2228,18 +2741,19 @@
 
     <p class="subtitulo">
 
-      Antes de explorar nuestra constelación...
-      hay algo que tienes que descubrir. 💜
+      Primero tendrás que descubrir
+      una pequeña sorpresa...
 
     </p>
-
 
 
     <!-- =====================================================
          🧩 ACERTIJO
     ===================================================== -->
 
-    <div class="acertijo-seccion">
+    <div
+      id="acertijo"
+      class="acertijo-seccion">
 
       <h2>
         🧩 Un pequeño acertijo
@@ -2261,11 +2775,13 @@
 
       <div class="palabras">
 
+
         <button
           class="palabra"
           onclick="seleccionarPalabra(this,'mi')">
           mi
         </button>
+
 
         <button
           class="palabra"
@@ -2273,11 +2789,13 @@
           universo
         </button>
 
+
         <button
           class="palabra"
           onclick="seleccionarPalabra(this,'eres')">
           eres
         </button>
+
 
         <button
           class="palabra"
@@ -2285,11 +2803,20 @@
           tú
         </button>
 
+
         <button
           class="palabra"
           onclick="seleccionarPalabra(this,'luna')">
           luna
         </button>
+
+
+        <button
+          class="palabra"
+          onclick="seleccionarPalabra(this,'mi')">
+          mi
+        </button>
+
 
         <button
           class="palabra"
@@ -2297,11 +2824,13 @@
           estrella
         </button>
 
+
         <button
           class="palabra"
           onclick="seleccionarPalabra(this,'mundo')">
           mundo
         </button>
+
 
         <button
           class="palabra"
@@ -2309,11 +2838,13 @@
           amor
         </button>
 
+
         <button
           class="palabra"
           onclick="seleccionarPalabra(this,'sol')">
           sol
         </button>
+
 
         <button
           class="palabra"
@@ -2321,16 +2852,11 @@
           siempre
         </button>
 
+
         <button
           class="palabra"
           onclick="seleccionarPalabra(this,'cielo')">
           cielo
-        </button>
-
-        <button
-          class="palabra"
-          onclick="seleccionarPalabra(this,'mi')">
-          mi
         </button>
 
       </div>
@@ -2339,25 +2865,28 @@
       <div id="resultadoAcertijo"></div>
 
 
-      <button
-        class="boton"
-        onclick="comprobarAcertijo()">
+      <div class="acertijo-controles">
 
-        ✨ Descubrir respuesta
+        <button
+          class="boton"
+          onclick="comprobarAcertijo()">
 
-      </button>
+          ✨ Descubrir respuesta
 
-
-      <button
-        class="boton boton-reiniciar"
-        onclick="reiniciarAcertijo()">
-
-        🔄 Reiniciar
-
-      </button>
+        </button>
 
 
-      <!-- TU IMAGEN DEL ECLIPSE -->
+        <button
+          id="reiniciarAcertijo"
+          class="boton boton-secundario"
+          onclick="reiniciarAcertijo()">
+
+          🔄 Intentarlo de nuevo
+
+        </button>
+
+      </div>
+
 
       <img
         id="imagenEclipse"
@@ -2365,59 +2894,58 @@
         alt="Nuestro eclipse">
 
 
-      <!-- MENSAJE QUE APARECE AL ACERTAR -->
-
       <div
-        id="mensajeEclipse"
-        class="mensaje-eclipse">
-
-        🌑💜
-
-        <br><br>
-
-        Hay algo que me gusta especialmente de los eclipses:
-        durante unos minutos, la luz y la oscuridad
-        terminan encontrándose en el mismo lugar.
-
-        <br><br>
-
-        Y creo que por eso esta imagen me recuerda tanto
-        a nosotros.
-
-        <br><br>
-
-        Porque incluso en medio de un universo enorme,
-        lleno de millones de estrellas y de lugares
-        que jamás podremos conocer...
-
-        <br><br>
+        id="fraseEclipse"
+        class="frase-eclipse">
 
         <strong>
-          de alguna manera terminamos encontrándonos tú y yo.
+          💜 Tú eres mi universo. 🌌
         </strong>
 
-        💗
+        <br><br>
+
+        Así como durante un eclipse la luna
+        consigue cubrir el brillo del sol y por
+        unos momentos todo parece detenerse,
+        tú también tienes esa capacidad de hacer
+        que el resto del mundo desaparezca.
 
         <br><br>
 
-        Así como un eclipse hace que por un momento
-        todo parezca detenerse para mirar al cielo,
-        hay momentos contigo en los que me pasa algo parecido.
+        Cuando estoy contigo no importa cuánto
+        ruido haya alrededor, porque de alguna
+        manera termino fijándome solamente en ti.
 
         <br><br>
 
-        El mundo sigue girando,
-        pero yo solo quiero quedarme ahí,
-        contigo, disfrutando ese pequeño instante.
+        Y quizás por eso esta imagen me gusta
+        tanto: porque me recuerda que incluso
+        algo tan enorme como el cielo puede
+        quedarse pequeño cuando encuentro en
+        una sola persona todo lo que necesito.
 
         <br><br>
 
-        Quizás por eso la frase era tan sencilla:
+        Si pudiera elegir cualquier lugar del
+        universo para estar, entre millones de
+        estrellas, planetas y galaxias...
 
         <br><br>
 
         <strong>
-          Tú eres mi universo. 🌌💜
+          seguiría eligiendo estar a tu lado. 💗
+        </strong>
+
+        <br><br>
+
+        Porque tú no eres solamente una estrella
+        más dentro de mi cielo.
+
+        <br>
+
+        <strong>
+          Eres el lugar al que siempre quiero
+          volver. 🌙💜
         </strong>
 
       </div>
@@ -2425,9 +2953,8 @@
     </div>
 
 
-
     <!-- =====================================================
-         ✨ CONSTELACIÓN
+         🌌 CONSTELACIÓN
     ===================================================== -->
 
     <h2>
@@ -2442,7 +2969,7 @@
 
       <br>
 
-      Tócalas para descubrirlas. 💜
+      Tócalas para descubrirlas.
 
     </p>
 
@@ -2452,17 +2979,17 @@
       class="constelacion">
 
 
-      <!-- LÍNEAS -->
-
       <div
         id="lineaRecuerdosTu"
         class="linea">
       </div>
 
+
       <div
         id="lineaTuCarta"
         class="linea">
       </div>
+
 
       <div
         id="lineaCartaRecuerdos"
@@ -2482,8 +3009,8 @@
         </div>
 
         <span>
-      Recuerdos
-    </span>
+            Recuerdos
+        </span>
 
       </div>
 
@@ -2500,8 +3027,8 @@
         </div>
 
         <span>
-      Tú
-    </span>
+            Tú
+        </span>
 
       </div>
 
@@ -2518,37 +3045,21 @@
         </div>
 
         <span>
-      Carta
-    </span>
+            Carta
+        </span>
 
       </div>
 
 
-      <!-- =================================================
-           🪐 PLANETA CON OBJETOS ORBITANDO
-      ================================================= -->
+      <!-- 🪐 PLANETA -->
 
       <div class="sistema-planeta">
 
         <div class="orbita"></div>
 
-        <div class="orbita-2"></div>
+        <div class="orbita-dos"></div>
 
-        <div class="orbita-3"></div>
-
-
-        <div class="particula particula-1">
-          ✦
-        </div>
-
-        <div class="particula particula-2">
-          ✧
-        </div>
-
-        <div class="particula particula-3">
-          ·
-        </div>
-
+        <div class="orbita-tres"></div>
 
         <div class="planeta"></div>
 
@@ -2557,6 +3068,66 @@
 
     </div>
 
+
+    <!-- =====================================================
+         🧬 ADN
+    ===================================================== -->
+
+    <section class="adn-seccion">
+
+      <div class="adn-icono">
+        🧬
+      </div>
+
+
+      <h2>
+        🧬 Análisis del universo
+      </h2>
+
+
+      <p>
+
+        ¿Qué tan compatibles son nuestras dos
+        pequeñas partes de este enorme universo?
+
+      </p>
+
+
+      <button
+        class="boton"
+        onclick="iniciarADN()">
+
+        🔬 Analizar conexión
+
+      </button>
+
+
+      <div
+        id="adnResultado"
+        class="adn-resultado">
+
+        <div class="adn-escaneo">
+
+          <div class="adn-linea"></div>
+
+          <div class="adn-helice">
+            🧬
+          </div>
+
+        </div>
+
+
+        <div
+          id="adnTexto"
+          class="adn-texto">
+
+          Preparando análisis...
+
+        </div>
+
+      </div>
+
+    </section>
 
 
     <!-- =====================================================
@@ -2613,6 +3184,124 @@
 
 </div>
 
+
+<!-- =====================================================
+     🕳️ AGUJERO NEGRO
+===================================================== -->
+
+<div
+  class="agujero-negro"
+  onclick="activarAgujeroNegro()"
+  title="¿Qué será esto?">
+
+  <div class="agujero-centro"></div>
+
+  <div class="disco-acrecion"></div>
+
+</div>
+
+
+<div
+  id="mensajeAgujero"
+  class="mensaje-agujero">
+
+  <div class="contenido-agujero">
+
+        <span>
+            🕳️
+        </span>
+
+
+    <h2>
+      Algo ha desaparecido...
+    </h2>
+
+
+    <p>
+
+      Hay cosas que el universo puede
+      tragarse...
+
+      <br><br>
+
+      pero nunca lo que siento por ti. 💜
+
+    </p>
+
+
+    <button
+      class="boton"
+      onclick="cerrarAgujero()">
+
+      ✨ Volver al universo
+
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     🔭 TELESCOPIO
+===================================================== -->
+
+<button
+  class="telescopio-boton"
+  onclick="activarTelescopio()">
+
+  🔭 Mirar al cielo
+
+</button>
+
+
+<div
+  id="telescopio"
+  class="telescopio">
+
+
+  <div class="telescopio-cielo">
+
+
+    <div class="telescopio-luna">
+      🌙
+    </div>
+
+
+    <div class="telescopio-secreto">
+
+      <div>
+        ✨
+      </div>
+
+
+      <strong>
+
+        Encontraste algo...
+
+        <br><br>
+
+        Incluso en un universo
+        lleno de estrellas,
+        siempre terminaría
+        buscándote a ti. 💜
+
+      </strong>
+
+    </div>
+
+  </div>
+
+
+  <button
+    class="cerrar-telescopio"
+    onclick="cerrarTelescopio()">
+
+    ✕
+
+  </button>
+
+</div>
 
 
 <!-- =====================================================
@@ -2758,7 +3447,6 @@
 </div>
 
 
-
 <!-- =====================================================
      💗 RAZONES
 ===================================================== -->
@@ -2814,7 +3502,6 @@
   </div>
 
 </div>
-
 
 
 <!-- =====================================================
@@ -2911,12 +3598,10 @@
 </div>
 
 
-
 <script>
 
-
   /* =====================================================
-     ⭐ CREAR ESTRELLAS
+     ⭐ ESTRELLAS
   ===================================================== */
 
   const estrellas =
@@ -2925,17 +3610,12 @@
 
   function crearEstrellas(cantidad){
 
-    for(
-      let i=0;
-      i<cantidad;
-      i++
-    ){
+    for(let i=0;i<cantidad;i++){
 
       const estrella =
         document.createElement("div");
 
-      estrella.className =
-        "estrella";
+      estrella.className="estrella";
 
       estrella.style.left =
         Math.random()*100+"%";
@@ -2949,12 +3629,8 @@
       estrella.style.opacity =
         Math.random();
 
-      estrellas.appendChild(
-        estrella
-      );
-
+      estrellas.appendChild(estrella);
     }
-
   }
 
   crearEstrellas(150);
@@ -2969,8 +3645,7 @@
     const cometa =
       document.createElement("div");
 
-    cometa.className =
-      "cometa";
+    cometa.className="cometa";
 
     const posiciones=[
 
@@ -3004,15 +3679,11 @@
         )
         ];
 
-    cometa.style.top =
-      posicion.top;
+    cometa.style.top=posicion.top;
 
-    cometa.style.right =
-      posicion.right;
+    cometa.style.right=posicion.right;
 
-    document.body.appendChild(
-      cometa
-    );
+    document.body.appendChild(cometa);
 
     setTimeout(
       ()=>{
@@ -3020,18 +3691,11 @@
       },
       2500
     );
-
   }
 
-  setTimeout(
-    crearCometa,
-    3500
-  );
+  setTimeout(crearCometa,3500);
 
-  setInterval(
-    crearCometa,
-    9000
-  );
+  setInterval(crearCometa,9000);
 
 
   /* =====================================================
@@ -3064,12 +3728,8 @@
 
     faseActual++;
 
-    if(
-      faseActual>=fasesLuna.length
-    ){
-
+    if(faseActual>=fasesLuna.length){
       faseActual=0;
-
     }
 
     luna.className =
@@ -3080,7 +3740,6 @@
       " · Haz clic para cambiarla";
 
     crearEstrellasEspeciales();
-
   }
 
 
@@ -3090,11 +3749,7 @@
 
   function crearEstrellasEspeciales(){
 
-    for(
-      let i=0;
-      i<10;
-      i++
-    ){
+    for(let i=0;i<10;i++){
 
       const estrella =
         document.createElement("div");
@@ -3148,9 +3803,7 @@
 
       );
 
-      document.body.appendChild(
-        estrella
-      );
+      document.body.appendChild(estrella);
 
       setTimeout(
         ()=>{
@@ -3158,9 +3811,7 @@
         },
         1200
       );
-
     }
-
   }
 
 
@@ -3173,7 +3824,7 @@
 
   function modoNoche(){
 
-    modoNocheActivo =
+    modoNocheActivo=
       !modoNocheActivo;
 
     document.body.classList.toggle(
@@ -3185,9 +3836,7 @@
         ".boton-secundario"
       );
 
-    if(
-      modoNocheActivo
-    ){
+    if(modoNocheActivo){
 
       boton.textContent =
         "☀️ Salir del modo noche";
@@ -3200,25 +3849,22 @@
 
       boton.textContent =
         "🌙 Modo noche";
-
     }
-
   }
 
 
   /* =====================================================
-     🌌 ENTRAR AL UNIVERSO
+     🌌 ENTRAR DIRECTAMENTE AL ACERTIJO
   ===================================================== */
 
   function entrarUniverso(){
 
     document
-      .querySelector(".acertijo-seccion")
+      .getElementById("acertijo")
       .scrollIntoView({
         behavior:"smooth",
         block:"center"
       });
-
   }
 
 
@@ -3230,23 +3876,16 @@
     new Set();
 
 
-  function abrirVentana(
-    id,
-    elemento
-  ){
+  function abrirVentana(id,elemento){
 
     const ventana =
       document.getElementById(id);
 
-    ventana.classList.add(
-      "activa"
-    );
+    ventana.classList.add("activa");
 
     visitadas.add(id);
 
-    elemento.classList.add(
-      "visitada"
-    );
+    elemento.classList.add("visitada");
 
     comprobarConstelacion();
 
@@ -3254,7 +3893,6 @@
       actualizarConstelacion,
       50
     );
-
 
     if(id==="razones"){
       crearCorazones();
@@ -3267,7 +3905,6 @@
     if(id==="carta"){
       crearCorazones();
     }
-
   }
 
 
@@ -3298,33 +3935,30 @@
 
 
     const x1 =
-      rectA.left +
-      rectA.width/2 -
+      rectA.left+
+      rectA.width/2-
       rectConstelacion.left;
 
     const y1 =
-      rectA.top +
-      rectA.height/2 -
+      rectA.top+
+      rectA.height/2-
       rectConstelacion.top;
 
 
     const x2 =
-      rectB.left +
-      rectB.width/2 -
+      rectB.left+
+      rectB.width/2-
       rectConstelacion.left;
 
     const y2 =
-      rectB.top +
-      rectB.height/2 -
+      rectB.top+
+      rectB.height/2-
       rectConstelacion.top;
 
 
-    const dx =
-      x2-x1;
+    const dx=x2-x1;
 
-    const dy =
-      y2-y1;
-
+    const dy=y2-y1;
 
     const distancia =
       Math.sqrt(
@@ -3332,21 +3966,15 @@
         dy*dy
       );
 
-
     const angulo =
-      Math.atan2(
-        dy,
-        dx
-      )*
+      Math.atan2(dy,dx)*
       180/
       Math.PI;
 
 
-    linea.style.left =
-      x1+"px";
+    linea.style.left=x1+"px";
 
-    linea.style.top =
-      y1+"px";
+    linea.style.top=y1+"px";
 
     linea.style.width =
       visible
@@ -3359,18 +3987,12 @@
 
     if(visible){
 
-      linea.classList.add(
-        "visible"
-      );
+      linea.classList.add("visible");
 
     }else{
 
-      linea.classList.remove(
-        "visible"
-      );
-
+      linea.classList.remove("visible");
     }
-
   }
 
 
@@ -3440,9 +4062,11 @@
 
 
     if(
+
       visitadas.has("recuerdos") &&
       visitadas.has("razones") &&
       visitadas.has("carta")
+
     ){
 
       document
@@ -3453,17 +4077,13 @@
       document
         .getElementById("final")
         .classList.add("mostrar");
-
     }
-
   }
 
 
   function comprobarConstelacion(){
 
-    if(
-      visitadas.size>=3
-    ){
+    if(visitadas.size>=3){
 
       actualizarConstelacion();
 
@@ -3474,9 +4094,7 @@
         },
         500
       );
-
     }
-
   }
 
 
@@ -3503,7 +4121,6 @@
           );
         }
       );
-
   }
 
 
@@ -3547,9 +4164,7 @@
   let animandoCarrusel=false;
 
 
-  function cambiarImagen(
-    direccion
-  ){
+  function cambiarImagen(direccion){
 
     if(animandoCarrusel){
       return;
@@ -3564,17 +4179,12 @@
 
       nuevaImagen =
         imagenes.length-1;
-
     }
 
 
-    if(
-      nuevaImagen>=
-      imagenes.length
-    ){
+    if(nuevaImagen>=imagenes.length){
 
       nuevaImagen=0;
-
     }
 
 
@@ -3582,7 +4192,6 @@
       nuevaImagen,
       direccion
     );
-
   }
 
 
@@ -3591,14 +4200,9 @@
     direccion=null
   ){
 
-    if(
-      numero===imagenActual
-    ){
-
+    if(numero===imagenActual){
       return;
-
     }
-
 
     animandoCarrusel=true;
 
@@ -3641,7 +4245,6 @@
             : "translateX(-100%) scale(.96)";
 
         actual.style.opacity="0";
-
       }
     );
 
@@ -3650,14 +4253,9 @@
       ()=>{
 
         imagenes.forEach(
-          (
-            imagen,
-            indice
-          )=>{
+          (imagen,indice)=>{
 
-            if(
-              indice!==numero
-            ){
+            if(indice!==numero){
 
               imagen.style.opacity="0";
 
@@ -3665,33 +4263,23 @@
                 "translateX(100%) scale(.96)";
 
               imagen.style.zIndex="1";
-
             }
-
           }
         );
 
 
-        nueva.classList.add(
-          "activa"
-        );
+        nueva.classList.add("activa");
 
-        actual.classList.remove(
-          "activa"
-        );
+        actual.classList.remove("activa");
 
 
         indicadores.forEach(
-          (
-            indicador,
-            indice
-          )=>{
+          (indicador,indice)=>{
 
             indicador.classList.toggle(
               "activo",
               indice===numero
             );
-
           }
         );
 
@@ -3707,7 +4295,6 @@
       },
       600
     );
-
   }
 
 
@@ -3743,13 +4330,9 @@
 
     razonActual++;
 
-    if(
-      razonActual>=
-      razones.length
-    ){
+    if(razonActual>=razones.length){
 
       razonActual=0;
-
     }
 
 
@@ -3767,7 +4350,6 @@
 
 
     crearCorazones();
-
   }
 
 
@@ -3788,11 +4370,7 @@
     ];
 
 
-    for(
-      let i=0;
-      i<12;
-      i++
-    ){
+    for(let i=0;i<12;i++){
 
       const corazon =
         document.createElement("div");
@@ -3811,17 +4389,14 @@
 
 
       corazon.style.left =
-        Math.random()*
-        100+
-        "%";
+        Math.random()*100+"%";
 
 
       corazon.style.bottom="20px";
 
 
       corazon.style.animationDelay =
-        Math.random()*
-        .8+
+        Math.random()*.8+
         "s";
 
 
@@ -3836,9 +4411,7 @@
         },
         2500
       );
-
     }
-
   }
 
 
@@ -3857,9 +4430,7 @@
     if(
       palabrasSeleccionadas.length>=4
     ){
-
       return;
-
     }
 
 
@@ -3868,9 +4439,7 @@
         "seleccionada"
       )
     ){
-
       return;
-
     }
 
 
@@ -3879,12 +4448,13 @@
     );
 
 
-    palabrasSeleccionadas.push(
-      {
-        palabra:palabra,
-        boton:boton
-      }
-    );
+    palabrasSeleccionadas.push({
+
+      palabra:palabra,
+
+      boton:boton
+
+    });
 
 
     document.getElementById(
@@ -3896,7 +4466,50 @@
             elemento.palabra
         )
         .join(" ");
+  }
 
+
+  /* =====================================================
+     🔄 REINICIAR ACERTIJO
+  ===================================================== */
+
+  function reiniciarAcertijo(){
+
+    palabrasSeleccionadas=[];
+
+
+    document
+      .querySelectorAll(".palabra")
+      .forEach(
+        boton=>{
+          boton.classList.remove(
+            "seleccionada"
+          );
+        }
+      );
+
+
+    document.getElementById(
+      "resultadoAcertijo"
+    ).textContent="";
+
+
+    document
+      .getElementById(
+        "imagenEclipse"
+      )
+      .classList.remove(
+      "mostrar"
+    );
+
+
+    document
+      .getElementById(
+        "fraseEclipse"
+      )
+      .classList.remove(
+      "mostrar"
+    );
   }
 
 
@@ -3944,7 +4557,7 @@
 
       document
         .getElementById(
-          "mensajeEclipse"
+          "fraseEclipse"
         )
         .classList.add(
         "mostrar"
@@ -3959,62 +4572,190 @@
     }else{
 
       resultado.innerHTML =
-        "👀 Mmm... esa no parece ser la respuesta. Inténtalo otra vez. 💜";
+        `
+            👀 Mmm... esa no parece ser la respuesta.
+            <br>
+            Inténtalo otra vez, astronauta. 🚀💜
+            `;
 
     }
-
   }
 
 
   /* =====================================================
-     🔄 REINICIAR ACERTIJO
+     🕳️ AGUJERO NEGRO
   ===================================================== */
 
-  function reiniciarAcertijo(){
-
-    palabrasSeleccionadas=[];
-
+  function activarAgujeroNegro(){
 
     document
-      .querySelectorAll(".palabra")
-      .forEach(
-        boton=>{
-          boton.classList.remove(
-            "seleccionada"
-          );
-        }
+      .getElementById(
+        "mensajeAgujero"
+      )
+      .classList.add("activo");
+
+
+    crearEstrellasEspeciales();
+
+    crearCorazones();
+  }
+
+
+  function cerrarAgujero(){
+
+    document
+      .getElementById(
+        "mensajeAgujero"
+      )
+      .classList.remove(
+      "activo"
+    );
+  }
+
+
+  /* =====================================================
+     🔭 TELESCOPIO
+  ===================================================== */
+
+  function activarTelescopio(){
+
+    document
+      .getElementById(
+        "telescopio"
+      )
+      .classList.add(
+      "activo"
+    );
+
+
+    crearEstrellasEspeciales();
+  }
+
+
+  function cerrarTelescopio(){
+
+    document
+      .getElementById(
+        "telescopio"
+      )
+      .classList.remove(
+      "activo"
+    );
+  }
+
+
+  /* =====================================================
+     🧬 ADN
+  ===================================================== */
+
+  let analisisADNActivo=false;
+
+
+  function iniciarADN(){
+
+    if(analisisADNActivo){
+      return;
+    }
+
+
+    analisisADNActivo=true;
+
+
+    const resultado =
+      document.getElementById(
+        "adnResultado"
       );
 
 
-    document
-      .getElementById(
-        "resultadoAcertijo"
-      )
-      .textContent="";
+    const texto =
+      document.getElementById(
+        "adnTexto"
+      );
 
 
-    document
-      .getElementById(
-        "imagenEclipse"
-      )
-      .classList.remove(
-      "mostrar"
+    resultado.classList.add(
+      "activo"
     );
 
 
-    document
-      .getElementById(
-        "mensajeEclipse"
-      )
-      .classList.remove(
-      "mostrar"
+    texto.textContent =
+      "🔬 Iniciando análisis...";
+
+
+    setTimeout(
+      ()=>{
+
+        texto.textContent =
+          "🌌 Analizando señales cósmicas...";
+
+      },
+      1800
     );
 
+
+    setTimeout(
+      ()=>{
+
+        texto.textContent =
+          "💫 Comparando dos pequeñas partes del universo...";
+
+      },
+      3500
+    );
+
+
+    setTimeout(
+      ()=>{
+
+        texto.innerHTML =
+          "💜 CONEXIÓN ENCONTRADA 💜";
+
+      },
+      5200
+    );
+
+
+    setTimeout(
+      ()=>{
+
+        texto.innerHTML =
+          `
+                💜 CONEXIÓN ENCONTRADA 💜
+
+                <br><br>
+
+                Compatibilidad cósmica:
+                <strong>100%</strong>
+
+                <br><br>
+
+                Error del sistema:
+
+                <br>
+
+                <span style="color:white">
+
+                    Demasiado amor detectado. 😂🌌
+
+                </span>
+                `;
+
+
+        crearCorazones();
+
+        crearEstrellasEspeciales();
+
+
+        analisisADNActivo=false;
+
+      },
+      6500
+    );
   }
 
 
   /* =====================================================
-     🖱️ CERRAR AL HACER CLICK AFUERA
+     🖱️ CERRAR VENTANAS HACIENDO CLICK AFUERA
   ===================================================== */
 
   document
@@ -4033,7 +4774,6 @@
               cerrarVentanas();
 
             }
-
           }
         );
 
@@ -4060,4 +4800,5 @@
 </script>
 
 </body>
+
 </html>
