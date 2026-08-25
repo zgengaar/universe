@@ -2,41 +2,22 @@
 <html lang="es">
 
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>🌌 Nuestro pequeño universo</title>
 
   <style>
 
-    /* =====================================================
-       🎨 VARIABLES
-    ===================================================== */
-
     :root{
-
       --rosa:#f3a6c8;
       --rosa-fuerte:#ec6fa9;
-
       --morado:#b79ae8;
       --morado-fuerte:#8d68c7;
-
       --azul:#8ec5ff;
-
       --noche:#090714;
-
       --blanco:#fff8ff;
     }
-
-
-    /* =====================================================
-       🌌 BASE
-    ===================================================== */
 
     *{
       box-sizing:border-box;
@@ -47,18 +28,9 @@
     }
 
     body{
-
       margin:0;
-
       min-height:100vh;
-
-      font-family:
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       color:var(--blanco);
 
       background:
@@ -70,9 +42,7 @@
         );
 
       overflow-x:hidden;
-
-      transition:
-        background 1s ease;
+      transition:background 1s ease;
     }
 
 
@@ -81,28 +51,18 @@
     ===================================================== */
 
     .nebulosa{
-
       position:fixed;
-
       inset:-30%;
-
       pointer-events:none;
-
       z-index:0;
-
       overflow:hidden;
-
       opacity:.65;
-
       filter:blur(45px);
     }
 
     .nube{
-
       position:absolute;
-
       border-radius:50%;
-
       filter:blur(50px);
 
       animation:
@@ -114,69 +74,46 @@
     }
 
     .nube-rosa{
-
       width:430px;
       height:300px;
-
       left:5%;
       top:10%;
-
-      background:
-        rgba(236,111,169,.28);
-
+      background:rgba(236,111,169,.28);
       animation-delay:-4s;
     }
 
     .nube-morada{
-
       width:500px;
       height:380px;
-
       right:5%;
       top:25%;
-
-      background:
-        rgba(141,104,199,.3);
-
+      background:rgba(141,104,199,.3);
       animation-delay:-8s;
     }
 
     .nube-azul{
-
       width:420px;
       height:320px;
-
       left:35%;
       bottom:5%;
-
-      background:
-        rgba(76,143,220,.18);
-
+      background:rgba(76,143,220,.18);
       animation-delay:-12s;
     }
 
     @keyframes moverNebulosa{
 
       0%{
-        transform:
-          translate(0,0)
-          scale(1)
-          rotate(0deg);
+        transform:translate(0,0) scale(1) rotate(0deg);
       }
 
       50%{
-        transform:
-          translate(100px,-70px)
-          scale(1.15)
-          rotate(20deg);
+        transform:translate(100px,-70px) scale(1.15) rotate(20deg);
       }
 
       100%{
-        transform:
-          translate(-80px,90px)
-          scale(.9)
-          rotate(-15deg);
+        transform:translate(-80px,90px) scale(.9) rotate(-15deg);
       }
+
     }
 
 
@@ -205,29 +142,21 @@
     ===================================================== */
 
     #estrellas{
-
       position:fixed;
-
       inset:0;
-
       pointer-events:none;
-
       z-index:1;
     }
 
     .estrella{
-
       position:absolute;
-
       width:3px;
       height:3px;
 
       background:white;
-
       border-radius:50%;
 
-      box-shadow:
-        0 0 6px white;
+      box-shadow:0 0 6px white;
 
       animation:
         parpadear
@@ -247,6 +176,7 @@
         opacity:1;
         transform:scale(1.4);
       }
+
     }
 
 
@@ -255,14 +185,12 @@
     ===================================================== */
 
     .cometa{
-
       position:fixed;
 
       width:180px;
       height:3px;
 
       pointer-events:none;
-
       z-index:20;
 
       opacity:0;
@@ -311,7 +239,6 @@
     @keyframes atravesarCometa{
 
       0%{
-
         opacity:0;
 
         transform:
@@ -328,13 +255,13 @@
       }
 
       100%{
-
         opacity:0;
 
         transform:
           translate(-700px,600px)
           rotate(-35deg);
       }
+
     }
 
 
@@ -343,9 +270,7 @@
     ===================================================== */
 
     .universo{
-
       position:relative;
-
       z-index:2;
     }
 
@@ -359,11 +284,9 @@
       min-height:100vh;
 
       display:flex;
-
       flex-direction:column;
 
       align-items:center;
-
       justify-content:center;
 
       text-align:center;
@@ -411,11 +334,8 @@
     }
 
     .fase-luna{
-
       margin-bottom:25px;
-
       font-size:.9rem;
-
       opacity:.65;
     }
 
@@ -428,11 +348,12 @@
       50%{
         transform:translateY(-15px);
       }
+
     }
 
 
     /* =====================================================
-       🌙 FASES
+       🌙 FASES DE LUNA
     ===================================================== */
 
     .luna-fase-0{
@@ -534,7 +455,6 @@
         );
 
       -webkit-background-clip:text;
-
       -webkit-text-fill-color:transparent;
     }
 
@@ -667,9 +587,9 @@
 
       max-width:700px;
 
-      margin:0 auto 100px;
+      margin:0 auto 90px;
 
-      padding:35px 20px;
+      padding:30px 20px;
 
       text-align:center;
 
@@ -689,6 +609,8 @@
       box-shadow:
         0 20px 60px
         rgba(0,0,0,.2);
+
+      scroll-margin-top:20px;
     }
 
     .acertijo-seccion h2{
@@ -747,7 +669,8 @@
 
     .palabra:hover{
 
-      transform:translateY(-3px);
+      transform:
+        translateY(-3px);
 
       background:
         rgba(236,111,169,.25);
@@ -784,17 +707,15 @@
       font-weight:bold;
 
       color:var(--rosa);
-
-      line-height:1.8;
     }
 
-    .acertijo-controles{
+    .botones-acertijo{
 
       display:flex;
 
-      justify-content:center;
-
       gap:10px;
+
+      justify-content:center;
 
       flex-wrap:wrap;
     }
@@ -838,37 +759,20 @@
       display:block;
     }
 
-    .frase-eclipse{
+    #fraseEclipse{
 
       display:none;
 
-      max-width:620px;
-
-      margin:25px auto 0;
-
-      padding:25px;
-
-      border-radius:25px;
-
-      background:
-        rgba(255,255,255,.06);
-
-      border:
-        1px solid
-        rgba(243,166,200,.2);
-
       line-height:1.9;
 
-      color:#fff4fb;
+      margin:25px auto 5px;
 
-      animation:
-        eclipseEntrada
-        1s
-        ease;
-    }
+      max-width:600px;
 
-    .frase-eclipse.mostrar{
-      display:block;
+      font-size:1.08rem;
+
+      color:
+        rgba(255,248,255,.92);
     }
 
     @keyframes eclipseEntrada{
@@ -890,6 +794,7 @@
           scale(1)
           translateY(0);
       }
+
     }
 
 
@@ -903,10 +808,22 @@
 
       width:min(900px,100%);
 
-      height:520px;
+      /*
+         Aumentamos un poco el espacio vertical.
+         Esto permite colocar el planeta abajo
+         sin que invada la estrella "Tú".
+      */
+      height:580px;
 
       margin:auto;
+
+      overflow:visible;
     }
+
+
+    /* =====================================================
+       ✨ LÍNEAS
+    ===================================================== */
 
     .linea{
 
@@ -939,6 +856,8 @@
       transition:
         opacity .7s ease,
         width .8s cubic-bezier(.2,.8,.2,1);
+
+      z-index:1;
     }
 
     .linea.visible{
@@ -951,8 +870,7 @@
         brilloLinea
         2s
         ease-in-out
-        infinite
-        alternate;
+        infinite alternate;
     }
 
     @keyframes brilloLinea{
@@ -968,6 +886,7 @@
           brightness(1.8)
           drop-shadow(0 0 15px white);
       }
+
     }
 
 
@@ -1049,6 +968,7 @@
         transform:scale(1.2);
         opacity:1;
       }
+
     }
 
     .estrella-especial:hover{
@@ -1089,28 +1009,44 @@
       color:var(--rosa);
     }
 
-    .recuerdos{
 
+    /* =====================================================
+       📍 POSICIONES
+    ===================================================== */
+
+    .recuerdos{
       left:8%;
       top:50px;
     }
 
     .tu{
-
       left:43%;
       top:200px;
     }
 
     .carta-planeta{
-
       right:8%;
       top:60px;
     }
 
 
     /* =====================================================
-       🪐 PLANETA + ÓRBITAS
+       🪐 SISTEMA PLANETARIO
     ===================================================== */
+
+    /*
+       🔧 CORRECCIÓN PRINCIPAL
+
+       Antes:
+       bottom:20px;
+
+       Ahora:
+       bottom:-45px;
+
+       Así el planeta queda claramente por debajo
+       de la estrella "Tú" y su órbita no invade
+       el botón.
+    */
 
     .sistema-planeta{
 
@@ -1118,17 +1054,21 @@
 
       left:50%;
 
-      bottom:10px;
+      bottom:-45px;
 
-      width:210px;
-      height:210px;
+      width:180px;
+      height:180px;
 
-      transform:translateX(-50%);
+      transform:
+        translateX(-50%);
 
-      z-index:3;
+      z-index:2;
 
       pointer-events:none;
     }
+
+
+    /* PLANETA */
 
     .planeta{
 
@@ -1160,8 +1100,6 @@
 
         0 0 55px
         rgba(183,154,232,.3);
-
-      z-index:5;
     }
 
     .planeta::before{
@@ -1186,7 +1124,9 @@
     }
 
 
-    /* ÓRBITA 1 */
+    /* =====================================================
+       💗 ÓRBITA PRINCIPAL
+    ===================================================== */
 
     .orbita{
 
@@ -1216,7 +1156,8 @@
       top:-8px;
       left:50%;
 
-      transform:translateX(-50%);
+      transform:
+        translateX(-50%);
 
       font-size:18px;
 
@@ -1244,114 +1185,6 @@
         0 0 10px white;
     }
 
-
-    /* ÓRBITA 2 */
-
-    .orbita-dos{
-
-      position:absolute;
-
-      inset:-18px;
-
-      border:
-        1px solid
-        rgba(243,166,200,.12);
-
-      border-radius:50%;
-
-      animation:
-        girarOrbitaDos
-        12s
-        linear
-        infinite
-        reverse;
-    }
-
-    .orbita-dos::before{
-
-      content:"🌙";
-
-      position:absolute;
-
-      right:-4px;
-      top:50%;
-
-      transform:
-        translateY(-50%);
-
-      font-size:17px;
-
-      filter:
-        drop-shadow(
-          0 0 8px
-          rgba(255,255,255,.8)
-        );
-    }
-
-    .orbita-dos::after{
-
-      content:"⭐";
-
-      position:absolute;
-
-      left:8px;
-      top:15%;
-
-      font-size:14px;
-    }
-
-
-    /* ÓRBITA 3 */
-
-    .orbita-tres{
-
-      position:absolute;
-
-      inset:-40px;
-
-      border:
-        1px dashed
-        rgba(142,197,255,.15);
-
-      border-radius:50%;
-
-      animation:
-        girarOrbitaTres
-        17s
-        linear
-        infinite;
-    }
-
-    .orbita-tres::before{
-
-      content:"💌";
-
-      position:absolute;
-
-      left:12px;
-      bottom:20px;
-
-      font-size:17px;
-
-      filter:
-        drop-shadow(
-          0 0 8px
-          rgba(243,166,200,.8)
-        );
-    }
-
-    .orbita-tres::after{
-
-      content:"✨";
-
-      position:absolute;
-
-      right:5px;
-      top:20px;
-
-      font-size:17px;
-    }
-
     @keyframes girarOrbita{
 
       from{
@@ -1361,33 +1194,12 @@
       to{
         transform:rotate(360deg);
       }
-    }
 
-    @keyframes girarOrbitaDos{
-
-      from{
-        transform:rotate(0deg);
-      }
-
-      to{
-        transform:rotate(360deg);
-      }
-    }
-
-    @keyframes girarOrbitaTres{
-
-      from{
-        transform:rotate(0deg);
-      }
-
-      to{
-        transform:rotate(360deg);
-      }
     }
 
 
     /* =====================================================
-       💗 CORAZONES FLOTANTES
+       💗 CORAZONES
     ===================================================== */
 
     .corazon-flotante{
@@ -1396,7 +1208,7 @@
 
       pointer-events:none;
 
-      z-index:700;
+      z-index:200;
 
       font-size:25px;
 
@@ -1426,561 +1238,6 @@
           translateY(-250px)
           scale(1.5);
       }
-    }
-
-
-    /* =====================================================
-       🕳️ AGUJERO NEGRO
-    ===================================================== */
-
-    .agujero-negro{
-
-      position:fixed;
-
-      right:7%;
-      bottom:12%;
-
-      width:100px;
-      height:100px;
-
-      border-radius:50%;
-
-      cursor:pointer;
-
-      z-index:30;
-
-      background:
-        radial-gradient(
-          circle,
-          #000 0 35%,
-          #12091f 45%,
-          #6d3b91 65%,
-          transparent 72%
-        );
-
-      box-shadow:
-        0 0 25px #8d68c7,
-        0 0 60px rgba(183,154,232,.5);
-
-      animation:
-        agujeroFlotando
-        5s
-        ease-in-out
-        infinite;
-    }
-
-    .agujero-centro{
-
-      position:absolute;
-
-      inset:20px;
-
-      border-radius:50%;
-
-      background:#000;
-
-      box-shadow:
-        inset 0 0 20px #000,
-        0 0 25px rgba(0,0,0,.9);
-    }
-
-    .disco-acrecion{
-
-      position:absolute;
-
-      inset:-12px;
-
-      border-radius:50%;
-
-      border:
-        5px solid transparent;
-
-      border-top-color:#f3a6c8;
-
-      border-bottom-color:#8d68c7;
-
-      transform:rotate(-25deg);
-
-      animation:
-        girarAgujero
-        2s
-        linear
-        infinite;
-    }
-
-    @keyframes girarAgujero{
-
-      from{
-        transform:rotate(-25deg);
-      }
-
-      to{
-        transform:rotate(335deg);
-      }
-    }
-
-    @keyframes agujeroFlotando{
-
-      0%,100%{
-        transform:translateY(0);
-      }
-
-      50%{
-        transform:translateY(-15px);
-      }
-    }
-
-    .mensaje-agujero{
-
-      position:fixed;
-
-      inset:0;
-
-      display:none;
-
-      align-items:center;
-
-      justify-content:center;
-
-      padding:20px;
-
-      background:
-        rgba(0,0,0,.8);
-
-      backdrop-filter:blur(12px);
-
-      z-index:500;
-    }
-
-    .mensaje-agujero.activo{
-
-      display:flex;
-
-      animation:
-        aparecer
-        .5s
-        ease;
-    }
-
-    .contenido-agujero{
-
-      width:min(550px,90%);
-
-      padding:45px 30px;
-
-      text-align:center;
-
-      border-radius:30px;
-
-      background:
-        radial-gradient(
-          circle at center,
-          #302047,
-          #100b1d
-        );
-
-      border:
-        1px solid
-        rgba(183,154,232,.4);
-
-      box-shadow:
-        0 0 80px
-        rgba(141,104,199,.3);
-    }
-
-    .contenido-agujero > span{
-
-      font-size:60px;
-    }
-
-    .contenido-agujero h2{
-
-      color:var(--rosa);
-    }
-
-
-    /* =====================================================
-       🔭 TELESCOPIO
-    ===================================================== */
-
-    .telescopio-boton{
-
-      position:fixed;
-
-      left:7%;
-      bottom:12%;
-
-      z-index:30;
-
-      border:none;
-
-      border-radius:999px;
-
-      padding:13px 20px;
-
-      color:white;
-
-      font-weight:bold;
-
-      font-size:.95rem;
-
-      cursor:pointer;
-
-      background:
-        rgba(255,255,255,.08);
-
-      border:
-        1px solid
-        rgba(255,255,255,.2);
-
-      backdrop-filter:blur(8px);
-
-      box-shadow:
-        0 10px 30px
-        rgba(0,0,0,.3);
-
-      transition:.3s;
-    }
-
-    .telescopio-boton:hover{
-
-      transform:
-        translateY(-4px)
-        scale(1.04);
-
-      background:
-        rgba(183,154,232,.2);
-
-      box-shadow:
-        0 0 30px
-        rgba(183,154,232,.3);
-    }
-
-    .telescopio{
-
-      position:fixed;
-
-      inset:0;
-
-      display:none;
-
-      z-index:600;
-
-      background:
-        radial-gradient(
-          circle,
-          #201638,
-          #030208 80%
-        );
-
-      overflow:hidden;
-    }
-
-    .telescopio.activo{
-
-      display:block;
-
-      animation:
-        aparecer
-        .8s
-        ease;
-    }
-
-    .telescopio-cielo{
-
-      position:absolute;
-
-      inset:0;
-
-      transform:scale(.5);
-
-      transition:
-        transform
-        2s
-        cubic-bezier(.2,.8,.2,1);
-    }
-
-    .telescopio.activo .telescopio-cielo{
-
-      transform:scale(1);
-    }
-
-    .telescopio-luna{
-
-      position:absolute;
-
-      left:50%;
-      top:42%;
-
-      transform:
-        translate(-50%,-50%);
-
-      font-size:150px;
-
-      filter:
-        drop-shadow(
-          0 0 40px
-          rgba(255,255,255,.7)
-        );
-    }
-
-    .telescopio-secreto{
-
-      position:absolute;
-
-      left:50%;
-      top:65%;
-
-      transform:
-        translateX(-50%);
-
-      width:min(600px,90%);
-
-      text-align:center;
-
-      color:white;
-
-      opacity:0;
-
-      transition:
-        opacity
-        1.5s
-        ease
-        1.5s;
-    }
-
-    .telescopio.activo .telescopio-secreto{
-
-      opacity:1;
-    }
-
-    .telescopio-secreto > div{
-
-      font-size:30px;
-
-      margin-bottom:15px;
-    }
-
-    .telescopio-secreto strong{
-
-      display:block;
-
-      font-size:1.2rem;
-
-      line-height:1.8;
-
-      color:var(--rosa);
-    }
-
-    .cerrar-telescopio{
-
-      position:absolute;
-
-      right:25px;
-      top:20px;
-
-      z-index:10;
-
-      border:none;
-
-      background:none;
-
-      color:white;
-
-      font-size:30px;
-
-      cursor:pointer;
-    }
-
-
-    /* =====================================================
-       🧬 ADN DEL UNIVERSO
-    ===================================================== */
-
-    .adn-seccion{
-
-      max-width:750px;
-
-      margin:100px auto;
-
-      padding:50px 30px;
-
-      text-align:center;
-
-      border-radius:35px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(243,166,200,.08),
-          rgba(183,154,232,.08)
-        );
-
-      border:
-        1px solid
-        rgba(255,255,255,.12);
-
-      box-shadow:
-        0 25px 80px
-        rgba(0,0,0,.25);
-    }
-
-    .adn-icono{
-
-      font-size:65px;
-
-      filter:
-        drop-shadow(
-          0 0 20px
-          rgba(243,166,200,.5)
-        );
-
-      animation:
-        adnFlotar
-        3s
-        ease-in-out
-        infinite;
-    }
-
-    @keyframes adnFlotar{
-
-      0%,100%{
-        transform:
-          translateY(0)
-          rotate(-5deg);
-      }
-
-      50%{
-        transform:
-          translateY(-10px)
-          rotate(5deg);
-      }
-    }
-
-    .adn-seccion h2{
-
-      color:var(--rosa);
-
-      font-size:2rem;
-
-      margin-bottom:10px;
-    }
-
-    .adn-seccion p{
-
-      opacity:.75;
-
-      line-height:1.7;
-    }
-
-    .adn-resultado{
-
-      display:none;
-
-      margin-top:35px;
-    }
-
-    .adn-resultado.activo{
-
-      display:block;
-
-      animation:
-        aparecer
-        .5s
-        ease;
-    }
-
-    .adn-escaneo{
-
-      position:relative;
-
-      width:180px;
-      height:180px;
-
-      margin:auto;
-
-      display:flex;
-
-      justify-content:center;
-
-      align-items:center;
-    }
-
-    .adn-helice{
-
-      font-size:100px;
-
-      animation:
-        girarADN
-        2s
-        linear
-        infinite;
-
-      filter:
-        drop-shadow(
-          0 0 25px
-          rgba(183,154,232,.8)
-        );
-    }
-
-    @keyframes girarADN{
-
-      from{
-        transform:rotateY(0deg);
-      }
-
-      to{
-        transform:rotateY(360deg);
-      }
-    }
-
-    .adn-linea{
-
-      position:absolute;
-
-      width:170px;
-      height:170px;
-
-      border-radius:50%;
-
-      border:
-        2px solid
-        rgba(243,166,200,.3);
-
-      border-top-color:
-        var(--rosa);
-
-      animation:
-        escanear
-        1.2s
-        linear
-        infinite;
-    }
-
-    @keyframes escanear{
-
-      from{
-        transform:rotate(0deg);
-      }
-
-      to{
-        transform:rotate(360deg);
-      }
-    }
-
-    .adn-texto{
-
-      min-height:100px;
-
-      margin-top:25px;
-
-      font-size:1.2rem;
-
-      font-weight:bold;
-
-      color:var(--rosa);
-
-      line-height:1.8;
     }
 
 
@@ -2478,6 +1735,7 @@
           scale(1)
           translateY(0);
       }
+
     }
 
     .final h2{
@@ -2506,7 +1764,7 @@
     @media(max-width:700px){
 
       .constelacion{
-        height:560px;
+        height:620px;
       }
 
       .recuerdos{
@@ -2524,43 +1782,25 @@
         top:380px;
       }
 
+      /*
+         En móvil bajamos todavía más
+         el planeta para separarlo de "Tú".
+      */
+
       .sistema-planeta{
-        bottom:-5px;
+        bottom:-50px;
       }
 
       .contenedor-imagen{
         height:270px;
       }
 
-      .agujero-negro{
-
-        width:70px;
-        height:70px;
-
-        right:4%;
-        bottom:8%;
+      .acertijo-seccion{
+        margin-bottom:70px;
       }
 
-      .telescopio-boton{
-
-        left:4%;
-        bottom:8%;
-
-        font-size:.8rem;
-
-        padding:
-          10px 14px;
-      }
-
-      .adn-seccion{
-
-        margin:
-          70px 20px;
-
-        padding:
-          40px 20px;
-      }
     }
+
 
     @media(max-width:450px){
 
@@ -2602,29 +1842,22 @@
         font-size:21px;
       }
 
+      /*
+         Posición final del planeta en pantallas pequeñas.
+      */
+
       .sistema-planeta{
+
+        bottom:-65px;
 
         transform:
           translateX(-50%)
           scale(.8);
       }
 
-      .agujero-negro{
-
-        width:60px;
-        height:60px;
-      }
-
-      .telescopio-boton{
-
-        bottom:5%;
-
-        left:3%;
-      }
     }
 
   </style>
-
 </head>
 
 
@@ -2681,11 +1914,9 @@
 
     </div>
 
-
     <h1>
       Nuestro pequeño universo
     </h1>
-
 
     <p>
 
@@ -2700,7 +1931,6 @@
 
     </p>
 
-
     <div class="botones-portada">
 
       <button
@@ -2710,7 +1940,6 @@
         ✨ Entrar a nuestro universo
 
       </button>
-
 
       <button
         class="boton boton-secundario"
@@ -2733,16 +1962,18 @@
     id="universo"
     class="seccion-universo">
 
-
     <h2>
-      ✨ Nuestro pequeño universo
+      ✨ Nuestra constelación
     </h2>
-
 
     <p class="subtitulo">
 
-      Primero tendrás que descubrir
-      una pequeña sorpresa...
+      Hay tres estrellas escondiendo
+      pequeñas partes de nuestra historia...
+
+      <br>
+
+      Tócalas para descubrirlas.
 
     </p>
 
@@ -2759,7 +1990,6 @@
         🧩 Un pequeño acertijo
       </h2>
 
-
       <p>
 
         Hay una frase escondida entre
@@ -2775,13 +2005,11 @@
 
       <div class="palabras">
 
-
         <button
           class="palabra"
           onclick="seleccionarPalabra(this,'mi')">
           mi
         </button>
-
 
         <button
           class="palabra"
@@ -2789,13 +2017,11 @@
           universo
         </button>
 
-
         <button
           class="palabra"
           onclick="seleccionarPalabra(this,'eres')">
           eres
         </button>
-
 
         <button
           class="palabra"
@@ -2803,13 +2029,11 @@
           tú
         </button>
 
-
         <button
           class="palabra"
           onclick="seleccionarPalabra(this,'luna')">
           luna
         </button>
-
 
         <button
           class="palabra"
@@ -2817,13 +2041,11 @@
           mi
         </button>
 
-
         <button
           class="palabra"
           onclick="seleccionarPalabra(this,'estrella')">
           estrella
         </button>
-
 
         <button
           class="palabra"
@@ -2831,13 +2053,11 @@
           mundo
         </button>
 
-
         <button
           class="palabra"
           onclick="seleccionarPalabra(this,'amor')">
           amor
         </button>
-
 
         <button
           class="palabra"
@@ -2845,13 +2065,11 @@
           sol
         </button>
 
-
         <button
           class="palabra"
           onclick="seleccionarPalabra(this,'siempre')">
           siempre
         </button>
-
 
         <button
           class="palabra"
@@ -2865,7 +2083,7 @@
       <div id="resultadoAcertijo"></div>
 
 
-      <div class="acertijo-controles">
+      <div class="botones-acertijo">
 
         <button
           class="boton"
@@ -2875,13 +2093,11 @@
 
         </button>
 
-
         <button
-          id="reiniciarAcertijo"
           class="boton boton-secundario"
           onclick="reiniciarAcertijo()">
 
-          🔄 Intentarlo de nuevo
+          🔄 Reiniciar
 
         </button>
 
@@ -2894,59 +2110,67 @@
         alt="Nuestro eclipse">
 
 
-      <div
-        id="fraseEclipse"
-        class="frase-eclipse">
+      <div id="fraseEclipse">
 
-        <strong>
-          💜 Tú eres mi universo. 🌌
-        </strong>
+        <p>
+          <strong>🌑💜 Para ti...</strong>
+        </p>
 
-        <br><br>
+        <p>
 
-        Así como durante un eclipse la luna
-        consigue cubrir el brillo del sol y por
-        unos momentos todo parece detenerse,
-        tú también tienes esa capacidad de hacer
-        que el resto del mundo desaparezca.
+          Así como la luna puede cubrir al sol
+          por un instante y hacer que el cielo
+          entero cambie, tú también llegaste
+          a mi vida y cambiaste la forma en que
+          veo muchas cosas.
 
-        <br><br>
+        </p>
 
-        Cuando estoy contigo no importa cuánto
-        ruido haya alrededor, porque de alguna
-        manera termino fijándome solamente en ti.
+        <p>
 
-        <br><br>
+          Un eclipse dura apenas un momento,
+          pero es capaz de hacer que todos
+          se detengan a mirar el cielo.
 
-        Y quizás por eso esta imagen me gusta
-        tanto: porque me recuerda que incluso
-        algo tan enorme como el cielo puede
-        quedarse pequeño cuando encuentro en
-        una sola persona todo lo que necesito.
+          Y contigo me pasa algo parecido:
+          entre tantas personas, tantos lugares
+          y tantos momentos, siempre hay algo
+          que consigue hacer que mi atención
+          termine encontrándote a ti.
 
-        <br><br>
+        </p>
 
-        Si pudiera elegir cualquier lugar del
-        universo para estar, entre millones de
-        estrellas, planetas y galaxias...
+        <p>
 
-        <br><br>
+          Quizás por eso esta imagen me recuerda
+          tanto a nosotros.
 
-        <strong>
-          seguiría eligiendo estar a tu lado. 💗
-        </strong>
+          Porque incluso en medio de un universo
+          enorme, lleno de estrellas y posibilidades,
+          hay momentos que simplemente se sienten
+          especiales.
 
-        <br><br>
+        </p>
 
-        Porque tú no eres solamente una estrella
-        más dentro de mi cielo.
+        <p>
 
-        <br>
+          Y si algún día vuelvo a mirar un eclipse,
+          probablemente voy a acordarme de ti. 🌌
 
-        <strong>
-          Eres el lugar al que siempre quiero
-          volver. 🌙💜
-        </strong>
+        </p>
+
+        <p>
+
+          <strong>
+
+            Porque entre todo este universo,
+            tú sigues siendo uno de mis lugares favoritos.
+
+            💜🌙
+
+          </strong>
+
+        </p>
 
       </div>
 
@@ -2956,23 +2180,6 @@
     <!-- =====================================================
          🌌 CONSTELACIÓN
     ===================================================== -->
-
-    <h2>
-      ✨ Nuestra constelación
-    </h2>
-
-
-    <p class="subtitulo">
-
-      Hay tres estrellas escondiendo
-      pequeñas partes de nuestra historia...
-
-      <br>
-
-      Tócalas para descubrirlas.
-
-    </p>
-
 
     <div
       id="constelacion"
@@ -2984,12 +2191,10 @@
         class="linea">
       </div>
 
-
       <div
         id="lineaTuCarta"
         class="linea">
       </div>
-
 
       <div
         id="lineaCartaRecuerdos"
@@ -3009,8 +2214,8 @@
         </div>
 
         <span>
-            Recuerdos
-        </span>
+      Recuerdos
+    </span>
 
       </div>
 
@@ -3027,8 +2232,8 @@
         </div>
 
         <span>
-            Tú
-        </span>
+      Tú
+    </span>
 
       </div>
 
@@ -3045,89 +2250,25 @@
         </div>
 
         <span>
-            Carta
-        </span>
+      Carta
+    </span>
 
       </div>
 
 
-      <!-- 🪐 PLANETA -->
+      <!-- =================================================
+           🪐 PLANETA
+      ================================================= -->
 
       <div class="sistema-planeta">
 
         <div class="orbita"></div>
 
-        <div class="orbita-dos"></div>
-
-        <div class="orbita-tres"></div>
-
         <div class="planeta"></div>
 
       </div>
 
-
     </div>
-
-
-    <!-- =====================================================
-         🧬 ADN
-    ===================================================== -->
-
-    <section class="adn-seccion">
-
-      <div class="adn-icono">
-        🧬
-      </div>
-
-
-      <h2>
-        🧬 Análisis del universo
-      </h2>
-
-
-      <p>
-
-        ¿Qué tan compatibles son nuestras dos
-        pequeñas partes de este enorme universo?
-
-      </p>
-
-
-      <button
-        class="boton"
-        onclick="iniciarADN()">
-
-        🔬 Analizar conexión
-
-      </button>
-
-
-      <div
-        id="adnResultado"
-        class="adn-resultado">
-
-        <div class="adn-escaneo">
-
-          <div class="adn-linea"></div>
-
-          <div class="adn-helice">
-            🧬
-          </div>
-
-        </div>
-
-
-        <div
-          id="adnTexto"
-          class="adn-texto">
-
-          Preparando análisis...
-
-        </div>
-
-      </div>
-
-    </section>
 
 
     <!-- =====================================================
@@ -3144,7 +2285,6 @@
         nuestra constelación ✨
 
       </h2>
-
 
       <p>
 
@@ -3170,7 +2310,6 @@
 
       </p>
 
-
       <div class="final-estrellas">
 
         ✨ 💜 🌙 💗 ✨
@@ -3181,125 +2320,6 @@
 
 
   </section>
-
-</div>
-
-
-<!-- =====================================================
-     🕳️ AGUJERO NEGRO
-===================================================== -->
-
-<div
-  class="agujero-negro"
-  onclick="activarAgujeroNegro()"
-  title="¿Qué será esto?">
-
-  <div class="agujero-centro"></div>
-
-  <div class="disco-acrecion"></div>
-
-</div>
-
-
-<div
-  id="mensajeAgujero"
-  class="mensaje-agujero">
-
-  <div class="contenido-agujero">
-
-        <span>
-            🕳️
-        </span>
-
-
-    <h2>
-      Algo ha desaparecido...
-    </h2>
-
-
-    <p>
-
-      Hay cosas que el universo puede
-      tragarse...
-
-      <br><br>
-
-      pero nunca lo que siento por ti. 💜
-
-    </p>
-
-
-    <button
-      class="boton"
-      onclick="cerrarAgujero()">
-
-      ✨ Volver al universo
-
-    </button>
-
-  </div>
-
-</div>
-
-
-<!-- =====================================================
-     🔭 TELESCOPIO
-===================================================== -->
-
-<button
-  class="telescopio-boton"
-  onclick="activarTelescopio()">
-
-  🔭 Mirar al cielo
-
-</button>
-
-
-<div
-  id="telescopio"
-  class="telescopio">
-
-
-  <div class="telescopio-cielo">
-
-
-    <div class="telescopio-luna">
-      🌙
-    </div>
-
-
-    <div class="telescopio-secreto">
-
-      <div>
-        ✨
-      </div>
-
-
-      <strong>
-
-        Encontraste algo...
-
-        <br><br>
-
-        Incluso en un universo
-        lleno de estrellas,
-        siempre terminaría
-        buscándote a ti. 💜
-
-      </strong>
-
-    </div>
-
-  </div>
-
-
-  <button
-    class="cerrar-telescopio"
-    onclick="cerrarTelescopio()">
-
-    ✕
-
-  </button>
 
 </div>
 
@@ -3322,11 +2342,9 @@
 
     </button>
 
-
     <h2>
       🪐 Nuestros recuerdos
     </h2>
-
 
     <p>
 
@@ -3336,36 +2354,29 @@
 
     </p>
 
-
     <div class="carrusel">
 
-
       <div class="contenedor-imagen">
-
 
         <img
           class="imagen-recuerdo activa"
           src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80"
           alt="Flores">
 
+        <img
+          class="imagen-recuerdo"
+          src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80"
+          alt="Flores rosas">
 
         <img
           class="imagen-recuerdo"
-          src="casita.png"
-          alt="Nuestra casa de mc">
-
-
-        <img
-          class="imagen-recuerdo"
-          src="juntos.png"
-          alt="Juntos en cualquier juego">
-
+          src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=80"
+          alt="Cielo nocturno">
 
         <img
           class="imagen-recuerdo"
           src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
           alt="Paisaje">
-
 
         <img
           class="imagen-recuerdo"
@@ -3465,11 +2476,9 @@
 
     </button>
 
-
     <h2>
       💗 Algunas razones
     </h2>
-
 
     <div
       id="numeroRazon"
@@ -3478,7 +2487,6 @@
       Razón #1
 
     </div>
-
 
     <div
       id="razon"
@@ -3489,7 +2497,6 @@
       simplemente estando en ellos.
 
     </div>
-
 
     <button
       class="boton"
@@ -3522,11 +2529,9 @@
 
     </button>
 
-
     <h2>
       💌 Para ti
     </h2>
-
 
     <div class="carta">
 
@@ -3538,7 +2543,6 @@
 
       </p>
 
-
       <p>
 
         Solo sé que ahora existen pequeños
@@ -3546,7 +2550,6 @@
         me hacen pensar en ti.
 
       </p>
-
 
       <p>
 
@@ -3557,7 +2560,6 @@
 
       </p>
 
-
       <p>
 
         Y de alguna manera,
@@ -3565,7 +2567,6 @@
         en mis pensamientos.
 
       </p>
-
 
       <p>
 
@@ -3579,7 +2580,6 @@
         de todo lo que siento por ti.
 
       </p>
-
 
       <div class="firma">
 
@@ -3600,6 +2600,7 @@
 
 <script>
 
+
   /* =====================================================
      ⭐ ESTRELLAS
   ===================================================== */
@@ -3610,12 +2611,17 @@
 
   function crearEstrellas(cantidad){
 
-    for(let i=0;i<cantidad;i++){
+    for(
+      let i=0;
+      i<cantidad;
+      i++
+    ){
 
       const estrella =
         document.createElement("div");
 
-      estrella.className="estrella";
+      estrella.className =
+        "estrella";
 
       estrella.style.left =
         Math.random()*100+"%";
@@ -3629,8 +2635,12 @@
       estrella.style.opacity =
         Math.random();
 
-      estrellas.appendChild(estrella);
+      estrellas.appendChild(
+        estrella
+      );
+
     }
+
   }
 
   crearEstrellas(150);
@@ -3645,7 +2655,8 @@
     const cometa =
       document.createElement("div");
 
-    cometa.className="cometa";
+    cometa.className =
+      "cometa";
 
     const posiciones=[
 
@@ -3679,11 +2690,15 @@
         )
         ];
 
-    cometa.style.top=posicion.top;
+    cometa.style.top =
+      posicion.top;
 
-    cometa.style.right=posicion.right;
+    cometa.style.right =
+      posicion.right;
 
-    document.body.appendChild(cometa);
+    document.body.appendChild(
+      cometa
+    );
 
     setTimeout(
       ()=>{
@@ -3691,11 +2706,18 @@
       },
       2500
     );
+
   }
 
-  setTimeout(crearCometa,3500);
+  setTimeout(
+    crearCometa,
+    3500
+  );
 
-  setInterval(crearCometa,9000);
+  setInterval(
+    crearCometa,
+    9000
+  );
 
 
   /* =====================================================
@@ -3728,8 +2750,12 @@
 
     faseActual++;
 
-    if(faseActual>=fasesLuna.length){
+    if(
+      faseActual>=fasesLuna.length
+    ){
+
       faseActual=0;
+
     }
 
     luna.className =
@@ -3740,16 +2766,17 @@
       " · Haz clic para cambiarla";
 
     crearEstrellasEspeciales();
+
   }
 
 
-  /* =====================================================
-     ✨ ESTRELLAS ESPECIALES
-  ===================================================== */
-
   function crearEstrellasEspeciales(){
 
-    for(let i=0;i<10;i++){
+    for(
+      let i=0;
+      i<10;
+      i++
+    ){
 
       const estrella =
         document.createElement("div");
@@ -3803,7 +2830,9 @@
 
       );
 
-      document.body.appendChild(estrella);
+      document.body.appendChild(
+        estrella
+      );
 
       setTimeout(
         ()=>{
@@ -3811,7 +2840,9 @@
         },
         1200
       );
+
     }
+
   }
 
 
@@ -3824,7 +2855,7 @@
 
   function modoNoche(){
 
-    modoNocheActivo=
+    modoNocheActivo =
       !modoNocheActivo;
 
     document.body.classList.toggle(
@@ -3836,7 +2867,9 @@
         ".boton-secundario"
       );
 
-    if(modoNocheActivo){
+    if(
+      modoNocheActivo
+    ){
 
       boton.textContent =
         "☀️ Salir del modo noche";
@@ -3849,12 +2882,14 @@
 
       boton.textContent =
         "🌙 Modo noche";
+
     }
+
   }
 
 
   /* =====================================================
-     🌌 ENTRAR DIRECTAMENTE AL ACERTIJO
+     🌌 ENTRAR AL UNIVERSO
   ===================================================== */
 
   function entrarUniverso(){
@@ -3863,8 +2898,9 @@
       .getElementById("acertijo")
       .scrollIntoView({
         behavior:"smooth",
-        block:"center"
+        block:"start"
       });
+
   }
 
 
@@ -3876,16 +2912,23 @@
     new Set();
 
 
-  function abrirVentana(id,elemento){
+  function abrirVentana(
+    id,
+    elemento
+  ){
 
     const ventana =
       document.getElementById(id);
 
-    ventana.classList.add("activa");
+    ventana.classList.add(
+      "activa"
+    );
 
     visitadas.add(id);
 
-    elemento.classList.add("visitada");
+    elemento.classList.add(
+      "visitada"
+    );
 
     comprobarConstelacion();
 
@@ -3894,17 +2937,23 @@
       50
     );
 
-    if(id==="razones"){
+    if(
+      id==="razones" ||
+      id==="carta"
+    ){
+
       crearCorazones();
+
     }
 
-    if(id==="recuerdos"){
+    if(
+      id==="recuerdos"
+    ){
+
       crearEstrellasEspeciales();
+
     }
 
-    if(id==="carta"){
-      crearCorazones();
-    }
   }
 
 
@@ -3935,30 +2984,33 @@
 
 
     const x1 =
-      rectA.left+
-      rectA.width/2-
+      rectA.left +
+      rectA.width/2 -
       rectConstelacion.left;
 
     const y1 =
-      rectA.top+
-      rectA.height/2-
+      rectA.top +
+      rectA.height/2 -
       rectConstelacion.top;
 
 
     const x2 =
-      rectB.left+
-      rectB.width/2-
+      rectB.left +
+      rectB.width/2 -
       rectConstelacion.left;
 
     const y2 =
-      rectB.top+
-      rectB.height/2-
+      rectB.top +
+      rectB.height/2 -
       rectConstelacion.top;
 
 
-    const dx=x2-x1;
+    const dx =
+      x2-x1;
 
-    const dy=y2-y1;
+    const dy =
+      y2-y1;
+
 
     const distancia =
       Math.sqrt(
@@ -3966,15 +3018,21 @@
         dy*dy
       );
 
+
     const angulo =
-      Math.atan2(dy,dx)*
+      Math.atan2(
+        dy,
+        dx
+      )*
       180/
       Math.PI;
 
 
-    linea.style.left=x1+"px";
+    linea.style.left =
+      x1+"px";
 
-    linea.style.top=y1+"px";
+    linea.style.top =
+      y1+"px";
 
     linea.style.width =
       visible
@@ -3987,12 +3045,18 @@
 
     if(visible){
 
-      linea.classList.add("visible");
+      linea.classList.add(
+        "visible"
+      );
 
     }else{
 
-      linea.classList.remove("visible");
+      linea.classList.remove(
+        "visible"
+      );
+
     }
+
   }
 
 
@@ -4062,11 +3126,9 @@
 
 
     if(
-
       visitadas.has("recuerdos") &&
       visitadas.has("razones") &&
       visitadas.has("carta")
-
     ){
 
       document
@@ -4077,13 +3139,17 @@
       document
         .getElementById("final")
         .classList.add("mostrar");
+
     }
+
   }
 
 
   function comprobarConstelacion(){
 
-    if(visitadas.size>=3){
+    if(
+      visitadas.size>=3
+    ){
 
       actualizarConstelacion();
 
@@ -4094,7 +3160,9 @@
         },
         500
       );
+
     }
+
   }
 
 
@@ -4121,6 +3189,7 @@
           );
         }
       );
+
   }
 
 
@@ -4164,7 +3233,9 @@
   let animandoCarrusel=false;
 
 
-  function cambiarImagen(direccion){
+  function cambiarImagen(
+    direccion
+  ){
 
     if(animandoCarrusel){
       return;
@@ -4179,12 +3250,17 @@
 
       nuevaImagen =
         imagenes.length-1;
+
     }
 
 
-    if(nuevaImagen>=imagenes.length){
+    if(
+      nuevaImagen>=
+      imagenes.length
+    ){
 
       nuevaImagen=0;
+
     }
 
 
@@ -4192,6 +3268,7 @@
       nuevaImagen,
       direccion
     );
+
   }
 
 
@@ -4200,9 +3277,14 @@
     direccion=null
   ){
 
-    if(numero===imagenActual){
+    if(
+      numero===imagenActual
+    ){
+
       return;
+
     }
+
 
     animandoCarrusel=true;
 
@@ -4245,6 +3327,7 @@
             : "translateX(-100%) scale(.96)";
 
         actual.style.opacity="0";
+
       }
     );
 
@@ -4253,9 +3336,14 @@
       ()=>{
 
         imagenes.forEach(
-          (imagen,indice)=>{
+          (
+            imagen,
+            indice
+          )=>{
 
-            if(indice!==numero){
+            if(
+              indice!==numero
+            ){
 
               imagen.style.opacity="0";
 
@@ -4263,23 +3351,33 @@
                 "translateX(100%) scale(.96)";
 
               imagen.style.zIndex="1";
+
             }
+
           }
         );
 
 
-        nueva.classList.add("activa");
+        nueva.classList.add(
+          "activa"
+        );
 
-        actual.classList.remove("activa");
+        actual.classList.remove(
+          "activa"
+        );
 
 
         indicadores.forEach(
-          (indicador,indice)=>{
+          (
+            indicador,
+            indice
+          )=>{
 
             indicador.classList.toggle(
               "activo",
               indice===numero
             );
+
           }
         );
 
@@ -4295,6 +3393,7 @@
       },
       600
     );
+
   }
 
 
@@ -4330,9 +3429,13 @@
 
     razonActual++;
 
-    if(razonActual>=razones.length){
+    if(
+      razonActual>=
+      razones.length
+    ){
 
       razonActual=0;
+
     }
 
 
@@ -4350,6 +3453,7 @@
 
 
     crearCorazones();
+
   }
 
 
@@ -4370,7 +3474,11 @@
     ];
 
 
-    for(let i=0;i<12;i++){
+    for(
+      let i=0;
+      i<12;
+      i++
+    ){
 
       const corazon =
         document.createElement("div");
@@ -4389,14 +3497,17 @@
 
 
       corazon.style.left =
-        Math.random()*100+"%";
+        Math.random()*
+        100+
+        "%";
 
 
       corazon.style.bottom="20px";
 
 
       corazon.style.animationDelay =
-        Math.random()*.8+
+        Math.random()*
+        .8+
         "s";
 
 
@@ -4411,7 +3522,9 @@
         },
         2500
       );
+
     }
+
   }
 
 
@@ -4430,7 +3543,9 @@
     if(
       palabrasSeleccionadas.length>=4
     ){
+
       return;
+
     }
 
 
@@ -4439,7 +3554,9 @@
         "seleccionada"
       )
     ){
+
       return;
+
     }
 
 
@@ -4448,13 +3565,12 @@
     );
 
 
-    palabrasSeleccionadas.push({
-
-      palabra:palabra,
-
-      boton:boton
-
-    });
+    palabrasSeleccionadas.push(
+      {
+        palabra:palabra,
+        boton:boton
+      }
+    );
 
 
     document.getElementById(
@@ -4466,27 +3582,24 @@
             elemento.palabra
         )
         .join(" ");
+
   }
 
 
-  /* =====================================================
-     🔄 REINICIAR ACERTIJO
-  ===================================================== */
-
   function reiniciarAcertijo(){
 
+    palabrasSeleccionadas.forEach(
+      elemento=>{
+
+        elemento.boton.classList.remove(
+          "seleccionada"
+        );
+
+      }
+    );
+
+
     palabrasSeleccionadas=[];
-
-
-    document
-      .querySelectorAll(".palabra")
-      .forEach(
-        boton=>{
-          boton.classList.remove(
-            "seleccionada"
-          );
-        }
-      );
 
 
     document.getElementById(
@@ -4507,15 +3620,10 @@
       .getElementById(
         "fraseEclipse"
       )
-      .classList.remove(
-      "mostrar"
-    );
+      .style.display="none";
+
   }
 
-
-  /* =====================================================
-     ✨ COMPROBAR ACERTIJO
-  ===================================================== */
 
   function comprobarAcertijo(){
 
@@ -4529,18 +3637,16 @@
         .toLowerCase();
 
 
-    const correcto =
-      respuesta ===
-      "tú eres mi universo";
-
-
     const resultado =
       document.getElementById(
         "resultadoAcertijo"
       );
 
 
-    if(correcto){
+    if(
+      respuesta ===
+      "tú eres mi universo"
+    ){
 
       resultado.innerHTML =
         "💜 ¡Lo encontraste! Tú eres mi universo. 🌌";
@@ -4559,9 +3665,7 @@
         .getElementById(
           "fraseEclipse"
         )
-        .classList.add(
-        "mostrar"
-      );
+        .style.display="block";
 
 
       crearCorazones();
@@ -4572,190 +3676,15 @@
     }else{
 
       resultado.innerHTML =
-        `
-            👀 Mmm... esa no parece ser la respuesta.
-            <br>
-            Inténtalo otra vez, astronauta. 🚀💜
-            `;
+        "👀 Mmm... esa no parece ser la respuesta. Inténtalo otra vez. Puedes usar 🔄 Reiniciar para volver a intentarlo.";
 
     }
+
   }
 
 
   /* =====================================================
-     🕳️ AGUJERO NEGRO
-  ===================================================== */
-
-  function activarAgujeroNegro(){
-
-    document
-      .getElementById(
-        "mensajeAgujero"
-      )
-      .classList.add("activo");
-
-
-    crearEstrellasEspeciales();
-
-    crearCorazones();
-  }
-
-
-  function cerrarAgujero(){
-
-    document
-      .getElementById(
-        "mensajeAgujero"
-      )
-      .classList.remove(
-      "activo"
-    );
-  }
-
-
-  /* =====================================================
-     🔭 TELESCOPIO
-  ===================================================== */
-
-  function activarTelescopio(){
-
-    document
-      .getElementById(
-        "telescopio"
-      )
-      .classList.add(
-      "activo"
-    );
-
-
-    crearEstrellasEspeciales();
-  }
-
-
-  function cerrarTelescopio(){
-
-    document
-      .getElementById(
-        "telescopio"
-      )
-      .classList.remove(
-      "activo"
-    );
-  }
-
-
-  /* =====================================================
-     🧬 ADN
-  ===================================================== */
-
-  let analisisADNActivo=false;
-
-
-  function iniciarADN(){
-
-    if(analisisADNActivo){
-      return;
-    }
-
-
-    analisisADNActivo=true;
-
-
-    const resultado =
-      document.getElementById(
-        "adnResultado"
-      );
-
-
-    const texto =
-      document.getElementById(
-        "adnTexto"
-      );
-
-
-    resultado.classList.add(
-      "activo"
-    );
-
-
-    texto.textContent =
-      "🔬 Iniciando análisis...";
-
-
-    setTimeout(
-      ()=>{
-
-        texto.textContent =
-          "🌌 Analizando señales cósmicas...";
-
-      },
-      1800
-    );
-
-
-    setTimeout(
-      ()=>{
-
-        texto.textContent =
-          "💫 Comparando dos pequeñas partes del universo...";
-
-      },
-      3500
-    );
-
-
-    setTimeout(
-      ()=>{
-
-        texto.innerHTML =
-          "💜 CONEXIÓN ENCONTRADA 💜";
-
-      },
-      5200
-    );
-
-
-    setTimeout(
-      ()=>{
-
-        texto.innerHTML =
-          `
-                💜 CONEXIÓN ENCONTRADA 💜
-
-                <br><br>
-
-                Compatibilidad cósmica:
-                <strong>100%</strong>
-
-                <br><br>
-
-                Error del sistema:
-
-                <br>
-
-                <span style="color:white">
-
-                    Demasiado amor detectado.
-
-                </span>
-                `;
-
-
-        crearCorazones();
-
-        crearEstrellasEspeciales();
-
-
-        analisisADNActivo=false;
-
-      },
-      6500
-    );
-  }
-
-
-  /* =====================================================
-     🖱️ CERRAR VENTANAS HACIENDO CLICK AFUERA
+     🖱️ CERRAR AL HACER CLICK AFUERA
   ===================================================== */
 
   document
@@ -4774,6 +3703,7 @@
               cerrarVentanas();
 
             }
+
           }
         );
 
@@ -4800,5 +3730,4 @@
 </script>
 
 </body>
-
 </html>
